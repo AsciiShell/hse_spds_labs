@@ -133,6 +133,8 @@ module sm_control
 
             { `C_BEQ,   `F_ANY  } : begin branch = 1'b1; condZero = 1'b1; aluControl = `ALU_SUBU; end
             { `C_BNE,   `F_ANY  } : begin branch = 1'b1; aluControl = `ALU_SUBU; end
+
+            { `C_J,     `F_ANY  } : begin branch = 1'b1; end
         endcase
     end
 endmodule
