@@ -99,6 +99,7 @@ module sm_testbench;
                 { `C_SPEC,  `F_SRL  } : $write ("srl   $%1d, $%1d, $%1d", cmdRd, cmdRs, cmdRt);
                 { `C_SPEC,  `F_SLTU } : $write ("sltu  $%1d, $%1d, $%1d", cmdRd, cmdRs, cmdRt);
                 { `C_SPEC,  `F_SUBU } : $write ("subu  $%1d, $%1d, $%1d", cmdRd, cmdRs, cmdRt);
+                { `C_SPEC2, `F_SRL  } : $write ("mul   $%1d, $%1d, $%1d", cmdRd, cmdRs, cmdRt);
 
                 { `C_ADDIU, `F_ANY  } : $write ("addiu $%1d, $%1d, %1d", cmdRt, cmdRs, cmdImm);
                 { `C_LUI,   `F_ANY  } : $write ("lui   $%1d, %1d",       cmdRt, cmdImm);
@@ -114,7 +115,7 @@ module sm_testbench;
     //simulation debug output
     integer cycle; initial cycle = 0;
 
-    initial regAddr = 0; // get PC
+    initial regAddr = 11; // get PC
 
     always @ (posedge clk)
     begin

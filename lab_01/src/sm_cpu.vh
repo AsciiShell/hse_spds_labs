@@ -15,9 +15,12 @@
 `define ALU_SRL     3'b011
 `define ALU_SLTU    3'b100
 `define ALU_SUBU    3'b101
+`define ALU_MUL     3'b110
+`define ALU_J       4'b1001
 
 //instruction operation code
 `define C_SPEC      6'b000000 // Special instructions (depends on function field)
+`define C_SPEC2     6'b011100 // Special instructions for MUL
 `define C_ADDIU     6'b001001 // I-type, Integer Add Immediate Unsigned
                               //         Rd = Rs + Immed
 `define C_BEQ       6'b000100 // I-type, Branch On Equal
