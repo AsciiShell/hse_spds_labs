@@ -1,3 +1,3 @@
 #!/bin/bash
 
-java -jar ../../scripts/bin/Mars4_5.jar &
+java -jar ../../../bin/Mars4_5.jar &
