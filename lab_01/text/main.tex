@@ -117,9 +117,26 @@
 	
 	\subsection{Добавление новых команд}
 	
-	В соответствии с заданием необходимо добавить команды: j, xori, sllv, nor
+	В соответствии с заданием необходимо добавить команды: j, xori, sllv, nor.
 	
-	%TODO описание j, xori, sllv, nor
+	Команда безусловного перехода j записывает новое значение в счётчик команд \cite{Harris}.
+	Для реализации данной команды необходимо добавить новый выход у Control unit, который будет отвечать за безусловный переход.
+	В случае установки данного флага будет изменено значение счетчика команд (PC).
+	Адрес перехода получается из второй части команды j.
+	
+	Для реализации остальных команд необходимо расширить возможности ALU: добавить операции xor, sll, nor.
+	После этого добавляются строки в мультиплексор, которые отвечают за распознавание команд.
+	Команда xori является операцией I-типа и работает с константой, остальные операции R-типа и работают с регистрами.
+	
+	Для тестирования кода была написана небольшая программа на ассемблере:
+		
+	{\small \VerbatimInput{../program/98_commands_visualization/main.S}}
+	
+	Моделирование программы проводилось в среде Icarus Verilog.
+	
+	Лог выполнения программы:
+	
+	{\small \VerbatimInput{./logs/98_commands_visualization.txt}}
 	
 	\subsection{Разработка программы нахождения суммы геометрической прогрессии}
 	
@@ -175,8 +192,7 @@
 	\centering 
 	\begin{thebibliography}{9} 
 		\addcontentsline{toc}{section}{\refname} 
-		\bibitem{Verilog} Thomas D., Moorby P. The Verilog Hardware Description Language. – Springer Science \& Business Media, 2008.
-		\bibitem{citekey} Khor W. Y. et al. Evaluation of FPGA Based QSPI Flash Access Using Partial Reconfiguration //2019 7th International Conference on Smart Computing \& Communications (ICSCC). – IEEE, 2019. – С. 1-5
+		\bibitem{Harris} Хэррис Д. М., Хэррис С. Л. Цифровая схемотехника и архитектура компьютера. – 2015.
 	\end{thebibliography}
 	
 \end{document} % конец документа
