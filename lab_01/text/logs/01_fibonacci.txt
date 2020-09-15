@@ -1,0 +1,15 @@
+    0  pc =  x  pcaddr = xxxxxxxX  instr = 00004021   v0 = 0   addu  $8, $0, $0
+    1  pc =  x  pcaddr = xxxxxxxX  instr = 00004021   v0 = 0   addu  $8, $0, $0
+    2  pc =  0  pcaddr = 00000000  instr = 00004021   v0 = 0   addu  $8, $0, $0
+    3  pc =  0  pcaddr = 00000000  instr = 00004021   v0 = 0   addu  $8, $0, $0
+    4  pc =  0  pcaddr = 00000000  instr = 00004021   v0 = 0   addu  $8, $0, $0
+    5  pc =  1  pcaddr = 00000004  instr = 24090001   v0 = 0   addiu $9, $0, 1
+    6  pc =  2  pcaddr = 00000008  instr = 00091021   v0 = 0   addu  $2, $0, $9
+    7  pc =  3  pcaddr = 0000000c  instr = 01094021   v0 = 1   addu  $8, $8, $9
+    8  pc =  4  pcaddr = 00000010  instr = 00081021   v0 = 1   addu  $2, $0, $8
+    9  pc =  5  pcaddr = 00000014  instr = 01094821   v0 = 1   addu  $9, $8, $9
+   10  pc =  6  pcaddr = 00000018  instr = 00091021   v0 = 1   addu  $2, $0, $9
+   11  pc =  7  pcaddr = 0000001c  instr = 1000fffb   v0 = 2   beq   $0, $0, -4
+   12  pc =  3  pcaddr = 0000000c  instr = 01094021   v0 = 2   addu  $8, $8, $9
+   13  pc =  4  pcaddr = 00000010  instr = 00081021   v0 = 2   addu  $2, $0, $8
+   14  pc =  5  pcaddr = 00000014  instr = 01094821   v0 = 3   addu  $9, $8, $9

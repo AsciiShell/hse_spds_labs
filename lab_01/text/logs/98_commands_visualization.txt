@@ -1,0 +1,122 @@
+    0  pc =  x  pcaddr = xxxxxxxX  instr = 240800ff   v0 = 0   addiu $8, $0, 255
+    1  pc =  x  pcaddr = xxxxxxxX  instr = 240800ff   v0 = 0   addiu $8, $0, 255
+    2  pc =  0  pcaddr = 00000000  instr = 240800ff   v0 = 0   addiu $8, $0, 255
+    3  pc =  0  pcaddr = 00000000  instr = 240800ff   v0 = 0   addiu $8, $0, 255
+    4  pc =  0  pcaddr = 00000000  instr = 240800ff   v0 = 0   addiu $8, $0, 255
+    5  pc =  1  pcaddr = 00000004  instr = 39020000   v0 = 0   xori  $2, 0
+    6  pc =  2  pcaddr = 00000008  instr = 390200ff   v0 = 255   xori  $2, 255
+    7  pc =  3  pcaddr = 0000000c  instr = 39020001   v0 = 0   xori  $2, 1
+    8  pc =  4  pcaddr = 00000010  instr = 24080002   v0 = 254   addiu $8, $0, 2
+    9  pc =  5  pcaddr = 00000014  instr = 24090002   v0 = 254   addiu $9, $0, 2
+   10  pc =  6  pcaddr = 00000018  instr = 01281004   v0 = 254   sllv  $2, $9, $8
+   11  pc =  7  pcaddr = 0000001c  instr = 01221004   v0 = 8   sllv  $2, $9, $2
+   12  pc =  8  pcaddr = 00000020  instr = 01221004   v0 = 32   sllv  $2, $9, $2
+   13  pc =  9  pcaddr = 00000024  instr = 240800f0   v0 = 128   addiu $8, $0, 240
+   14  pc = 10  pcaddr = 00000028  instr = 2409000f   v0 = 128   addiu $9, $0, 15
+   15  pc = 11  pcaddr = 0000002c  instr = 01091027   v0 = 128   nor   $2, $8, $9
+   16  pc = 12  pcaddr = 00000030  instr = 01081027   v0 = 4294967040   nor   $2, $8, $8
+   17  pc = 13  pcaddr = 00000034  instr = 08100017   v0 = 4294967055   j     23
+   18  pc = 23  pcaddr = 0000005c  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   19  pc = 24  pcaddr = 00000060  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   20  pc = 25  pcaddr = 00000064  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   21  pc = 26  pcaddr = 00000068  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   22  pc = 27  pcaddr = 0000006c  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   23  pc = 28  pcaddr = 00000070  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   24  pc = 29  pcaddr = 00000074  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   25  pc = 30  pcaddr = 00000078  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   26  pc = 31  pcaddr = 0000007c  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   27  pc = 32  pcaddr = 00000080  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   28  pc = 33  pcaddr = 00000084  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   29  pc = 34  pcaddr = 00000088  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   30  pc = 35  pcaddr = 0000008c  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   31  pc = 36  pcaddr = 00000090  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   32  pc = 37  pcaddr = 00000094  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   33  pc = 38  pcaddr = 00000098  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   34  pc = 39  pcaddr = 0000009c  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   35  pc = 40  pcaddr = 000000a0  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   36  pc = 41  pcaddr = 000000a4  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   37  pc = 42  pcaddr = 000000a8  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   38  pc = 43  pcaddr = 000000ac  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   39  pc = 44  pcaddr = 000000b0  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   40  pc = 45  pcaddr = 000000b4  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   41  pc = 46  pcaddr = 000000b8  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   42  pc = 47  pcaddr = 000000bc  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   43  pc = 48  pcaddr = 000000c0  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   44  pc = 49  pcaddr = 000000c4  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   45  pc = 50  pcaddr = 000000c8  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   46  pc = 51  pcaddr = 000000cc  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   47  pc = 52  pcaddr = 000000d0  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   48  pc = 53  pcaddr = 000000d4  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   49  pc = 54  pcaddr = 000000d8  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   50  pc = 55  pcaddr = 000000dc  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   51  pc = 56  pcaddr = 000000e0  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   52  pc = 57  pcaddr = 000000e4  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   53  pc = 58  pcaddr = 000000e8  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   54  pc = 59  pcaddr = 000000ec  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   55  pc = 60  pcaddr = 000000f0  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   56  pc = 61  pcaddr = 000000f4  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   57  pc = 62  pcaddr = 000000f8  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   58  pc = 63  pcaddr = 000000fc  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   59  pc = 64  pcaddr = 00000100  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   60  pc = 65  pcaddr = 00000104  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   61  pc = 66  pcaddr = 00000108  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   62  pc = 67  pcaddr = 0000010c  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   63  pc = 68  pcaddr = 00000110  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   64  pc = 69  pcaddr = 00000114  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   65  pc = 70  pcaddr = 00000118  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   66  pc = 71  pcaddr = 0000011c  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   67  pc = 72  pcaddr = 00000120  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   68  pc = 73  pcaddr = 00000124  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   69  pc = 74  pcaddr = 00000128  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   70  pc = 75  pcaddr = 0000012c  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   71  pc = 76  pcaddr = 00000130  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   72  pc = 77  pcaddr = 00000134  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   73  pc = 78  pcaddr = 00000138  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   74  pc = 79  pcaddr = 0000013c  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   75  pc = 80  pcaddr = 00000140  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   76  pc = 81  pcaddr = 00000144  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   77  pc = 82  pcaddr = 00000148  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   78  pc = 83  pcaddr = 0000014c  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   79  pc = 84  pcaddr = 00000150  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   80  pc = 85  pcaddr = 00000154  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   81  pc = 86  pcaddr = 00000158  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   82  pc = 87  pcaddr = 0000015c  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   83  pc = 88  pcaddr = 00000160  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   84  pc = 89  pcaddr = 00000164  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   85  pc = 90  pcaddr = 00000168  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   86  pc = 91  pcaddr = 0000016c  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   87  pc = 92  pcaddr = 00000170  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   88  pc = 93  pcaddr = 00000174  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   89  pc = 94  pcaddr = 00000178  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   90  pc = 95  pcaddr = 0000017c  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   91  pc = 96  pcaddr = 00000180  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   92  pc = 97  pcaddr = 00000184  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   93  pc = 98  pcaddr = 00000188  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   94  pc = 99  pcaddr = 0000018c  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   95  pc = 100  pcaddr = 00000190  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   96  pc = 101  pcaddr = 00000194  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   97  pc = 102  pcaddr = 00000198  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   98  pc = 103  pcaddr = 0000019c  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+   99  pc = 104  pcaddr = 000001a0  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+  100  pc = 105  pcaddr = 000001a4  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+  101  pc = 106  pcaddr = 000001a8  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+  102  pc = 107  pcaddr = 000001ac  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+  103  pc = 108  pcaddr = 000001b0  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+  104  pc = 109  pcaddr = 000001b4  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+  105  pc = 110  pcaddr = 000001b8  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+  106  pc = 111  pcaddr = 000001bc  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+  107  pc = 112  pcaddr = 000001c0  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+  108  pc = 113  pcaddr = 000001c4  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+  109  pc = 114  pcaddr = 000001c8  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+  110  pc = 115  pcaddr = 000001cc  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+  111  pc = 116  pcaddr = 000001d0  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+  112  pc = 117  pcaddr = 000001d4  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+  113  pc = 118  pcaddr = 000001d8  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+  114  pc = 119  pcaddr = 000001dc  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+  115  pc = 120  pcaddr = 000001e0  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+  116  pc = 121  pcaddr = 000001e4  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+  117  pc = 122  pcaddr = 000001e8  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+  118  pc = 123  pcaddr = 000001ec  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+  119  pc = 124  pcaddr = 000001f0  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+  120  pc = 125  pcaddr = 000001f4  instr = xxxxxxxx   v0 = 4294967055   new/unknown
+Timeout
