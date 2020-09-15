@@ -1,9 +1,0 @@
-\babel@toc {russian}{}
-\contentsline {section}{\numberline {1}Задание}{3}{section.1}
-\contentsline {section}{\numberline {2}Выполнение работы}{3}{section.2}
-\contentsline {subsection}{\numberline {2.1}Моделирование счетчика}{3}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Моделирование последовательности Фибоначчи}{4}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Моделирование извлечения квадратного корня}{6}{subsection.2.3}
-\contentsline {section}{\numberline {3}Самостоятельная работа}{9}{section.3}
-\contentsline {section}{\numberline {4}Выводы по работе}{9}{section.4}
-\contentsline {section}{{\relax \fontsize {14.4}{17}\selectfont \abovedisplayskip 14\p@ plus3\p@ minus7\p@ \abovedisplayshortskip \z@ plus4\p@ \belowdisplayshortskip 7\p@ plus4\p@ minus3\p@ \belowdisplayskip \abovedisplayskip \let \leftmargin \leftmargini \parsep 6\p@ plus2.5\p@ minus\p@ \topsep 12\p@ plus5\p@ minus7\p@ \itemsep 6\p@ plus2.5\p@ minus\p@ \leftmargin \leftmargini \parsep 6\p@ plus2.5\p@ minus\p@ \topsep 12\p@ plus5\p@ minus7\p@ \itemsep 6\p@ plus2.5\p@ minus\p@ Список использованных источников}}{11}{section*.4}
