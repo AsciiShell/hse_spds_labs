@@ -1,0 +1,132 @@
+%!TEX TS-program = xelatex
+
+% Шаблон документа LaTeX создан в 2018 году
+% Алексеем Подчезерцевым
+% В качестве исходных использованы шаблоны
+% 	Данилом Фёдоровых (danil@fedorovykh.ru) 
+%		https://www.writelatex.com/coursera/latex/5.2.2
+%	LaTeX-шаблон для русской кандидатской диссертации и её автореферата.
+%		https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template
+
+\documentclass[a4paper,14pt]{article}
+
+\input{data/preambular.tex}
+\begin{document} % конец преамбулы, начало документа
+	\input{data/title.tex}
+	\tableofcontents
+	\pagebreak
+	\section{Задание}
+	
+	\begin{enumerate}
+		\item Изучить разделы 6.2, 6.3, 6.4, 6.7 и приложение В книги H\&H.
+		Добавить в микропроцессор в соответствии со своим вариантом	поддержку следующих команд: j, xori, sllv, nor.
+		
+		\item Разработать программу, продемонстрировать на модели и прототипе правильность их	работы.
+		Разработать в соответствии со своим вариантом программу, продемонстрировать на модели и прототипе правильность ее работы.
+		Добавить ее в проект микропроцессора; добавить в папку с программой файл описания.
+		Использовать только те команды, которые есть в процессоре.
+		
+		6) Найти сумму геометрической прогрессии (количество членов прогрессии = ваш
+		вариант \% 30 + 3, знаменатель прогрессии = ваш вариант \% 10 + 1)
+		
+		\item Перейти в ветку проекта schoolMIPS 01\_mmio.
+		Скачать новую версию процессора и выполнить на вашей плате (или DE10-Lite)
+		программы 00\_counter, 01\_fibonacci, 02\_sqrt. Убедиться, что они работают также.
+		Выполнить одну из программ (по вариантам):
+		
+		2) 04\_gpio
+	\end{enumerate}
+
+	%{\small \VerbatimInput{../03_syn_pow_5_single_cycle_always/pow_5_single_cycle_always.v}}
+	
+	\section{Выполнение работы}
+	
+	\subsection{Моделирование счетчика}
+	
+	Ассемблерный код счетчика представлен на листинге ниже.
+	
+	{\small \VerbatimInput{../program/00_counter/main.S}}
+	
+	Моделирование программы проводилось в среде Icarus Verilog.
+	
+	Ниже приведена часть логов из выполнения программы:
+	
+	{\small \VerbatimInput{./logs/00_logs.txt}}
+	
+	Вейвформа при моделировании программы (рис. \ref{fig:00wvf}).
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.95\linewidth]{images/00_wvf}
+		\caption{Вейвформа для программы счетчика}
+		\label{fig:00wvf}
+	\end{figure}
+
+	Можно заметить, что значение интересующего нас регистра постепенно увеличивается на 1.
+	
+	
+	\subsection{Моделирование последовательности Фибоначчи}
+	
+	Ассемблерный код функции для подсчета значений последовательности Фибоначчи представлен на листинге ниже.
+	
+	{\small \VerbatimInput{../program/01_fibonacci/main.S}}
+	
+	Моделирование программы проводилось в среде Icarus Verilog.
+	
+	Ниже приведена часть логов из выполнения программы:
+	
+	{\small \VerbatimInput{./logs/01_logs.txt}}
+	
+	Вейвформа при моделировании программы (рис. \ref{fig:01wvf}).
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.95\linewidth]{images/01_wvf}
+		\caption{Вейвформа для последовательности Фибоначчи}
+		\label{fig:01wvf}
+	\end{figure}
+
+	
+	
+
+	\subsection{Моделирование извлечения квадратного корня}
+	
+	Ассемблерный код функции для вычисления квадратного корня представлен на листинге ниже.
+	
+	{\small \VerbatimInput{../program/02_sqrt/main.S}}
+	
+	Моделирование программы проводилось в среде Icarus Verilog.
+	
+	Лог выполнения программы:
+	
+	{\small \VerbatimInput{./logs/02_sqrt_logs.txt}}
+	
+	Вейвформа при моделировании программы (рис. \ref{fig:02wvf}).
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.95\linewidth]{images/02_wvf}
+		\caption{Вейвформа для программы извлечения квадратного корня}
+		\label{fig:02wvf}
+	\end{figure}
+	
+	
+	\section{Самостоятельная работа}
+	
+	\section{Выводы по работе}
+	
+	В ходе работы получен опыт проектирования схем в программе Quartus с помощью языка Verilog.
+	Полученное устройство было протестировано с помощью бенчтестов в программе Quartus Simulation Waveform editor.
+	В процессе работы были смоделированы устройства для конвейерной обработки данных и изучены различные способы моделирования.
+	В процессе был получен опыт работы с платой DE10-Lite, на которой проверялась работоспособность полученного устройства.
+	
+	\newpage 
+	\renewcommand{\refname}{{\normalsize Список использованных источников}} 
+	\centering 
+	\begin{thebibliography}{9} 
+		\addcontentsline{toc}{section}{\refname} 
+		\bibitem{Verilog} Thomas D., Moorby P. The Verilog Hardware Description Language. – Springer Science \& Business Media, 2008.
+		\bibitem{citekey} Khor W. Y. et al. Evaluation of FPGA Based QSPI Flash Access Using Partial Reconfiguration //2019 7th International Conference on Smart Computing \& Communications (ICSCC). – IEEE, 2019. – С. 1-5
+	\end{thebibliography}
+	
+\end{document} % конец документа
