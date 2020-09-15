@@ -12,23 +12,13 @@ start:      li	    $t0, 0xFF
             sllv    $v0, $v0, $t1      # $v0 = 0x0080
             sllv    $v0, $v0, $t1      # $v0 = 0x0800
 
-
             li      $t0, 0xF0
             li      $t1, 0x0F
             nor     $v0, $t0, $t1      # $v0 = 0xFFFFFF00
             nor     $v0, $t0, $t0      # $v0 = 0xFFFFFF0F
-            
 
             j end
             nop
-            nop
-            nop
-            nop
-            nop
-            nop
-            nop
-            nop
-            nop
-            
+            nop            
 end:
             
