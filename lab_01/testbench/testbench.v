@@ -4,7 +4,7 @@
 `include "sm_cpu.vh"
 
 `ifndef SIMULATION_CYCLES
-    `define SIMULATION_CYCLES 300
+    `define SIMULATION_CYCLES 120
 `endif
 
 module sm_testbench;
@@ -75,6 +75,7 @@ module sm_testbench;
         reg        [ 4:0] cmdSa;
         reg        [15:0] cmdImm;
         reg signed [15:0] cmdImmS;
+        reg        [15:0] cmdJump;
 
         begin
             cmdOper = instr[31:26];
@@ -85,6 +86,7 @@ module sm_testbench;
             cmdSa   = instr[10:6 ];
             cmdImm  = instr[15:0 ];
             cmdImmS = instr[15:0 ];
+            cmdJump = instr[15:0 ];
 
             $write("   ");
 
@@ -99,12 +101,16 @@ module sm_testbench;
                 { `C_SPEC,  `F_SRL  } : $write ("srl   $%1d, $%1d, $%1d", cmdRd, cmdRs, cmdRt);
                 { `C_SPEC,  `F_SLTU } : $write ("sltu  $%1d, $%1d, $%1d", cmdRd, cmdRs, cmdRt);
                 { `C_SPEC,  `F_SUBU } : $write ("subu  $%1d, $%1d, $%1d", cmdRd, cmdRs, cmdRt);
+                { `C_SPEC,  `F_SLLV } : $write ("sllv  $%1d, $%1d, $%1d", cmdRd, cmdRs, cmdRt);
+                { `C_SPEC,  `F_NOR  } : $write ("nor   $%1d, $%1d, $%1d", cmdRd, cmdRs, cmdRt);
 
                 { `C_ADDIU, `F_ANY  } : $write ("addiu $%1d, $%1d, %1d", cmdRt, cmdRs, cmdImm);
                 { `C_LUI,   `F_ANY  } : $write ("lui   $%1d, %1d",       cmdRt, cmdImm);
+                { `C_XORI,  `F_ANY  } : $write ("xori  $%1d, %1d",       cmdRt, cmdImm);
 
                 { `C_BEQ,   `F_ANY  } : $write ("beq   $%1d, $%1d, %1d", cmdRs, cmdRt, cmdImmS + 1);
                 { `C_BNE,   `F_ANY  } : $write ("bne   $%1d, $%1d, %1d", cmdRs, cmdRt, cmdImmS + 1);
+                { `C_J,     `F_ANY  } : $write ("j     %1d", cmdJump);
             endcase
         end
 

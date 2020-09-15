@@ -9,12 +9,15 @@
  */ 
 
 //ALU commands
-`define ALU_ADD     3'b000
-`define ALU_OR      3'b001
-`define ALU_LUI     3'b010
-`define ALU_SRL     3'b011
-`define ALU_SLTU    3'b100
-`define ALU_SUBU    3'b101
+`define ALU_ADD     4'b0000
+`define ALU_OR      4'b0001
+`define ALU_LUI     4'b0010
+`define ALU_SRL     4'b0011
+`define ALU_SLTU    4'b0100
+`define ALU_SUBU    4'b0101
+`define ALU_XOR     4'b0110
+`define ALU_NOR     4'b0111
+`define ALU_SLL     4'b1000
 
 //instruction operation code
 `define C_SPEC      6'b000000 // Special instructions (depends on function field)
@@ -27,6 +30,7 @@
 `define C_BNE       6'b000101 // I-type, Branch on Not Equal
                               //         if (Rs != Rt) PC += (int)offset
 `define C_J			6'b000010 // J-type, Jump
+`define C_XORI      6'b001110 // I-type, xori
 
 //instruction function field
 `define F_ADDU      6'b100001 // R-type, Integer Add Unsigned
@@ -39,4 +43,6 @@
                               //         Rd = (Rs∅ < Rt∅) ? 1 : 0
 `define F_SUBU      6'b100011 // R-type, Unsigned Subtract
                               //         Rd = Rs – Rt
+`define F_SLLV      6'b000100 // shift left logical variable
+`define F_NOR       6'b100111 // nor
 `define F_ANY       6'b??????
