@@ -4,7 +4,7 @@
 `include "sm_cpu.vh"
 
 `ifndef SIMULATION_CYCLES
-    `define SIMULATION_CYCLES 120
+    `define SIMULATION_CYCLES 300
 `endif
 
 module sm_testbench;

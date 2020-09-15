@@ -21,6 +21,7 @@ module sm_cpu
 );
     //control wires
     wire        pcSrc;
+    wire        pcJump;
     wire        regDst;
     wire        regWrite;
     wire        aluSrc;
@@ -31,7 +32,8 @@ module sm_cpu
     wire [31:0] pc;
     wire [31:0] pcBranch;
     wire [31:0] pcNext  = pc + 1;
-    wire [31:0] pc_new   = ~pcSrc ? pcNext : pcBranch;
+    wire [31:0] pcJumpAddr;    
+    wire [31:0] pc_new   = ~pcJump ? (~pcSrc ? pcNext : pcBranch) : pcJumpAddr;
     sm_register r_pc(clk ,rst_n, pc_new, pc);
 
     //program memory access
@@ -65,6 +67,10 @@ module sm_cpu
     //sign extension
     wire [31:0] signImm = { {16 { instr[15] }}, instr[15:0] };
     assign pcBranch = pcNext + signImm;
+    // Нам не надо добавлять нули справа, так как это PC, а не адрес
+    // Корректировка адреса начала программы в schoolMIPS и в стандарнтом MIPS
+    // assign pcJumpAddr = { pc[31:26], instr[25:0] } && 32'hff_fb_ff_ff;
+    assign pcJumpAddr = { 16'h0000, instr[15:0] };
 
     //alu
     wire [31:0] srcB = aluSrc ? signImm : rd2;
@@ -86,6 +92,7 @@ module sm_cpu
         .cmdFunk    ( instr[ 5:0 ] ),
         .aluZero    ( aluZero      ),
         .pcSrc      ( pcSrc        ), 
+        .pcJump     ( pcJump       ),
         .regDst     ( regDst       ), 
         .regWrite   ( regWrite     ), 
         .aluSrc     ( aluSrc       ),
@@ -100,6 +107,7 @@ module sm_control
     input      [5:0] cmdFunk,
     input            aluZero,
     output           pcSrc, 
+    output reg       pcJump,
     output reg       regDst, 
     output reg       regWrite, 
     output reg       aluSrc,
@@ -111,6 +119,7 @@ module sm_control
 
     always @ (*) begin
         branch      = 1'b0;
+        pcJump      = 1'b0;
         condZero    = 1'b0;
         regDst      = 1'b0;
         regWrite    = 1'b0;
@@ -132,7 +141,7 @@ module sm_control
             { `C_BEQ,   `F_ANY  } : begin branch = 1'b1; condZero = 1'b1; aluControl = `ALU_SUBU; end
             { `C_BNE,   `F_ANY  } : begin branch = 1'b1; aluControl = `ALU_SUBU; end
 
-            { `C_J,     `F_ANY  } : begin branch = 1'b1; end
+            { `C_J,     `F_ANY  } : begin pcJump = 1'b1; end
         endcase
     end
 endmodule

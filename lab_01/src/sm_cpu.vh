@@ -26,7 +26,7 @@
                               //         Rt = Immed << 16
 `define C_BNE       6'b000101 // I-type, Branch on Not Equal
                               //         if (Rs != Rt) PC += (int)offset
-`define C_J			6'b000010 // I-type, Jump
+`define C_J			6'b000010 // J-type, Jump
 
 //instruction function field
 `define F_ADDU      6'b100001 // R-type, Integer Add Unsigned

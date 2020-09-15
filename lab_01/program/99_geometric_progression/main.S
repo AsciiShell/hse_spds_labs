@@ -10,5 +10,23 @@ start:      li	    $t0, 8 	# N_max, NUMBER OF ELEMENTS
             for_loop:
                 addiu	$t4, $t4, 1 	    # N -= 1
                 addu	$t3, $t3, $t2	    # S += C
-                mul 	$t2, $t2, $t1   	# C *= Q
+                
+                move    $a0, $t2
+                move    $a1, $t1
+                j multiplyer
+                multiplyer_back:
+                move    $t2, $v0            # C = C * Q
                 bne		$t0, $t4, for_loop	# if $t0 == $t4 then target
+            j end
+
+multiplyer: # $v0 = $a0 + $a0 + $a0 ... $a1 times
+            move $v0, $0
+            move $a2, $0            # mul time counter
+            multiplyer_for_loop:
+                beq	    $a2, $a1, multiplyer_back	
+                addiu   $a2, $a2, 1
+                addu    $v0, $v0, $a0
+                j multiplyer_for_loop
+
+end:        
+            move $v0, $t3 # Write result
