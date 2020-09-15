@@ -19,15 +19,3 @@
    18  pc =  6  pcaddr = 00000018  instr = ac027f04   v0 = 10   sw    $2, 32516($0)
    19  pc =  7  pcaddr = 0000001c  instr = 1000fffa   v0 = 10   beq   $0, $0, -5
    20  pc =  2  pcaddr = 00000008  instr = 25080001   v0 = 10   addiu $8, $8, 1
-   21  pc =  3  pcaddr = 0000000c  instr = 1509fffe   v0 = 10   bne   $8, $9, -1
-   22  pc =  2  pcaddr = 00000008  instr = 25080001   v0 = 10   addiu $8, $8, 1
-   23  pc =  3  pcaddr = 0000000c  instr = 1509fffe   v0 = 10   bne   $8, $9, -1
-   24  pc =  2  pcaddr = 00000008  instr = 25080001   v0 = 10   addiu $8, $8, 1
-   25  pc =  3  pcaddr = 0000000c  instr = 1509fffe   v0 = 10   bne   $8, $9, -1
-   26  pc =  2  pcaddr = 00000008  instr = 25080001   v0 = 10   addiu $8, $8, 1
-   27  pc =  3  pcaddr = 0000000c  instr = 1509fffe   v0 = 10   bne   $8, $9, -1
-   28  pc =  2  pcaddr = 00000008  instr = 25080001   v0 = 10   addiu $8, $8, 1
-   29  pc =  3  pcaddr = 0000000c  instr = 1509fffe   v0 = 10   bne   $8, $9, -1
-   30  pc =  4  pcaddr = 00000010  instr = 00004021   v0 = 10   addu  $8, $0, $0
-   31  pc =  5  pcaddr = 00000014  instr = 8c027f00   v0 = 10   lw    $2, 32512($0)
-   32  pc =  6  pcaddr = 00000018  instr = ac027f04   v0 = 10   sw    $2, 32516($0)
