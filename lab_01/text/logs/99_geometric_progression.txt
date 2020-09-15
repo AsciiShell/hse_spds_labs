@@ -1,0 +1,20 @@
+    0  pc =  x  pcaddr = xxxxxxxX  instr = 24080008   v0 = 0   addiu $8, $0, 8
+    1  pc =  x  pcaddr = xxxxxxxX  instr = 24080008   v0 = 0   addiu $8, $0, 8
+    2  pc =  0  pcaddr = 00000000  instr = 24080008   v0 = 0   addiu $8, $0, 8
+    3  pc =  0  pcaddr = 00000000  instr = 24080008   v0 = 0   addiu $8, $0, 8
+    4  pc =  0  pcaddr = 00000000  instr = 24080008   v0 = 0   addiu $8, $0, 8
+    5  pc =  1  pcaddr = 00000004  instr = 24090006   v0 = 0   addiu $9, $0, 6
+    6  pc =  2  pcaddr = 00000008  instr = 240a0001   v0 = 0   addiu $10, $0, 1
+    7  pc =  3  pcaddr = 0000000c  instr = 00005821   v0 = 0   addu  $11, $0, $0
+    8  pc =  4  pcaddr = 00000010  instr = 00006021   v0 = 0   addu  $12, $0, $0
+    9  pc =  5  pcaddr = 00000014  instr = 258c0001   v0 = 0   addiu $12, $12, 1
+   10  pc =  6  pcaddr = 00000018  instr = 016a5821   v0 = 0   addu  $11, $11, $10
+   11  pc =  7  pcaddr = 0000001c  instr = 000a2021   v0 = 0   addu  $4, $0, $10
+   12  pc =  8  pcaddr = 00000020  instr = 00092821   v0 = 0   addu  $5, $0, $9
+...
+  278  pc = 15  pcaddr = 0000003c  instr = 10c5fffa   v0 = 1679616   beq   $6, $5, -5
+  279  pc = 10  pcaddr = 00000028  instr = 00025021   v0 = 1679616   addu  $10, $0, $2
+  280  pc = 11  pcaddr = 0000002c  instr = 150cfff9   v0 = 1679616   bne   $8, $12, -6
+  281  pc = 12  pcaddr = 00000030  instr = 08100013   v0 = 1679616   j     19
+  282  pc = 19  pcaddr = 0000004c  instr = 000b1021   v0 = 1679616   addu  $2, $0, $11
+  283  pc = 20  pcaddr = 00000050  instr = xxxxxxxx   v0 = 335923   new/unknown
