@@ -59,8 +59,7 @@ module de0_cv
     wire [  3:0 ] clkDevide =  SW [8:5];
     wire [  4:0 ] regAddr   =  SW [4:0];
     wire [ 31:0 ] regData;
-	wire [`SM_GPIO_WIDTH - 1:0] gpioInput = {8'b0, GPIO_0 [8:1]}
-	wire [`SM_GPIO_WIDTH - 1:0] gpioOutput;
+    wire [ `SM_GPIO_WIDTH - 1:0] gpioInput = { 8'b0, GPIO_0 [8:1]};
 
     //cores
     sm_top sm_top
@@ -72,8 +71,8 @@ module de0_cv
         .clk        ( clk       ),
         .regAddr    ( regAddr   ),
         .regData    ( regData   ),
-		.gpioInput 	( gpioInput	),
-		.gpioOutput	(gpioOutput	)
+        .gpioInput  ( gpioInput ),
+        .gpioOutput ( gpioOutput)
     );
 
     //outputs
@@ -89,21 +88,20 @@ module de0_cv
     sm_hex_display digit_1 ( h7segment [ 7: 4] , HEX1 [6:0] );
     sm_hex_display digit_0 ( h7segment [ 3: 0] , HEX0 [6:0] );
 
-	wire  [6:0] digit1;
-	wire  [6:0] digit2;
-	wire  [6:0] digit3;
+    wire [`SM_GPIO_WIDTH-1:0] h7segment_my = gpioOutput;
+    wire [6:0] digit1;
+    wire [6:0] digit2;
+    wire [6:0] digit3;
+    wire [11:0] gpio1 = GPIO_1[12:1];
+    sm_hex_display_our digit_2_our ( h7segment_my [11: 8] , digit1 [6:0] );
+    sm_hex_display_our digit_1_our ( h7segment_my [ 7: 4] , digit2 [6:0] );
+    sm_hex_display_our digit_0_our ( h7segment_my [ 3: 0] , digit3 [6:0] );
+    sm_hex_display_digit dis_digit (
+        .digit1 (digit1),
+        .digit2 (digit2),
+        .digit3 (digit3),
+        .clkIn  (clkIn),
+        .seven_segments (GPIO_1[12:1])
+    );
 
-	sm_hex_display_our digit_2_inv ( gpioOutput [11: 8] , digit1 [6:0] );
-    sm_hex_display_our digit_1_inv ( gpioOutput [ 7: 4] , digit2 [6:0] );
-    sm_hex_display_our digit_0_inv ( gpioOutput [ 3: 0] , digit3 [6:0] );
-
-	sm_hex_display_digit to_gpio
-	(
-		.digit1(digit1),
-		.digit2(digit2),
-		.digit3(digit3),
-		.clkIn(clkIn),
-		.seven_segments(GPIO_1 [12:1])
-	)
-	
 endmodule
