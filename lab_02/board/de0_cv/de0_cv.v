@@ -59,6 +59,8 @@ module de0_cv
     wire [  3:0 ] clkDevide =  SW [8:5];
     wire [  4:0 ] regAddr   =  SW [4:0];
     wire [ 31:0 ] regData;
+	wire [`SM_GPIO_WIDTH - 1:0] gpioInput = {8'b0, GPIO_0 [8:1]}
+	wire [`SM_GPIO_WIDTH - 1:0] gpioOutput;
 
     //cores
     sm_top sm_top
@@ -69,7 +71,9 @@ module de0_cv
         .clkEnable  ( clkEnable ),
         .clk        ( clk       ),
         .regAddr    ( regAddr   ),
-        .regData    ( regData   )
+        .regData    ( regData   ),
+		.gpioInput 	( gpioInput	),
+		.gpioOutput	(gpioOutput	)
     );
 
     //outputs
@@ -85,4 +89,21 @@ module de0_cv
     sm_hex_display digit_1 ( h7segment [ 7: 4] , HEX1 [6:0] );
     sm_hex_display digit_0 ( h7segment [ 3: 0] , HEX0 [6:0] );
 
+	wire  [6:0] digit1;
+	wire  [6:0] digit2;
+	wire  [6:0] digit3;
+
+	sm_hex_display_our digit_2_inv ( gpioOutput [11: 8] , digit1 [6:0] );
+    sm_hex_display_our digit_1_inv ( gpioOutput [ 7: 4] , digit2 [6:0] );
+    sm_hex_display_our digit_0_inv ( gpioOutput [ 3: 0] , digit3 [6:0] );
+
+	sm_hex_display_digit to_gpio
+	(
+		.digit1(digit1),
+		.digit2(digit2),
+		.digit3(digit3),
+		.clkIn(clkIn),
+		.seven_segments(GPIO_1 [12:1])
+	)
+	
 endmodule
