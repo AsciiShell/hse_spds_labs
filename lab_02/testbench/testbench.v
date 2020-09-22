@@ -5,7 +5,7 @@
 `include "sm_config.vh"
 
 `ifndef SIMULATION_CYCLES
-    `define SIMULATION_CYCLES 120
+    `define SIMULATION_CYCLES 350
 `endif
 
 module sm_testbench;
@@ -26,7 +26,7 @@ module sm_testbench;
     wire                        alsSCK;     // Light Sensor SPI clock
     wire                        alsSDO;     // Light Sensor SPI data
 
-    assign gpioInput = 16'h0A;
+    assign gpioInput = 16'h10;
 
     // ***** DUT start ************************
 
