@@ -51,7 +51,7 @@
 			
 	\end{itemize}
 		
-		Модуль $sm\_hex\_display\_digit$ поочередно через 11 пинов GPIO отоюражает результат на тройном 8-ми сегментном индикаторе.
+		Модуль $sm\_hex\_display\_digit$ поочередно через 11 пинов GPIO оторажает результат на тройном 8-ми сегментном индикаторе.
 		Листинг представлен ниже: 
 		
 		{\small \VerbatimInput{../src/sm_hex_display_digit.v}}
@@ -67,17 +67,23 @@
 	
 	\subsection{Написание программ}
 	
-		GPIO input и GPIO output настроены таким обрзом, что для загрузки и выгрузки значений не нужны дополнительные инструкции.
+		GPIO input и GPIO output настроены таким образом, что для загрузки и выгрузки значений не нужны дополнительные инструкции.
 		Для этих задач подходят уже имеющиеся в нашем процессоре инструкции $lw$ и $sw$.
 		
-	\subsubsection{последовательность фибо}
+	\subsubsection{последовательность Фибоначчи}
 		
-		Код программы вычисления последовательности фибоначи:
+		Код программы вычисления последовательности Фибоначчи:
 		
 		{\small \VerbatimInput{../program/91_fibo/main.S}}
 		
 		Вейвформы:
 		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\linewidth]{images/fibo_wvf}
+			\caption{Выйвформа моделирования вычисления последовательность Фибоначчи}
+			\label{fig:fibowvf}
+		\end{figure}
 		
 	\subsubsection{Вычисление квадратного корня}
 	
@@ -86,6 +92,13 @@
 		{\small \VerbatimInput{../program/92_sqrt/main.S}}
 	
 		Вейвформы:
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\linewidth]{images/sqrt_wvf}
+			\caption{Выйвформа моделирования вычисления квадратного корня}
+			\label{fig:sqrtwvf}
+		\end{figure}
 
 		
 	\section{Выводы по работе}
