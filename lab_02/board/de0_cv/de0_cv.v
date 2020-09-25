@@ -82,8 +82,8 @@ module de0_cv
 
     wire [ 31:0 ] h7segment = regData;
 
-    sm_hex_display digit_5 ( h7segment [23:20] , HEX5 [6:0] );
-    sm_hex_display digit_4 ( h7segment [19:16] , HEX4 [6:0] );
+    sm_hex_display digit_5 ( GPIO_0 [7:4] , HEX5 [6:0] );
+    sm_hex_display digit_4 ( GPIO_0 [3:0] , HEX4 [6:0] );
     sm_hex_display digit_3 ( h7segment [15:12] , HEX3 [6:0] );
     sm_hex_display digit_2 ( h7segment [11: 8] , HEX2 [6:0] );
     sm_hex_display digit_1 ( h7segment [ 7: 4] , HEX1 [6:0] );
@@ -93,7 +93,8 @@ module de0_cv
     wire [6:0] digit1;
     wire [6:0] digit2;
     wire [6:0] digit3;
-    wire [11:0] gpio1 = {GPIO_1[11:6],GPIO_1[4:0]};
+	 //wire [11:0] gpio1;
+    //assign GPIO_1 [11:0] = gpio1[11:0];
     sm_hex_display_our digit_2_our ( h7segment_my [11: 8] , digit1 [6:0] );
     sm_hex_display_our digit_1_our ( h7segment_my [ 7: 4] , digit2 [6:0] );
     sm_hex_display_our digit_0_our ( h7segment_my [ 3: 0] , digit3 [6:0] );
@@ -102,7 +103,7 @@ module de0_cv
         .digit2 (digit2),
         .digit3 (digit3),
         .clkIn  (clkIn),
-        .seven_segments (gpio1)
+        .seven_segments (GPIO_1 [11:0])
     );
 
 endmodule
