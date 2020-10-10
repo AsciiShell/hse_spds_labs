@@ -17,7 +17,7 @@ module sm_cpu
     input   [ 4:0]  regAddr,    // debug access reg address
     //output  [31:0]  regData,    // debug access reg data
     output  [31:0]  imAddr,     // instruction memory address
-    input   [31:0]  imData      // instruction memory data
+    input   [31:0]  imData,      // instruction memory data
     output  [31:0]  dmAddr,     // data memory address
     output          dmWe,       // data memory write enable
     output  [31:0]  dmWData,    // data memory write data

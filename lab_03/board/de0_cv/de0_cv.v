@@ -57,7 +57,7 @@ module de0_cv
     wire          rst_n     =  KEY[0] & RESET_N;
     wire          clkEnable =  SW [9] | ~KEY[1];
     wire [  3:0 ] clkDevide =  SW [8:5];
-    wire [  3:0 ] memAddr   =  SW [3:0];
+    wire [  4:0 ] memAddr   =  SW [4:0];
     wire [ 31:0 ] memData;
 
     //cores
@@ -74,9 +74,9 @@ module de0_cv
 
     //outputs
     assign LEDR[0]   = clk;
-    assign LEDR[9:1] = regData[8:0];
+    assign LEDR[9:1] = memData[8:0];
 
-    wire [ 31:0 ] h7segment = regData;
+    wire [ 31:0 ] h7segment = memData;
 
     sm_hex_display digit_5 ( h7segment [23:20] , HEX5 [6:0] );
     sm_hex_display digit_4 ( h7segment [19:16] , HEX4 [6:0] );

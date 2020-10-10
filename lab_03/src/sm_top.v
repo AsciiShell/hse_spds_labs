@@ -7,7 +7,7 @@ module sm_top
     input   [ 3:0 ] clkDevide,
     input           clkEnable,
     output          clk,
-    input   [ 3:0 ] regAddr,
+    input   [ 4:0 ] regAddr,
     output  [31:0 ] regData
 );
     //metastability input filters
@@ -56,7 +56,7 @@ module sm_top
     (
         .clk        ( clk       ),
         .rst_n      ( rst_n     ),
-        .regAddr    ( b'40000   ),
+        .regAddr    (  4'b0  ),
         //.regData    ( regData   ),
         .imAddr     ( imAddr    ),
         .imData     ( imData    ),

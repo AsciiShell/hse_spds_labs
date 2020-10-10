@@ -18,6 +18,10 @@ module true_dual_port_ram_single_clock
 	// Declare the RAM variable
 	reg [DATA_WIDTH-1:0] ram[2**ADDR_WIDTH-1:0];
 
+    initial begin
+        $readmemh ("data2.hex", ram);
+    end
+
 	// Port A 
 	always @ (posedge clk)
 	begin
