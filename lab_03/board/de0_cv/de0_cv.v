@@ -57,8 +57,8 @@ module de0_cv
     wire          rst_n     =  KEY[0] & RESET_N;
     wire          clkEnable =  SW [9] | ~KEY[1];
     wire [  3:0 ] clkDevide =  SW [8:5];
-    wire [  4:0 ] regAddr   =  SW [4:0];
-    wire [ 31:0 ] regData;
+    wire [  3:0 ] memAddr   =  SW [3:0];
+    wire [ 31:0 ] memData;
 
     //cores
     sm_top sm_top
@@ -68,8 +68,8 @@ module de0_cv
         .clkDevide  ( clkDevide ),
         .clkEnable  ( clkEnable ),
         .clk        ( clk       ),
-        .regAddr    ( regAddr   ),
-        .regData    ( regData   )
+        .regAddr    ( memAddr   ),
+        .regData    ( memData   )
     );
 
     //outputs

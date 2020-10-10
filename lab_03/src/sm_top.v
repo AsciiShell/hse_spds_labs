@@ -7,7 +7,7 @@ module sm_top
     input   [ 3:0 ] clkDevide,
     input           clkEnable,
     output          clk,
-    input   [ 4:0 ] regAddr,
+    input   [ 3:0 ] regAddr,
     output  [31:0 ] regData
 );
     //metastability input filters
@@ -17,7 +17,7 @@ module sm_top
 
     sm_debouncer #(.SIZE(4)) f0(clkIn, clkDevide, devide);
     sm_debouncer #(.SIZE(1)) f1(clkIn, clkEnable, enable);
-    sm_debouncer #(.SIZE(5)) f2(clkIn, regAddr,   addr  );
+    sm_debouncer #(.SIZE(4)) f2(clkIn, regAddr,   addr  );
 
     //cores
     //clock devider
@@ -35,15 +35,38 @@ module sm_top
     wire    [31:0]  imData;
     sm_rom reset_rom(imAddr, imData);
 
+    //data bus matrix
+    wire    [31:0]  dmAddr;
+    wire            dmWe;
+    wire    [31:0]  dmWData;
+    wire    [31:0]  dmRData;
+    sm_matrix matrix
+    (
+        .clk        ( clk        ),
+        .rst_n      ( rst_n      ),
+        .bAddr      ( dmAddr     ),
+        .bWrite     ( dmWe       ),
+        .bWData     ( dmWData    ),
+        .bRData     ( dmRData    ),
+        .bBAddr     ( addr       ),
+        .bRBData    ( regData    ),
+    );
+
     sm_cpu sm_cpu
     (
         .clk        ( clk       ),
         .rst_n      ( rst_n     ),
-        .regAddr    ( addr      ),
-        .regData    ( regData   ),
+        .regAddr    ( b'40000   ),
+        //.regData    ( regData   ),
         .imAddr     ( imAddr    ),
-        .imData     ( imData    )
+        .imData     ( imData    ),
+        .dmAddr     ( dmAddr    ),
+        .dmWe       ( dmWe      ),
+        .dmWData    ( dmWData   ),
+        .dmRData    ( dmRData   )
     );
+
+    
 
 endmodule
 

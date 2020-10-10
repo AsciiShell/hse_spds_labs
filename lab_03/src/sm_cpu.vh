@@ -31,6 +31,10 @@
                               //         if (Rs != Rt) PC += (int)offset
 `define C_J			6'b000010 // J-type, Jump
 `define C_XORI      6'b001110 // I-type, xori
+`define C_LW        6'b100011 // I-type, Load Word
+                              //         Rt = memory[Rs + Immed]
+`define C_SW        6'b101011 //I-type,  Store Word
+                              //         memory[Rs + Immed] = Rt
 
 //instruction function field
 `define F_ADDU      6'b100001 // R-type, Integer Add Unsigned
