@@ -107,6 +107,8 @@ module sm_testbench;
                 { `C_ADDIU, `F_ANY  } : $write ("addiu $%1d, $%1d, %1d", cmdRt, cmdRs, cmdImm);
                 { `C_LUI,   `F_ANY  } : $write ("lui   $%1d, %1d",       cmdRt, cmdImm);
                 { `C_XORI,  `F_ANY  } : $write ("xori  $%1d, %1d",       cmdRt, cmdImm);
+                { `C_LW,    `F_ANY  } : $write ("lw    $%1d, %1d($%1d)", cmdRt, cmdImm, cmdRs);
+                { `C_SW,    `F_ANY  } : $write ("sw    $%1d, %1d($%1d)", cmdRt, cmdImm, cmdRs);
 
                 { `C_BEQ,   `F_ANY  } : $write ("beq   $%1d, $%1d, %1d", cmdRs, cmdRt, cmdImmS + 1);
                 { `C_BNE,   `F_ANY  } : $write ("bne   $%1d, $%1d, %1d", cmdRs, cmdRt, cmdImmS + 1);
