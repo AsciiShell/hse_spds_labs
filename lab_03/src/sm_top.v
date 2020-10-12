@@ -49,7 +49,7 @@ module sm_top
         .bWData     ( dmWData    ),
         .bRData     ( dmRData    ),
         .bBAddr     ( addr       ),
-        .bRBData    ( regData    ),
+        .bRBData    ( regData    )
     );
 
     sm_cpu sm_cpu

@@ -18,20 +18,20 @@ module sm_matrix
     wire [4:0] aAddr = bAddr[4:0];
 
 
-    /*true_dual_port_ram_single_clock data_ram
+    true_dual_port_ram_single_clock data_ram
     (
-        .data_a ( bWData    ),
-        .data_b ( 32'b0     ),
         .addr_a ( aAddr     ),
         .addr_b ( bBAddr    ),
+        .clk    ( clk       ),
+        .data_a ( bWData    ),
+        .data_b ( 32'b0     ),
         .we_a   ( bWrite    ),
         .we_b   ( 1'b0      ),
-        .clk    ( clk       ),
         .q_a    ( bRData    ),
         .q_b    ( bRBData   )
-    );*/
-
-    ram_2port ram_2port
+    );
+/*
+    ram ram_2port
     (
         .address_a ( aAddr     ),
         .address_b ( bBAddr    ),
@@ -44,5 +44,5 @@ module sm_matrix
         .q_b    ( bRBData   )
     );
 
-
+*/
 endmodule

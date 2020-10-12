@@ -4,13 +4,13 @@
 module true_dual_port_ram_single_clock
 #(parameter DATA_WIDTH=32, parameter ADDR_WIDTH=4)
 (
-	input [(DATA_WIDTH-1):0] data_a,
-	input [(DATA_WIDTH-1):0] data_b,
 	input [(ADDR_WIDTH-1):0] addr_a,
 	input [(ADDR_WIDTH-1):0] addr_b,
+	input clk,
+	input [(DATA_WIDTH-1):0] data_a,
+	input [(DATA_WIDTH-1):0] data_b,
 	input we_a,
 	input we_b,
-	input clk,
 	output reg [(DATA_WIDTH-1):0] q_a,
 	output reg [(DATA_WIDTH-1):0] q_b
 );
@@ -19,7 +19,7 @@ module true_dual_port_ram_single_clock
 	reg [DATA_WIDTH-1:0] ram[2**ADDR_WIDTH-1:0];
 
     initial begin
-        $readmemh ("data2.hex", ram);
+        $readmemh ("data3.hex", ram);
     end
 
 	// Port A 

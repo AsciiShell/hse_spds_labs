@@ -7,7 +7,7 @@ cd sim
 cp ../*.hex .
 
 # default simulation params
-SIMULATION_CYCLESS=120
+SIMULATION_CYCLESS=500
 
 # read local simulation params
 source ../icarus.cfg
