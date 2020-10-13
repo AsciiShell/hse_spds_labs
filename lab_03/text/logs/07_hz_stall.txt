@@ -1,0 +1,19 @@
+0  pc_F = xxxxxxxx  instr_D = 00000000   v0 = 0   nop nop new/unknown new/unknown
+1  pc_F = xxxxxxxx  instr_D = 00000000   v0 = 0   nop nop nop new/unknown
+2  pc_F = 00000000  instr_D = 00000000   v0 = 0   nop nop nop nop
+3  pc_F = 00000000  instr_D = 00000000   v0 = 0   nop nop nop nop
+4  pc_F = 00000000  instr_D = 00000000   v0 = 0   nop nop nop nop
+5  pc_F = 00000004  instr_D = 24080001   v0 = 0   addiu $8, $0, 1 nop nop nop
+6  pc_F = 00000008  instr_D = ac080000   v0 = 0   sw  $8, 0($0) addiu $8, $0, 1 nop nop
+7  pc_F = 0000000c  instr_D = 00000000   v0 = 0   nop sw $8, 0($0) addiu $8, $0, 1 nop
+8  pc_F = 00000010  instr_D = 00000000   v0 = 0   nop nop sw $8, 0($0) addiu $8, $0, 1
+9  pc_F = 00000014  instr_D = 8c090000   v0 = 0   lw  $9, 0($0) nop nop sw $8, 0($0)
+10  pc_F = 00000018  instr_D = 01291021   v0 = 0   addu  $2, $9, $9 lw $9, 0($0) nop nop
+11  pc_F = 00000018  instr_D = 01291021   v0 = 0   addu  $2, $9, $9 nop lw $9, 0($0) nop
+12  pc_F = 0000001c  instr_D = 00000000   v0 = 0   nop addu  $2, $9, $9 nop lw $9, 0($0)
+13  pc_F = 00000020  instr_D = 00000000   v0 = 0   nop nop addu  $2, $9, $9    nop
+14  pc_F = 00000024  instr_D = 00000000   v0 = 0   nop nop nop addu  $2, $9, $9
+15  pc_F = 00000028  instr_D = 00000000   v0 = 2   nop nop nop nop
+16  pc_F = 0000002c  instr_D = 1000ffff   v0 = 2   beq $0, $0, 0 nop nop nop
+7  pc_F = 00000028  instr_D = 00000000   v0 = 2   nop beq   $0, $0, 0 nop nop
+18  pc_F = 0000002c  instr_D = 1000ffff   v0 = 2   beq   $0, $0, 0 nop beq $0, $0, 0 nop
