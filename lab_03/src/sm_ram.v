@@ -1,6 +1,6 @@
 // Quartus Prime Verilog Template
 // True Dual Port RAM with single clock
-
+/*
 module true_dual_port_ram_single_clock
 #(parameter DATA_WIDTH=32, parameter ADDR_WIDTH=4)
 (
@@ -50,4 +50,4 @@ module true_dual_port_ram_single_clock
 		end 
 	end
 
-endmodule
+endmodule*/
