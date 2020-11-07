@@ -1,0 +1,18 @@
+    0  pc =  x  pcaddr = xxxxxxxX  instr = 240800ff   v0 = 0   addiu $8, $0, 255
+    1  pc =  x  pcaddr = xxxxxxxX  instr = 240800ff   v0 = 0   addiu $8, $0, 255
+    2  pc =  0  pcaddr = 00000000  instr = 240800ff   v0 = 0   addiu $8, $0, 255
+    3  pc =  0  pcaddr = 00000000  instr = 240800ff   v0 = 0   addiu $8, $0, 255
+    4  pc =  0  pcaddr = 00000000  instr = 240800ff   v0 = 0   addiu $8, $0, 255
+    5  pc =  1  pcaddr = 00000004  instr = 39020000   v0 = 0   xori  $2, 0
+    6  pc =  2  pcaddr = 00000008  instr = 390200ff   v0 = 255   xori  $2, 255
+    7  pc =  3  pcaddr = 0000000c  instr = 39020001   v0 = 0   xori  $2, 1
+    8  pc =  4  pcaddr = 00000010  instr = 24080002   v0 = 254   addiu $8, $0, 2
+    9  pc =  5  pcaddr = 00000014  instr = 24090002   v0 = 254   addiu $9, $0, 2
+   10  pc =  6  pcaddr = 00000018  instr = 01281004   v0 = 254   sllv  $2, $9, $8
+   11  pc =  7  pcaddr = 0000001c  instr = 01221004   v0 = 8   sllv  $2, $9, $2
+   12  pc =  8  pcaddr = 00000020  instr = 01221004   v0 = 32   sllv  $2, $9, $2
+   13  pc =  9  pcaddr = 00000024  instr = 240800f0   v0 = 128   addiu $8, $0, 240
+   14  pc = 10  pcaddr = 00000028  instr = 2409000f   v0 = 128   addiu $9, $0, 15
+   15  pc = 11  pcaddr = 0000002c  instr = 01091027   v0 = 128   nor   $2, $8, $9
+   16  pc = 12  pcaddr = 00000030  instr = 01081027   v0 = 4294967040   nor   $2, $8, $8
+   17  pc = 13  pcaddr = 00000034  instr = 08100017   v0 = 4294967055   j     23
