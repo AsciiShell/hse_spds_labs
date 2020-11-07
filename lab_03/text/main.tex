@@ -1,0 +1,175 @@
+%!TEX TS-program = xelatex
+
+% Шаблон документа LaTeX создан в 2018 году
+% Алексеем Подчезерцевым
+% В качестве исходных использованы шаблоны
+% 	Данилом Фёдоровых (danil@fedorovykh.ru) 
+%		https://www.writelatex.com/coursera/latex/5.2.2
+%	LaTeX-шаблон для русской кандидатской диссертации и её автореферата.
+%		https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template
+
+\documentclass[a4paper,14pt]{article}
+
+\input{data/preambular.tex}
+\begin{document} % конец преамбулы, начало документа
+	\input{data/title.tex}
+	\tableofcontents
+	\pagebreak
+	\section{Задание}
+	
+	\begin{enumerate}
+		\item Создать модуль RAM памяти с двумя входами/выходами
+
+		\item Добавить к процессору в тракт передачи данных блок памяти на 16-ть 32-х битных слов с двумя входами/выходами
+		
+		\item Добавить команды LW и SW в тракт передачи данных
+
+		\item разработать программу на ассемблере, которая: 6) Инвертирует все четные числа в памяти.
+		
+		\item Синтезировать проект, провести моделирование и прототипирование процессора и выполняемой программы. 
+		
+		\item Сравнить данный вариант процессора с версией https://github.com/MIPSfpga/schoolMIPS/tree/01\_mmio/. В чем отличия?
+
+		\item Перейти в ветку проекта schoolMIPS 03\_pipeline: https://github.com/MIPSfpga/schoolMIPS/tree/03\_pipeline.
+		
+		\item Скачать новую версию процессора и выполнить на вашей плате (или DE10-Lite) программы 00\_counter, 01\_fibonacci, 02\_sqrt, 03\_ram.
+		
+		\item Выполнить программы: 06\_hz\_forward, 07\_hz\_stall, 08\_hz\_branch
+	\end{enumerate}
+
+	%{\small \VerbatimInput{../03_syn_pow_5_single_cycle_always/pow_5_single_cycle_always.v}}
+	
+	\section{Выполнение работы}
+	
+	
+	\subsection{Создание модуля RAM}
+
+	Был создан модуль RAM памяти с двумя входами/выходами на языке Verilog.
+	Для этого использовалась функция Insert Template в окне редактора кода.
+	
+	\section{Самостоятельная работа}
+	
+	
+	\subsection{Доработка процессора}
+	
+	
+	За основу была взята программа с первой лабораторной работы, в которой во время первой лабораторной работы были дополнительно реализованны команды sllv и nor.
+	
+	Изменения в процессоре:
+	
+	\begin{enumerate}
+		\item Были добавлены команды sw и lw, по аналогии с второй лабораторной работой.
+		
+		\item Был добавлен модуль matrix, который содержит в себе модуль RAM.
+		
+		\item Вход и выход для просмотра состояния регистров в процессоре был переделан на просмотр содержимого в RAM.
+	\end{enumerate}
+	
+	Отличие этого процессора от 01\_mmio заключается в том, что этот процессор не поддерживает работу периферийных устройств.
+	
+	\subsection{Разработка программы, которая инвертирует все четные числа в памяти}
+	
+	Код программы:
+	
+	{\small \VerbatimInput{../program/16_invert_even/main.S}}
+	
+	Результат моделирования в Icarus verilog (рис. \ref{fig:wvf16}).
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{images/wvf_16}
+		\caption{Моделирование программы в Icarus verilog}
+		\label{fig:wvf16}
+	\end{figure}	
+
+	\subsection{Моделирование программ на процессоре из ветки 03\_pipeline}
+	
+	Программы 00\_counter, 01\_fibonacci, 02\_sqrt, 03\_ram продолжают работать на данной версии процессора.
+	
+	
+	\subsubsection{Выполнение программы 06\_hz\_forward}
+	
+	Код программы:
+	
+	{\small \VerbatimInput{../program/06_hz_forward/main.S}}
+	
+	Лог выполнения программы:
+	
+	{\small \VerbatimInput{logs/06_hz_forward.txt}}
+	
+	Результат моделирования в Icarus verilog (рис. \ref{fig:wvf06}).
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{images/wvf_06}
+		\caption{Моделирование программы в Icarus verilog}
+		\label{fig:wvf06}
+	\end{figure}
+
+	На вэйвформе можно заметить, что данные в регистрах появляются спустя несколько тактов после попадания инструкции в процессор.
+	
+	
+	\subsubsection{Выполнение программы 07\_hz\_stall}
+	
+	Код программы:
+	
+	{\small \VerbatimInput{../program/07_hz_stall/main.S}}
+	
+	Лог выполнения программы:
+	
+	{\small \VerbatimInput{logs/07_hz_stall.txt}}
+	
+	Результат моделирования в Icarus verilog (рис. \ref{fig:wvf07}).
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{images/wvf_07}
+		\caption{Моделирование программы в Icarus verilog}
+		\label{fig:wvf07}
+	\end{figure}
+
+	В данной программе сначала число записывается в оперативную память, потом считывается из оперативной памяти.
+	При этом арифметическая операция над регистром, с которы считывается число из RAM, не производится.
+	Это можно заметить в 10-11 строках лога выполнения программы.
+	
+	\subsubsection{Выполнение программы 08\_hz\_branch}
+	
+	Код программы:
+	
+	{\small \VerbatimInput{../program/08_hz_branch/main.S}}
+	
+	Лог выполнения программы:
+	
+	{\small \VerbatimInput{logs/08_hz_branch.txt}}
+	
+	Результат моделирования в Icarus verilog (рис. \ref{fig:wvf08}).
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{images/wvf_08}
+		\caption{Моделирование программы в Icarus verilog}
+		\label{fig:wvf08}
+	\end{figure}
+
+	В данной программе демонстрируется то, что после инструкции ветвления не происходит выполнение инструкции следующей за текущей.
+	Это можно наблюдать в (7-8, 12-13, 15-17) строках лога. 
+	
+	\section{Выводы по работе}
+	
+	В ходе работы получен опыт в написании кода на ассемблере MIPS.
+	Был получен опыт чтения машинного кода.
+	Был доработан процессор MIPS, к нему была добавлена оперативная память.
+	Изучены и добавлены дополнительные команды процессора MIPS.
+	Было произведено моделирование в программе Icarus Verilog.
+	Итоговый проект был собран и загружен на плату.
+	Был рассмотрен процессор с конвейерной архитектурой.
+	
+	\newpage 
+	\renewcommand{\refname}{{\normalsize Список использованных источников}} 
+	\centering 
+	\begin{thebibliography}{9} 
+		\addcontentsline{toc}{section}{\refname} 
+		\bibitem{Harris} Хэррис Д. М., Хэррис С. Л. Цифровая схемотехника и архитектура компьютера. – 2015.
+	\end{thebibliography}
+	
+\end{document} % конец документа
