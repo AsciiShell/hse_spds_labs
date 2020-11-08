@@ -1,26 +1,19 @@
-
 #define FORWARD_EPC_NONE    0
 #define FORWARD_EPC_E       1
 #define FORWARD_EPC_M       2
-
 #define MODE    FORWARD_EPC_NONE
-
 #define c0_status   $12
 #define c0_EPC      $14
 #define c0_cause    $13
-
             .text
             .org    0x0
 init:       addiu   $t0, $0, 0x1
             li      $v0, 0x0
-
             nop
             nop
             addu    $v0, $v0, $t0
             subu    $v0, $v0, $t0
-
             mfhi    $0            # reserved instruction
-
             addu    $v0, $v0, $t0
             subu    $v0, $v0, $t0
             nop
