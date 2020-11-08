@@ -1,0 +1,15 @@
+    5  pc_F = 00000004  instr_D = 3c034000   v0 = 0   lui   $3, 16384          sll   $0, $0, $0    sll   $0, $0, $0    sll   $0, $0, $0
+    6  pc_F = 00000008  instr_D = 8c620000   v0 = 0   lw    $2,  0($3)    lui   $3, 16384          sll   $0, $0, $0    sll   $0, $0, $0
+    7  pc_F = 0000000c  instr_D = 00021040   v0 = 0   sll   $2, $0, $2    lw    $2,  0($3)    lui   $3, 16384          sll   $0, $0, $0
+    8  pc_F = 0000000c  instr_D = 00021040   v0 = 0   sll   $2, $0, $2    sll   $0, $0, $0    lw    $2,  0($3)    lui   $3, 16384      
+    9  pc_F = 00000010  instr_D = ac620004   v0 = 0   sw    $2,  4($3)    sll   $2, $0, $2    sll   $0, $0, $0    lw    $2,  0($3)
+   10  pc_F = 00000014  instr_D = 24020014   v0 = 2   addiu $2, $0, 20    sw    $2,  4($3)    sll   $2, $0, $2    sll   $0, $0, $0
+   11  pc_F = 00000018  instr_D = 2442ffff   v0 = 2   addiu $2, $2, 65535    addiu $2, $0, 20    sw    $2,  4($3)    sll   $2, $0, $2
+   12  pc_F = 0000001c  instr_D = 1440fffe   v0 = 4   bne   $2, $0, -1    addiu $2, $2, 65535    addiu $2, $0, 20    sw    $2,  4($3)
+   13  pc_F = 0000001c  instr_D = 1440fffe   v0 = 4   bne   $2, $0, -1    addiu $2, $2, 65535    addiu $2, $0, 20    sw    $2,  4($3)
+   14  pc_F = 0000001c  instr_D = 1440fffe   v0 = 4   bne   $2, $0, -1    sll   $0, $0, $0    addiu $2, $2, 65535    addiu $2, $0, 20
+   15  pc_F = 00000014  instr_D = 00000000   v0 = 20   sll   $0, $0, $0    bne   $2, $0, -1    sll   $0, $0, $0    addiu $2, $2, 65535
+   16  pc_F = 00000018  instr_D = 2442ffff   v0 = 19   addiu $2, $2, 65535    sll   $0, $0, $0    bne   $2, $0, -1    sll   $0, $0, $0
+   17  pc_F = 0000001c  instr_D = 1440fffe   v0 = 19   bne   $2, $0, -1    addiu $2, $2, 65535    sll   $0, $0, $0    bne   $2, $0, -1
+   18  pc_F = 0000001c  instr_D = 1440fffe   v0 = 19   bne   $2, $0, -1    sll   $0, $0, $0    addiu $2, $2, 65535    sll   $0, $0, $0
+   19  pc_F = 00000014  instr_D = 00000000   v0 = 19   sll   $0, $0, $0    bne   $2, $0, -1    sll   $0, $0, $0    addiu $2, $2, 65535

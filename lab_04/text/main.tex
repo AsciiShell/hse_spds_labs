@@ -138,7 +138,7 @@
 	
 	
 
-	\subsection{Моделирование программ на процессоре из ветки 04\_pipeline\_irq}
+	\subsection{Моделирование программ на процессоре \\ из ветки 04\_pipeline\_irq}
 	
 	Было произведено моделирование программ  00\_counter, 01\_fibonacci, 02\_sqrt, 03\_ram, все по-прежнему работают, но никаких изменений в логах или вейвформах нет.
 	
@@ -257,7 +257,52 @@
 		\label{fig:0408wvf}
 	\end{figure}
 	
+	\subsection{Моделирование программ на процессоре \\ из ветки 05\_pipeline\_ahb}
 	
+	Программы 00 -- 07 по прежнему работают. Изменений в вейвформах и логах нет.
+	В данную версию добавлена Advanced High-performance Bus (AHB) Lite версии,
+	которая позволяет взаимодействовать двум и более устройствам в режиме master~--~slaves.
+	
+	\subsubsection{Моделирование программы 09\_ahb\_mem}
+	
+	В данной программе проверяется работа памяти путем постоянного чтения и записи по разным адресам.
+	Ее ассемблерный код:
+	
+	{\small \VerbatimInput{../branch_05/05_pipeline_ahb/09_ahb_mem/main.S}}
+	
+	Ниже приведена часть логов из выполнения программы:
+	
+	{\small \VerbatimInput{./logs/05_09_ahb_mem.txt}}
+	
+	Вейвформа при моделировании программы (рис. \ref{fig:05_09_wvf}).
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\linewidth]{images/05_09_wvf}
+		\caption{Вейвформа для  09\_ahb\_mem}
+		\label{fig:05_09_wvf}
+	\end{figure}
+
+	\subsubsection{Моделирование программы 10\_ahb\_gpio}
+
+	В данной программе проверяется работа GPIO путем постоянного чтения и записи по разным адресам.
+	Ее C код:
+	
+	{\small \VerbatimInput{../branch_05/05_pipeline_ahb/10_ahb_gpio/main.c}}
+	
+	Ниже приведена часть логов из выполнения программы:
+	
+	{\small \VerbatimInput{./logs/05_10_ahb_gpio.txt}}
+	
+	Вейвформа при моделировании программы (рис. \ref{fig:05_10_wvf}).
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\linewidth]{images/05_10_wvf}
+		\caption{Вейвформа для 10\_ahb\_gpio}
+		\label{fig:05_10_wvf}
+	\end{figure}
+
 	\section{Выводы по работе}
 	
 	В ходе работы получен опыт в написании кода на ассемблере MIPS.
