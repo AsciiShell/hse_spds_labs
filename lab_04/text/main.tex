@@ -45,8 +45,10 @@
 		С использованием SignalTap II продемонстрировать корректность выполнение программ 00\_counter/, 01\_fibonacci/ и 02\_sqrt/.
 		
 		\item Перейти в ветку проекта schoolMIPS 03\_pipeline\_irq: https://github.com/MIPSfpga/schoolMIPS/tree/04\_pipeline\_irq.
+		Скачать новую версию процессора и выполнить на вашей плате (или DE10-Lite) программы https://github.com/MIPSfpga/schoolMIPS/tree/04\_pipeline\_irq/program, в программах начиная с 4-й сделать подробные комментарии. Объяснить, чем эта версия schoolMIPS отличается от базовой.
 		
 		\item Перейти в ветку проекта schoolMIPS 05\_pipeline\_ahb: https://github.com/MIPSfpga/schoolMIPS/tree/05\_pipeline\_ahb.
+		Скачать новую версию процессора и выполнить на вашей плате (или DE10-Lite) программы https://github.com/MIPSfpga/schoolMIPS/tree/05\_pipeline\_ahb/program, в программах начиная с 4-й сделать подробные комментарии. Объяснить, чем эта версия schoolMIPS отличается от базовой.
 		
 	\end{enumerate}
 
@@ -123,11 +125,26 @@
 	
 	\section{Самостоятельная работа}
 	
+	\subsection{Настройка SignalTap для 1 версии процессора}
+	
+	В таблицу $setup$ были перенесены первые 16 регистров процессора, а также кнопка $KEY_2$ по убывающему фронту которой будет начинаться запись из выбранных регистров.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{images/view_registers}
+		\caption{Таблица $setup$ для отслеживания состояния регистров}
+		\label{fig:viewregisters}
+	\end{figure}
+	
+	
 
 	\subsection{Моделирование программ на процессоре из ветки 04\_pipeline\_irq}
 	
 	Было произведено моделирование программ  00\_counter, 01\_fibonacci, 02\_sqrt, 03\_ram, все по-прежнему работают, но никаких изменений в логах или вейвформах нет.
 	
+	Данный процессор отличается о базового прежде всего тем, что данный процессор является конвейерным.
+	Также в этой версии процессора реализованы прерывания для обработки исключений.
+	Данной задачей занимается сопроцессор $sm\_cpz$.
 	%04_04_irq_timer
 	%04_05_exc_ri
 	%04_06_hz_forward
