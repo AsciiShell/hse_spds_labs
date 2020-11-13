@@ -1,0 +1,10 @@
+    5  pc_F = 00000004  instr_D = 24080001   v0 = 0   addiu $8, $0,  1    nop                 nop                 nop
+    6  pc_F = 00000008  instr_D = 01084821   v0 = 0   addu  $9, $8, $8    addiu $8, $0,  1    nop                 nop
+    7  pc_F = 0000000c  instr_D = 01085021   v0 = 0   addu  $10, $8, $8    addu  $9, $8, $8    addiu $8, $0,  1    nop
+    8  pc_F = 00000010  instr_D = 01085821   v0 = 0   addu  $11, $8, $8    addu  $10, $8, $8    addu  $9, $8, $8    addiu $8, $0,  1
+    9  pc_F = 00000014  instr_D = 00000000   v0 = 0   nop                 addu  $11, $8, $8    addu  $10, $8, $8    addu  $9, $8, $8
+   10  pc_F = 00000018  instr_D = 00000000   v0 = 0   nop                 nop                 addu  $11, $8, $8    addu  $10, $8, $8
+   11  pc_F = 0000001c  instr_D = 00000000   v0 = 0   nop                 nop                 nop                 addu  $11, $8, $8
+   12  pc_F = 00000020  instr_D = 00000000   v0 = 0   nop                 nop                 nop                 nop
+   13  pc_F = 00000024  instr_D = 1000ffff   v0 = 0   beq   $0, $0, 0    nop                 nop                 nop
+   14  pc_F = 00000020  instr_D = 00000000   v0 = 0   nop                 beq   $0, $0, 0    nop                 nop
