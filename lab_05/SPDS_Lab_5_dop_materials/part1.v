@@ -1,8 +1,8 @@
 module part1 (CLOCK_50, CLOCK2_50, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK, 
-		        AUD_DACLRCK, AUD_ADCLRCK, AUD_BCLK, AUD_ADCDAT, AUD_DACDAT);
+		        AUD_DACLRCK, AUD_ADCLRCK, AUD_BCLK, AUD_ADCDAT, AUD_DACDAT, writedata_left, writedata_right);
 
 	input CLOCK_50, CLOCK2_50;
-	input [0:0] KEY;
+	input [3:0] KEY;
 	// I2C Audio/Video config interface
 	output FPGA_I2C_SCLK;
 	inout FPGA_I2C_SDAT;
@@ -11,22 +11,34 @@ module part1 (CLOCK_50, CLOCK2_50, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK,
 	input AUD_DACLRCK, AUD_ADCLRCK, AUD_BCLK;
 	input AUD_ADCDAT;
 	output AUD_DACDAT;
+	output [23:0] writedata_left, writedata_right;
 	
 	// Local wires.
 	wire read_ready, write_ready, read, write;
 	wire [23:0] readdata_left, readdata_right;
-	wire [23:0] writedata_left, writedata_right;
 	wire reset = ~KEY[0];
 
 	/////////////////////////////////
 	// Your code goes here 
 	/////////////////////////////////
 	
-	assign writedata_left = ... not shown
-	assign writedata_right = ... not shown
-	assign read = ... not shown
-	assign write = ... not shown
-	
+	//assign writedata_left = readdata_left;
+	//assign writedata_right = readdata_right;
+	//assign read = ... not shown
+	//assign write = ... not shown
+
+	z2 z1(
+		.CLOCK_50 (CLOCK_50),
+		.read_ready (read_ready),
+		.write_ready (write_ready),
+		.readdata_left (readdata_left),
+		.readdata_right (readdata_right),
+		.key (KEY),
+		.read (read),
+		.write (write),
+		.writedata_left (writedata_left),
+		.writedata_right (writedata_right)
+	);
 /////////////////////////////////////////////////////////////////////////////////
 // Audio CODEC interface. 
 //
