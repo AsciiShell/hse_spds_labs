@@ -47,8 +47,8 @@ module ram2 (
 	q_a,
 	q_b);
 
-	input	[19:0]  address_a;
-	input	[19:0]  address_b;
+	input	[15:0]  address_a;
+	input	[15:0]  address_b;
 	input	  clock;
 	input	[23:0]  data_a;
 	input	[23:0]  data_b;
@@ -104,8 +104,8 @@ module ram2 (
 		altsyncram_component.indata_reg_b = "CLOCK0",
 		altsyncram_component.intended_device_family = "Cyclone V",
 		altsyncram_component.lpm_type = "altsyncram",
-		altsyncram_component.numwords_a = 1048576,
-		altsyncram_component.numwords_b = 1048576,
+		altsyncram_component.numwords_a = 65536,
+		altsyncram_component.numwords_b = 65536,
 		altsyncram_component.operation_mode = "BIDIR_DUAL_PORT",
 		altsyncram_component.outdata_aclr_a = "NONE",
 		altsyncram_component.outdata_aclr_b = "NONE",
@@ -115,8 +115,8 @@ module ram2 (
 		altsyncram_component.read_during_write_mode_mixed_ports = "DONT_CARE",
 		altsyncram_component.read_during_write_mode_port_a = "NEW_DATA_NO_NBE_READ",
 		altsyncram_component.read_during_write_mode_port_b = "NEW_DATA_NO_NBE_READ",
-		altsyncram_component.widthad_a = 20,
-		altsyncram_component.widthad_b = 20,
+		altsyncram_component.widthad_a = 16,
+		altsyncram_component.widthad_b = 16,
 		altsyncram_component.width_a = 24,
 		altsyncram_component.width_b = 24,
 		altsyncram_component.width_byteena_a = 1,

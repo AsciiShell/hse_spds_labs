@@ -4,155 +4,235 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "read",
+					"name" : "AUD_DACDAT",
 					"strict" : false
 				},
 				{
-					"name" : "write",
+					"name" : "FPGA_I2C_SCLK",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_left[0]",
+					"name" : "HEX0[0]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_left[1]",
+					"name" : "HEX0[1]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_left[2]",
+					"name" : "HEX0[2]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_left[3]",
+					"name" : "HEX0[3]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_left[4]",
+					"name" : "HEX0[4]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_left[5]",
+					"name" : "HEX0[5]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_left[6]",
+					"name" : "HEX0[6]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_left[7]",
+					"name" : "HEX1[0]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_left[8]",
+					"name" : "HEX1[1]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_left[9]",
+					"name" : "HEX1[2]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_left[10]",
+					"name" : "HEX1[3]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_left[11]",
+					"name" : "HEX1[4]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_left[12]",
+					"name" : "HEX1[5]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_left[13]",
+					"name" : "HEX1[6]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_left[14]",
+					"name" : "HEX2[0]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_left[15]",
+					"name" : "HEX2[1]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_right[0]",
+					"name" : "HEX2[2]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_right[1]",
+					"name" : "HEX2[3]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_right[2]",
+					"name" : "HEX2[4]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_right[3]",
+					"name" : "HEX2[5]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_right[4]",
+					"name" : "HEX2[6]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_right[5]",
+					"name" : "HEX3[0]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_right[6]",
+					"name" : "HEX3[1]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_right[7]",
+					"name" : "HEX3[2]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_right[8]",
+					"name" : "HEX3[3]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_right[9]",
+					"name" : "HEX3[4]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_right[10]",
+					"name" : "HEX3[5]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_right[11]",
+					"name" : "HEX3[6]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_right[12]",
+					"name" : "HEX4[0]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_right[13]",
+					"name" : "HEX4[1]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_right[14]",
+					"name" : "HEX4[2]",
 					"strict" : false
 				},
 				{
-					"name" : "writedata_right[15]",
+					"name" : "HEX4[3]",
 					"strict" : false
 				},
 				{
-					"name" : "key[2]",
+					"name" : "HEX4[4]",
 					"strict" : false
 				},
 				{
-					"name" : "read_ready",
+					"name" : "HEX4[5]",
 					"strict" : false
 				},
 				{
-					"name" : "write_ready",
+					"name" : "HEX4[6]",
 					"strict" : false
 				},
 				{
-					"name" : "key[3]",
+					"name" : "HEX5[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX5[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[7]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[8]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[9]",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_ADCLRCK",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_BCLK",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_DACLRCK",
+					"strict" : false
+				},
+				{
+					"name" : "FPGA_I2C_SDAT",
 					"strict" : false
 				},
 				{
@@ -160,135 +240,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "key[0]",
+					"name" : "KEY[0]",
 					"strict" : false
 				},
 				{
-					"name" : "readdata_left[0]",
+					"name" : "KEY[3]",
 					"strict" : false
 				},
 				{
-					"name" : "readdata_left[1]",
+					"name" : "KEY[2]",
 					"strict" : false
 				},
 				{
-					"name" : "readdata_left[2]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_left[3]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_left[4]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_left[5]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_left[6]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_left[7]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_left[8]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_left[9]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_left[10]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_left[11]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_left[12]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_left[13]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_left[14]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_left[15]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_right[0]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_right[1]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_right[2]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_right[3]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_right[4]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_right[5]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_right[6]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_right[7]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_right[8]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_right[9]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_right[10]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_right[11]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_right[12]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_right[13]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_right[14]",
-					"strict" : false
-				},
-				{
-					"name" : "readdata_right[15]",
+					"name" : "AUD_ADCDAT",
 					"strict" : false
 				}
 			]

@@ -3,7 +3,7 @@ $comment
 		vcd file lab_05.msim.vcd -direction
 $end
 $date
-	Mon Nov 16 01:13:51 2020
+	Mon Nov 16 11:40:56 2020
 $end
 $version
 	ModelSim Version 10.5b

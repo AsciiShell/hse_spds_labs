@@ -27,7 +27,7 @@ module part1 (CLOCK_50, CLOCK2_50, KEY, FPGA_I2C_SCLK, FPGA_I2C_SDAT, AUD_XCK,
 	//assign read = ... not shown
 	//assign write = ... not shown
 
-	z2 z1(
+	z5 z5(
 		.CLOCK_50 (CLOCK_50),
 		.read_ready (read_ready),
 		.write_ready (write_ready),

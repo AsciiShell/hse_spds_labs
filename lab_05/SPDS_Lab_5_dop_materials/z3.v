@@ -21,13 +21,19 @@ always @ (posedge CLOCK_50)
 	begin
 		if (read_ready == 1'b1 && write_ready == 1'b1)
 		begin
-            if (key == 1'b1) begin
+            if (key[1] == 1'b1) begin
                 writedata_left <= readdata_left + Q;
                 writedata_right <= readdata_right + Q;
             end else begin
+					if (key[3])
                 writedata_left <= readdata_right + Q;
+					else
+					 writedata_left <= 24'b0 + Q;
                 writedata_right <= readdata_left + Q;
             end
+				
+				
+					
 			read <= 1'b1;
 			write <= 1'b1;
 		end	else begin

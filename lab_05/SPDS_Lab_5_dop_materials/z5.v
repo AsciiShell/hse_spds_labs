@@ -19,23 +19,48 @@ wire [23:0] send_l, send_r;
 assign record = ~ key[2];   // key[2] - запись
 assign play = ~ key[3];     // key[3] - воспроизвести
 reg last_write, last_read;
-my_mem #(.WIDTH(WIDTH)) left_ram(
-	.clk (CLOCK_50),
-	.write_addr (addr),
-	.read_addr (temp_addr),
-	.data_in (readdata_left),
-	.we (read),
-	.data_out (send_l),
-);
+//my_mem #(.WIDTH(WIDTH)) left_ram(
+//	.clk (CLOCK_50),
+//	.write_addr (addr),
+//	.read_addr (temp_addr),
+//	.data_in (readdata_left),
+//	.we (read),
+//	.data_out (send_l),
+//);
+//
+//my_mem #(.WIDTH(WIDTH)) right_ram(
+//	.clk (CLOCK_50),
+//	.write_addr (addr),
+//	.read_addr (temp_addr),
+//	.data_in (readdata_right),
+//	.we (read),
+//	.data_out (send_r),
+//);
 
-my_mem #(.WIDTH(WIDTH)) right_ram(
-	.clk (CLOCK_50),
-	.write_addr (addr),
-	.read_addr (temp_addr),
-	.data_in (readdata_right),
-	.we (read),
-	.data_out (send_r),
-);	 
+	    
+	 
+ram2 left_ram(
+	.address_a (addr),
+	.address_b (temp_addr),
+	.clock (CLOCK_50),
+	.data_a (readdata_left),
+	.data_b (24'b0),
+	.wren_a (read),
+	.wren_b (1'b0),
+	.q_a (empty_l),
+	.q_b (send_l));
+
+ram2 right_ram(
+	.address_a (addr),
+	.address_b (temp_addr),
+	.clock (CLOCK_50),
+	.data_a (readdata_right),
+	.data_b (24'b0),
+	.wren_a (read),
+	.wren_b (1'b0),
+	.q_a (empty_r),
+	.q_b (send_r));
+	 
 always @ (posedge CLOCK_50)
 	begin
 		if (key[0] == 1'b0) 
@@ -73,6 +98,7 @@ always @ (posedge CLOCK_50)
 							
 					writedata_left <= send_l;
 					writedata_right <= send_r;
+					
 					write <= 1'b1;
 					temp_addr <= temp_addr + 1;
 					last_write <= 1'b1;
