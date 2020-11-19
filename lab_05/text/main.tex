@@ -1,0 +1,117 @@
+%!TEX TS-program = xelatex
+
+% Шаблон документа LaTeX создан в 2018 году
+% Алексеем Подчезерцевым
+% В качестве исходных использованы шаблоны
+% 	Данилом Фёдоровых (danil@fedorovykh.ru) 
+%		https://www.writelatex.com/coursera/latex/5.2.2
+%	LaTeX-шаблон для русской кандидатской диссертации и её автореферата.
+%		https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template
+
+\documentclass[a4paper,14pt]{article}
+
+\input{data/preambular.tex}
+\begin{document} % конец преамбулы, начало документа
+	\input{data/title.tex}
+	\tableofcontents
+	\pagebreak
+	\section{Задание}
+	
+	\begin{enumerate}
+		\item В соответствии с мануалом Basic\_DSP\_Manual.pdf и используя файлы из /SPDS\_Lab\_5\_dop\_materials 1 и 2, создать проект, в котором сигнал с линейного входа от микрофона (или плеера) подается на линейный выход (наушники, динамики).
+		
+		\item Добавить управление от кнопки, убирающее один из каналов или меняющее каналы местами.
+		
+		\item Разработать генератор шума и добавить его к выходному звуку.
+		
+		\item Провести моделирование проекта и провести анализ полученных вейвформ.
+		
+		\item Выполнить прототипирование.
+		
+		\item Используя делитель частоты из ЛР1 (опционально, можно использовать PLL и самописные делители частоты) реализовать индикацию на светодиодной ленте и 7-сегментном индикаторе.
+		
+		\item Разработать диктофон (записывает звук, пока нажата кнопка, при нажатии другой кнопки – воспроизводит запись циклически).
+		
+		
+	\end{enumerate}
+
+	%{\small \VerbatimInput{../03_syn_pow_5_single_cycle_always/pow_5_single_cycle_always.v}}
+	
+	\section{Выполнение работы}
+	
+		Был создан модуль, который перенаправляет считанные значения из кодека в кодек для их воспроизведения, учитывая при этом готовность кодека к отдаче и приему сигналов.
+		Левая дорожка визуализируется на светодиодной ленте, а правая на восьмисегментых индикаторах.
+		Помимо этого при нажатии кнопки (KEY[1]) каналы меняются местами.
+		Листинг и вейвформа (рис. \ref{fig:screenshot93}) приведены ниже:
+		
+		{\small \VerbatimInput{../SPDS_Lab_5_dop_materials/z2.v}}
+		
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\linewidth]{images/Screenshot_93}
+			\caption{Вейвформа при которой дорожки меняются местами}
+			\label{fig:screenshot93}
+		\end{figure}
+	
+		Далее был создан генератор шума.
+		Листинг и вейвформа (рис. \ref{fig:screenshot94}) приведены ниже:
+		
+		{\small \VerbatimInput{../SPDS_Lab_5_dop_materials/z3.v}}
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\linewidth]{images/Screenshot_94}
+			\caption{Вейвформа с генератором шума}
+			\label{fig:screenshot94}
+		\end{figure}
+
+	\section{Самостоятельная работа}
+	
+		Далее был спроектирован диктофон. 
+		
+		\begin{itemize}
+			\item KEY[0] - сброс памяти;
+			
+			\item KEY[2] - запись;
+						
+			\item KEY[0] - воспроизведение.
+		\end{itemize}
+	
+		Листинг и вейвформа (рис. \ref{fig:z5}) приведены ниже:
+		
+		{\small \VerbatimInput{../SPDS_Lab_5_dop_materials/z5.v}}
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\linewidth]{images/z5}
+			\caption{Вейвформа с диктофоном}
+			\label{fig:z5}
+		\end{figure}
+
+	Модул памяти был спроектирован самостоятельно, листинг ниже:
+	
+	Листинг и вейвформа (рис. \ref{fig:z5}) приведены ниже:
+	
+	{\small \VerbatimInput{../proj/my_mem.v}}
+
+	\section{Выводы по работе}
+	
+	В ходе работы было получено базовое представление звука в цифровых устройствах.
+	Был получен опыт в написании кода на языке verilog.
+	Был получен опыт обработки звука при помощи ПЛИС и языка verilog.
+	Были изучены звуковые фильтры.
+	Была исследована возможность добавления шумов к аудио дорожке.
+	Были построены и проанализированы вейвформы для спроектированных схем.
+	Итоговый проект был собран и загружен на плату.
+
+	
+	\newpage 
+	\renewcommand{\refname}{{\normalsize Список использованных источников}} 
+	\centering 
+	\begin{thebibliography}{9} 
+		\addcontentsline{toc}{section}{\refname} 
+		\bibitem{Harris} Хэррис Д. М., Хэррис С. Л. Цифровая схемотехника и архитектура компьютера. – 2015.
+	\end{thebibliography}
+	
+\end{document} % конец документа

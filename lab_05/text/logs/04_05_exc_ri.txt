@@ -1,0 +1,16 @@
+    5  pc_F = 00000004  instr_D = 24080001   v0 = 0   addiu $8, $0,  1    nop                 nop                 nop
+    6  pc_F = 00000008  instr_D = 24020000   v0 = 0   addiu $2, $0,  0    addiu $8, $0,  1    nop                 nop
+    7  pc_F = 0000000c  instr_D = 00000000   v0 = 0   nop                 addiu $2, $0,  0    addiu $8, $0,  1    nop
+    8  pc_F = 00000010  instr_D = 00000000   v0 = 0   nop                 nop                 addiu $2, $0,  0    addiu $8, $0,  1
+    9  pc_F = 00000014  instr_D = 00481021   v0 = 0   addu  $2, $2, $8    nop                 nop                 addiu $2, $0,  0
+   10  pc_F = 00000018  instr_D = 00481023   v0 = 0   subu  $2, $2, $8    addu  $2, $2, $8    nop                 nop
+   11  pc_F = 0000001c  instr_D = 00000010   v0 = 0   new/unknown               subu  $2, $2, $8    addu  $2, $2, $8    nop
+   12  pc_F = 00000100  instr_D = 00000000   v0 = 0   nop                 new/unknown               subu  $2, $2, $8    addu  $2, $2, $8
+   13  pc_F = 00000104  instr_D = 00404825   v0 = 1   or    $9, $2, $0    nop                 new/unknown               subu  $2, $2, $8
+   14  pc_F = 00000108  instr_D = 40026000   v0 = 0   mfc0  $2, $12,  0    or    $9, $2, $0    nop                 new/unknown
+   15  pc_F = 0000010c  instr_D = 40026800   v0 = 0   mfc0  $2, $13,  0    mfc0  $2, $12,  0    or    $9, $2, $0    nop
+   16  pc_F = 0000010c  instr_D = 40026800   v0 = 0   mfc0  $2, $13,  0    nop                 mfc0  $2, $12,  0    or    $9, $2, $0
+   17  pc_F = 00000110  instr_D = 40027000   v0 = 0   mfc0  $2, $14,  0    mfc0  $2, $13,  0    nop                 mfc0  $2, $12,  0
+   18  pc_F = 00000110  instr_D = 40027000   v0 = 2   mfc0  $2, $14,  0    nop                 mfc0  $2, $13,  0    nop
+   19  pc_F = 00000114  instr_D = 24420004   v0 = 2   addiu $2, $2,  4    mfc0  $2, $14,  0    nop                 mfc0  $2, $13,  0
+   20  pc_F = 00000114  instr_D = 24420004   v0 = 40   addiu $2, $2,  4    nop                 mfc0  $2, $14,  0    nop

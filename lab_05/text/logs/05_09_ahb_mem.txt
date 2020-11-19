@@ -1,0 +1,16 @@
+
+    5  pc_F = 00000004  instr_D = 3c082000   v0 = 0   lui   $8, 8192          sll   $0, $0, $0    sll   $0, $0, $0    sll   $0, $0, $0
+    6  pc_F = 00000008  instr_D = 00001025   v0 = 0   or    $2, $0, $0    lui   $8, 8192          sll   $0, $0, $0    sll   $0, $0, $0
+    7  pc_F = 0000000c  instr_D = 25090020   v0 = 0   addiu $9, $8, 32    or    $2, $0, $0    lui   $8, 8192          sll   $0, $0, $0
+    8  pc_F = 00000010  instr_D = ad020000   v0 = 0   sw    $2,  0($8)    addiu $9, $8, 32    or    $2, $0, $0    lui   $8, 8192      
+    9  pc_F = 00000014  instr_D = 8d030000   v0 = 0   lw    $3,  0($8)    sw    $2,  0($8)    addiu $9, $8, 32    or    $2, $0, $0
+   10  pc_F = 00000018  instr_D = 25080004   v0 = 0   addiu $8, $8,  4    lw    $3,  0($8)    sw    $2,  0($8)    addiu $9, $8, 32
+   11  pc_F = 0000001c  instr_D = 24420001   v0 = 0   addiu $2, $2,  1    addiu $8, $8,  4    lw    $3,  0($8)    sw    $2,  0($8)
+   12  pc_F = 0000001c  instr_D = 24420001   v0 = 0   addiu $2, $2,  1    addiu $8, $8,  4    lw    $3,  0($8)    sw    $2,  0($8)
+   13  pc_F = 0000001c  instr_D = 24420001   v0 = 0   addiu $2, $2,  1    addiu $8, $8,  4    lw    $3,  0($8)    sw    $2,  0($8)
+   14  pc_F = 0000001c  instr_D = 24420001   v0 = 0   addiu $2, $2,  1    addiu $8, $8,  4    lw    $3,  0($8)    sw    $2,  0($8)
+   15  pc_F = 0000001c  instr_D = 24420001   v0 = 0   addiu $2, $2,  1    addiu $8, $8,  4    lw    $3,  0($8)    sw    $2,  0($8)
+   16  pc_F = 00000020  instr_D = 1509fffb   v0 = 0   bne   $8, $9, -4    addiu $2, $2,  1    addiu $8, $8,  4    lw    $3,  0($8)
+   17  pc_F = 00000020  instr_D = 1509fffb   v0 = 0   bne   $8, $9, -4    addiu $2, $2,  1    addiu $8, $8,  4    lw    $3,  0($8)
+   18  pc_F = 00000020  instr_D = 1509fffb   v0 = 0   bne   $8, $9, -4    addiu $2, $2,  1    addiu $8, $8,  4    lw    $3,  0($8)
+   19  pc_F = 00000020  instr_D = 1509fffb   v0 = 0   bne   $8, $9, -4    addiu $2, $2,  1    addiu $8, $8,  4    lw    $3,  0($8)

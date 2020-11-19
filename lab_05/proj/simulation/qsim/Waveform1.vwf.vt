@@ -1,0 +1,418 @@
+// Copyright (C) 2017  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "11/15/2020 22:06:39"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          z3
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module z3_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg CLOCK_50;
+reg [3:0] key;
+reg read_ready;
+reg [23:0] readdata_left;
+reg [23:0] readdata_right;
+reg write_ready;
+// wires                                               
+wire read;
+wire write;
+wire [23:0] writedata_left;
+wire [23:0] writedata_right;
+
+// assign statements (if any)                          
+z3 i1 (
+// port map - connection between master ports and signals/registers   
+	.CLOCK_50(CLOCK_50),
+	.key(key),
+	.read(read),
+	.read_ready(read_ready),
+	.readdata_left(readdata_left),
+	.readdata_right(readdata_right),
+	.write(write),
+	.write_ready(write_ready),
+	.writedata_left(writedata_left),
+	.writedata_right(writedata_right)
+);
+initial 
+begin 
+#1000000 $finish;
+end 
+
+// CLOCK_50
+initial
+begin
+	repeat(166)
+	begin
+		CLOCK_50 = 1'b0;
+		CLOCK_50 = #3000 1'b1;
+		# 3000;
+	end
+	CLOCK_50 = 1'b0;
+	CLOCK_50 = #3000 1'b1;
+end 
+
+// key[1]
+initial
+begin
+	key[1] = 1'b1;
+end 
+
+// key[2]
+initial
+begin
+	key[2] = 1'b1;
+	# 200000;
+	repeat(2)
+	begin
+		key[2] = 1'b0;
+		key[2] = #200000 1'b1;
+		# 200000;
+	end
+end 
+
+// read_ready
+initial
+begin
+	repeat(16)
+	begin
+		read_ready = 1'b0;
+		read_ready = #30000 1'b1;
+		# 30000;
+	end
+	read_ready = 1'b0;
+	read_ready = #30000 1'b1;
+end 
+
+// write_ready
+initial
+begin
+	write_ready = 1'b0;
+	# 30000;
+	repeat(16)
+	begin
+		write_ready = 1'b1;
+		write_ready = #30000 1'b0;
+		# 30000;
+	end
+	write_ready = 1'b1;
+end 
+// readdata_left[ 23 ]
+initial
+begin
+	readdata_left[23] = 1'b0;
+end 
+// readdata_left[ 22 ]
+initial
+begin
+	readdata_left[22] = 1'b0;
+end 
+// readdata_left[ 21 ]
+initial
+begin
+	readdata_left[21] = 1'b0;
+end 
+// readdata_left[ 20 ]
+initial
+begin
+	readdata_left[20] = 1'b0;
+end 
+// readdata_left[ 19 ]
+initial
+begin
+	readdata_left[19] = 1'b0;
+end 
+// readdata_left[ 18 ]
+initial
+begin
+	readdata_left[18] = 1'b0;
+end 
+// readdata_left[ 17 ]
+initial
+begin
+	readdata_left[17] = 1'b0;
+end 
+// readdata_left[ 16 ]
+initial
+begin
+	readdata_left[16] = 1'b0;
+end 
+// readdata_left[ 15 ]
+initial
+begin
+	readdata_left[15] = 1'b0;
+end 
+// readdata_left[ 14 ]
+initial
+begin
+	readdata_left[14] = 1'b0;
+end 
+// readdata_left[ 13 ]
+initial
+begin
+	readdata_left[13] = 1'b0;
+end 
+// readdata_left[ 12 ]
+initial
+begin
+	readdata_left[12] = 1'b0;
+end 
+// readdata_left[ 11 ]
+initial
+begin
+	readdata_left[11] = 1'b0;
+end 
+// readdata_left[ 10 ]
+initial
+begin
+	readdata_left[10] = 1'b0;
+	readdata_left[10] = #960000 1'b1;
+end 
+// readdata_left[ 9 ]
+initial
+begin
+	readdata_left[9] = 1'b0;
+	readdata_left[9] = #480000 1'b1;
+	readdata_left[9] = #480000 1'b0;
+end 
+// readdata_left[ 8 ]
+initial
+begin
+	repeat(2)
+	begin
+		readdata_left[8] = 1'b0;
+		readdata_left[8] = #240000 1'b1;
+		# 240000;
+	end
+	readdata_left[8] = 1'b0;
+end 
+// readdata_left[ 7 ]
+initial
+begin
+	repeat(4)
+	begin
+		readdata_left[7] = 1'b0;
+		readdata_left[7] = #120000 1'b1;
+		# 120000;
+	end
+	readdata_left[7] = 1'b0;
+end 
+// readdata_left[ 6 ]
+initial
+begin
+	repeat(8)
+	begin
+		readdata_left[6] = 1'b0;
+		readdata_left[6] = #60000 1'b1;
+		# 60000;
+	end
+	readdata_left[6] = 1'b0;
+end 
+// readdata_left[ 5 ]
+initial
+begin
+	repeat(16)
+	begin
+		readdata_left[5] = 1'b0;
+		readdata_left[5] = #30000 1'b1;
+		# 30000;
+	end
+	readdata_left[5] = 1'b0;
+	readdata_left[5] = #30000 1'b1;
+end 
+// readdata_left[ 4 ]
+initial
+begin
+	readdata_left[4] = 1'b0;
+end 
+// readdata_left[ 3 ]
+initial
+begin
+	readdata_left[3] = 1'b0;
+end 
+// readdata_left[ 2 ]
+initial
+begin
+	readdata_left[2] = 1'b0;
+end 
+// readdata_left[ 1 ]
+initial
+begin
+	readdata_left[1] = 1'b0;
+end 
+// readdata_left[ 0 ]
+initial
+begin
+	readdata_left[0] = 1'b0;
+end 
+// readdata_right[ 23 ]
+initial
+begin
+	readdata_right[23] = 1'b0;
+end 
+// readdata_right[ 22 ]
+initial
+begin
+	readdata_right[22] = 1'b0;
+end 
+// readdata_right[ 21 ]
+initial
+begin
+	readdata_right[21] = 1'b0;
+end 
+// readdata_right[ 20 ]
+initial
+begin
+	readdata_right[20] = 1'b0;
+end 
+// readdata_right[ 19 ]
+initial
+begin
+	readdata_right[19] = 1'b0;
+end 
+// readdata_right[ 18 ]
+initial
+begin
+	readdata_right[18] = 1'b0;
+end 
+// readdata_right[ 17 ]
+initial
+begin
+	readdata_right[17] = 1'b0;
+end 
+// readdata_right[ 16 ]
+initial
+begin
+	readdata_right[16] = 1'b0;
+end 
+// readdata_right[ 15 ]
+initial
+begin
+	readdata_right[15] = 1'b0;
+end 
+// readdata_right[ 14 ]
+initial
+begin
+	readdata_right[14] = 1'b0;
+end 
+// readdata_right[ 13 ]
+initial
+begin
+	readdata_right[13] = 1'b0;
+end 
+// readdata_right[ 12 ]
+initial
+begin
+	readdata_right[12] = 1'b0;
+end 
+// readdata_right[ 11 ]
+initial
+begin
+	readdata_right[11] = 1'b0;
+	readdata_right[11] = #960000 1'b1;
+end 
+// readdata_right[ 10 ]
+initial
+begin
+	readdata_right[10] = 1'b0;
+	readdata_right[10] = #480000 1'b1;
+	readdata_right[10] = #480000 1'b0;
+end 
+// readdata_right[ 9 ]
+initial
+begin
+	repeat(2)
+	begin
+		readdata_right[9] = 1'b0;
+		readdata_right[9] = #240000 1'b1;
+		# 240000;
+	end
+	readdata_right[9] = 1'b0;
+end 
+// readdata_right[ 8 ]
+initial
+begin
+	repeat(4)
+	begin
+		readdata_right[8] = 1'b0;
+		readdata_right[8] = #120000 1'b1;
+		# 120000;
+	end
+	readdata_right[8] = 1'b0;
+end 
+// readdata_right[ 7 ]
+initial
+begin
+	repeat(8)
+	begin
+		readdata_right[7] = 1'b0;
+		readdata_right[7] = #60000 1'b1;
+		# 60000;
+	end
+	readdata_right[7] = 1'b0;
+end 
+// readdata_right[ 6 ]
+initial
+begin
+	repeat(16)
+	begin
+		readdata_right[6] = 1'b0;
+		readdata_right[6] = #30000 1'b1;
+		# 30000;
+	end
+	readdata_right[6] = 1'b0;
+	readdata_right[6] = #30000 1'b1;
+end 
+// readdata_right[ 5 ]
+initial
+begin
+	readdata_right[5] = 1'b0;
+end 
+// readdata_right[ 4 ]
+initial
+begin
+	readdata_right[4] = 1'b0;
+end 
+// readdata_right[ 3 ]
+initial
+begin
+	readdata_right[3] = 1'b0;
+end 
+// readdata_right[ 2 ]
+initial
+begin
+	readdata_right[2] = 1'b0;
+end 
+// readdata_right[ 1 ]
+initial
+begin
+	readdata_right[1] = 1'b0;
+end 
+// readdata_right[ 0 ]
+initial
+begin
+	readdata_right[0] = 1'b0;
+end 
+endmodule
+

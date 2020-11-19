@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at z5.v(47): always construct contains both blocking and non-blocking assignments File: D:/repos/hse_spds_labs/lab_05/SPDS_Lab_5_dop_materials/z5.v Line: 47
