@@ -1,0 +1,53 @@
+%!TEX TS-program = xelatex
+
+% Шаблон документа LaTeX создан в 2018 году
+% Алексеем Подчезерцевым
+% В качестве исходных использованы шаблоны
+% 	Данилом Фёдоровых (danil@fedorovykh.ru) 
+%		https://www.writelatex.com/coursera/latex/5.2.2
+%	LaTeX-шаблон для русской кандидатской диссертации и её автореферата.
+%		https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template
+
+\documentclass[a4paper,14pt]{article}
+
+\input{data/preambular.tex}
+\begin{document} % конец преамбулы, начало документа
+	\input{data/title.tex}
+	\tableofcontents
+	\pagebreak
+	\section{Задание}
+	
+	\begin{enumerate}
+		\item 
+	\end{enumerate}
+
+	%{\small \VerbatimInput{../03_syn_pow_5_single_cycle_always/pow_5_single_cycle_always.v}}
+	
+	\section{Выполнение работы}
+	
+	
+
+	\section{Самостоятельная работа}
+	
+	
+
+	\section{Выводы по работе}
+	
+	В ходе работы было получено базовое представление звука в цифровых устройствах.
+	Был получен опыт в написании кода на языке verilog.
+	Был получен опыт обработки звука при помощи ПЛИС и языка verilog.
+	Были изучены звуковые фильтры.
+	Была исследована возможность добавления шумов к аудио дорожке.
+	Были построены и проанализированы вейвформы для спроектированных схем.
+	Итоговый проект был собран и загружен на плату.
+
+	
+	\newpage 
+	\renewcommand{\refname}{{\normalsize Список использованных источников}} 
+	\centering 
+	\begin{thebibliography}{9} 
+		\addcontentsline{toc}{section}{\refname} 
+		\bibitem{Harris} Хэррис Д. М., Хэррис С. Л. Цифровая схемотехника и архитектура компьютера. – 2015.
+	\end{thebibliography}
+	
+\end{document} % конец документа
