@@ -1,5 +1,6 @@
 module SEG7_LUT_m	(	oSEG, key, iDIG	);
 input	[3:0]	iDIG;
+input key;
 output	[6:0]	oSEG;
 reg		[6:0]	oSEG;
 
