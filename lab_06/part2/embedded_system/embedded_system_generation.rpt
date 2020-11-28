@@ -1,0 +1,89 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate D:\repos\hse_spds_labs\lab_06\part2\embedded_system.qsys --block-symbol-file --output-directory=D:\repos\hse_spds_labs\lab_06\part2\embedded_system --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading part2/embedded_system.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 17.1]
+Progress: Parameterizing module clk_0
+Progress: Adding nios2_qsys_0 [altera_nios2_qsys 16.1]
+Progress: Parameterizing module nios2_qsys_0
+Progress: Adding onchip_memory2_0 [altera_avalon_onchip_memory2 17.1]
+Progress: Parameterizing module onchip_memory2_0
+Progress: Adding reg32_avalon_interface_0 [reg32_avalon_interface 1.0]
+Progress: Parameterizing module reg32_avalon_interface_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: embedded_system.nios2_qsys_0: Nios II Classic cores are no longer recommended for new projects
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate D:\repos\hse_spds_labs\lab_06\part2\embedded_system.qsys --synthesis=VERILOG --output-directory=D:\repos\hse_spds_labs\lab_06\part2\embedded_system\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading part2/embedded_system.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 17.1]
+Progress: Parameterizing module clk_0
+Progress: Adding nios2_qsys_0 [altera_nios2_qsys 16.1]
+Progress: Parameterizing module nios2_qsys_0
+Progress: Adding onchip_memory2_0 [altera_avalon_onchip_memory2 17.1]
+Progress: Parameterizing module onchip_memory2_0
+Progress: Adding reg32_avalon_interface_0 [reg32_avalon_interface 1.0]
+Progress: Parameterizing module reg32_avalon_interface_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: embedded_system.nios2_qsys_0: Nios II Classic cores are no longer recommended for new projects
+Info: embedded_system: Generating embedded_system "embedded_system" for QUARTUS_SYNTH
+Info: nios2_qsys_0: Starting RTL generation for module 'embedded_system_nios2_qsys_0'
+Info: nios2_qsys_0:   Generation command is [exec D:/intelfpga_lite/17.1/quartus/bin64/eperlcmd.exe -I D:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I D:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I D:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I D:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I D:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I D:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I D:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2 -I D:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2 -- D:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=embedded_system_nios2_qsys_0 --dir=C:/Users/A4F7~1/AppData/Local/Temp/alt8587_6455397592968096279.dir/0004_nios2_qsys_0_gen/ --quartus_bindir=D:/intelfpga_lite/17.1/quartus/bin64 --verilog --config=C:/Users/A4F7~1/AppData/Local/Temp/alt8587_6455397592968096279.dir/0004_nios2_qsys_0_gen//embedded_system_nios2_qsys_0_processor_configuration.pl  --do_build_sim=0  ]
+Info: nios2_qsys_0: # 2020.11.22 00:20:14 (*) Starting Nios II generation
+Info: nios2_qsys_0: # 2020.11.22 00:20:14 (*)   Checking for plaintext license.
+Info: nios2_qsys_0: # 2020.11.22 00:20:15 (*)   Couldn't query license setup in Quartus directory D:/intelfpga_lite/17.1/quartus/bin64
+Info: nios2_qsys_0: # 2020.11.22 00:20:15 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: nios2_qsys_0: # 2020.11.22 00:20:15 (*)   LM_LICENSE_FILE environment variable is empty
+Info: nios2_qsys_0: # 2020.11.22 00:20:15 (*)   Plaintext license not found.
+Info: nios2_qsys_0: # 2020.11.22 00:20:15 (*)   No license required to generate encrypted Nios II/e.
+Info: nios2_qsys_0: # 2020.11.22 00:20:15 (*)   Elaborating CPU configuration settings
+Info: nios2_qsys_0: # 2020.11.22 00:20:16 (*)   Creating all objects for CPU
+Info: nios2_qsys_0: # 2020.11.22 00:20:19 (*)   Generating RTL from CPU objects
+Info: nios2_qsys_0: # 2020.11.22 00:20:19 (*)   Creating plain-text RTL
+Info: nios2_qsys_0: # 2020.11.22 00:20:23 (*) Done Nios II generation
+Info: nios2_qsys_0: Done RTL generation for module 'embedded_system_nios2_qsys_0'
+Info: nios2_qsys_0: "embedded_system" instantiated altera_nios2_qsys "nios2_qsys_0"
+Info: onchip_memory2_0: Starting RTL generation for module 'embedded_system_onchip_memory2_0'
+Info: onchip_memory2_0:   Generation command is [exec D:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I D:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I D:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I D:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I D:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I D:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I D:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- D:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=embedded_system_onchip_memory2_0 --dir=C:/Users/A4F7~1/AppData/Local/Temp/alt8587_6455397592968096279.dir/0005_onchip_memory2_0_gen/ --quartus_dir=D:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/A4F7~1/AppData/Local/Temp/alt8587_6455397592968096279.dir/0005_onchip_memory2_0_gen//embedded_system_onchip_memory2_0_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_memory2_0: Done RTL generation for module 'embedded_system_onchip_memory2_0'
+Info: onchip_memory2_0: "embedded_system" instantiated altera_avalon_onchip_memory2 "onchip_memory2_0"
+Info: reg32_avalon_interface_0: "embedded_system" instantiated reg32_avalon_interface "reg32_avalon_interface_0"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "embedded_system" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: irq_mapper: "embedded_system" instantiated altera_irq_mapper "irq_mapper"
+Info: rst_controller: "embedded_system" instantiated altera_reset_controller "rst_controller"
+Info: nios2_qsys_0_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "nios2_qsys_0_data_master_translator"
+Info: reg32_avalon_interface_0_avalon_slave_0_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "reg32_avalon_interface_0_avalon_slave_0_translator"
+Info: nios2_qsys_0_data_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "nios2_qsys_0_data_master_agent"
+Info: reg32_avalon_interface_0_avalon_slave_0_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "reg32_avalon_interface_0_avalon_slave_0_agent"
+Info: reg32_avalon_interface_0_avalon_slave_0_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "reg32_avalon_interface_0_avalon_slave_0_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
+Info: Reusing file D:/repos/hse_spds_labs/lab_06/part2/embedded_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file D:/repos/hse_spds_labs/lab_06/part2/embedded_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
+Info: Reusing file D:/repos/hse_spds_labs/lab_06/part2/embedded_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: embedded_system: Done "embedded_system" with 25 modules, 40 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
