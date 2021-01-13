@@ -1,0 +1,19 @@
+Fitter Status : Successful - Fri May 16 16:41:30 2014
+Quartus II 64-Bit Version : 13.1.3 Build 178 02/12/2014 SJ Full Version
+Revision Name : DE1_SoC_Audio
+Top-level Entity Name : DE1_SoC_Audio
+Family : Cyclone V
+Device : 5CSEMA5F31C6
+Timing Models : Final
+Logic utilization (in ALMs) : 2,592 / 32,070 ( 8 % )
+Total registers : 4307
+Total pins : 241 / 457 ( 53 % )
+Total virtual pins : 0
+Total block memory bits : 2,642,976 / 4,065,280 ( 65 % )
+Total DSP Blocks : 2 / 87 ( 2 % )
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI TX Channels : 0
+Total PLLs : 2 / 6 ( 33 % )
+Total DLLs : 0 / 4 ( 0 % )
