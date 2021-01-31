@@ -1,5 +1,5 @@
-Analysis & Synthesis Status : Successful - Fri Jun 20 09:36:24 2014
-Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Full Version
+Analysis & Synthesis Status : Successful - Sat Jan 30 15:19:24 2021
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : DE1_SoC_SDRAM_RTL_Test
 Top-level Entity Name : DE1_SoC_SDRAM_RTL_Test
 Family : Cyclone V
@@ -12,6 +12,6 @@ Total DSP Blocks : 0
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
 Total HSSI TX PCSs : 0
-Total HSSI TX Channels : 0
+Total HSSI PMA TX Serializers : 0
 Total PLLs : 2
 Total DLLs : 0

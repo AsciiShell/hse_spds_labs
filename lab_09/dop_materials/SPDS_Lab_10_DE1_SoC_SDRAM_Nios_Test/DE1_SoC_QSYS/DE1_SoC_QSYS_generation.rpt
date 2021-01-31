@@ -1,0 +1,156 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate E:\repos\hse_spds_labs\lab_09\dop_materials\SPDS_Lab_10_DE1_SoC_SDRAM_Nios_Test\DE1_SoC_QSYS.qsys --block-symbol-file --output-directory=E:\repos\hse_spds_labs\lab_09\dop_materials\SPDS_Lab_10_DE1_SoC_SDRAM_Nios_Test\DE1_SoC_QSYS --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading SPDS_Lab_10_DE1_SoC_SDRAM_Nios_Test/DE1_SoC_QSYS.qsys
+Progress: Reading input file
+Progress: Adding clk_50 [clock_source 20.1]
+Progress: Parameterizing module clk_50
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 20.1]
+Progress: Parameterizing module jtag_uart
+Progress: Adding key [altera_avalon_pio 20.1]
+Progress: Parameterizing module key
+Progress: Adding nios2_qsys [altera_nios2_gen2 20.1]
+Progress: Parameterizing module nios2_qsys
+Progress: Adding onchip_memory2 [altera_avalon_onchip_memory2 20.1]
+Progress: Parameterizing module onchip_memory2
+Progress: Adding pll [altera_pll 20.1]
+Progress: Parameterizing module pll
+Progress: Adding sdram [altera_avalon_new_sdram_controller 20.1]
+Progress: Parameterizing module sdram
+Progress: Adding sysid_qsys [altera_avalon_sysid_qsys 20.1]
+Progress: Parameterizing module sysid_qsys
+Progress: Adding timer [altera_avalon_timer 20.1]
+Progress: Parameterizing module timer
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: DE1_SoC_QSYS.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: DE1_SoC_QSYS.key: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: DE1_SoC_QSYS.pll: The legal reference clock frequency is 5.0 MHz..800.0 MHz
+Warning: DE1_SoC_QSYS.pll: Able to implement PLL - Actual settings differ from Requested settings
+Info: DE1_SoC_QSYS.sdram: SDRAM Controller will only be supported in Quartus Prime Standard Edition in the future release.
+Info: DE1_SoC_QSYS.sysid_qsys: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: DE1_SoC_QSYS.sysid_qsys: Time stamp will be automatically updated when this component is generated.
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate E:\repos\hse_spds_labs\lab_09\dop_materials\SPDS_Lab_10_DE1_SoC_SDRAM_Nios_Test\DE1_SoC_QSYS.qsys --synthesis=VERILOG --output-directory=E:\repos\hse_spds_labs\lab_09\dop_materials\SPDS_Lab_10_DE1_SoC_SDRAM_Nios_Test\DE1_SoC_QSYS\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading SPDS_Lab_10_DE1_SoC_SDRAM_Nios_Test/DE1_SoC_QSYS.qsys
+Progress: Reading input file
+Progress: Adding clk_50 [clock_source 20.1]
+Progress: Parameterizing module clk_50
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 20.1]
+Progress: Parameterizing module jtag_uart
+Progress: Adding key [altera_avalon_pio 20.1]
+Progress: Parameterizing module key
+Progress: Adding nios2_qsys [altera_nios2_gen2 20.1]
+Progress: Parameterizing module nios2_qsys
+Progress: Adding onchip_memory2 [altera_avalon_onchip_memory2 20.1]
+Progress: Parameterizing module onchip_memory2
+Progress: Adding pll [altera_pll 20.1]
+Progress: Parameterizing module pll
+Progress: Adding sdram [altera_avalon_new_sdram_controller 20.1]
+Progress: Parameterizing module sdram
+Progress: Adding sysid_qsys [altera_avalon_sysid_qsys 20.1]
+Progress: Parameterizing module sysid_qsys
+Progress: Adding timer [altera_avalon_timer 20.1]
+Progress: Parameterizing module timer
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: DE1_SoC_QSYS.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: DE1_SoC_QSYS.key: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: DE1_SoC_QSYS.pll: The legal reference clock frequency is 5.0 MHz..800.0 MHz
+Warning: DE1_SoC_QSYS.pll: Able to implement PLL - Actual settings differ from Requested settings
+Info: DE1_SoC_QSYS.sdram: SDRAM Controller will only be supported in Quartus Prime Standard Edition in the future release.
+Info: DE1_SoC_QSYS.sysid_qsys: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: DE1_SoC_QSYS.sysid_qsys: Time stamp will be automatically updated when this component is generated.
+Info: DE1_SoC_QSYS: Generating DE1_SoC_QSYS "DE1_SoC_QSYS" for QUARTUS_SYNTH
+Info: jtag_uart: Starting RTL generation for module 'DE1_SoC_QSYS_jtag_uart'
+Info: jtag_uart:   Generation command is [exec C:/intelfpga_lite/20.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/20.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=DE1_SoC_QSYS_jtag_uart --dir=C:/Users/andrs/AppData/Local/Temp/alt8657_3163242082686484788.dir/0002_jtag_uart_gen/ --quartus_dir=C:/intelfpga_lite/20.1/quartus --verilog --config=C:/Users/andrs/AppData/Local/Temp/alt8657_3163242082686484788.dir/0002_jtag_uart_gen//DE1_SoC_QSYS_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart: Done RTL generation for module 'DE1_SoC_QSYS_jtag_uart'
+Info: jtag_uart: "DE1_SoC_QSYS" instantiated altera_avalon_jtag_uart "jtag_uart"
+Info: key: Starting RTL generation for module 'DE1_SoC_QSYS_key'
+Info: key:   Generation command is [exec C:/intelfpga_lite/20.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/20.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=DE1_SoC_QSYS_key --dir=C:/Users/andrs/AppData/Local/Temp/alt8657_3163242082686484788.dir/0003_key_gen/ --quartus_dir=C:/intelfpga_lite/20.1/quartus --verilog --config=C:/Users/andrs/AppData/Local/Temp/alt8657_3163242082686484788.dir/0003_key_gen//DE1_SoC_QSYS_key_component_configuration.pl  --do_build_sim=0  ]
+Info: key: Done RTL generation for module 'DE1_SoC_QSYS_key'
+Info: key: "DE1_SoC_QSYS" instantiated altera_avalon_pio "key"
+Info: nios2_qsys: "DE1_SoC_QSYS" instantiated altera_nios2_gen2 "nios2_qsys"
+Info: onchip_memory2: Starting RTL generation for module 'DE1_SoC_QSYS_onchip_memory2'
+Info: onchip_memory2:   Generation command is [exec C:/intelfpga_lite/20.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/20.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=DE1_SoC_QSYS_onchip_memory2 --dir=C:/Users/andrs/AppData/Local/Temp/alt8657_3163242082686484788.dir/0004_onchip_memory2_gen/ --quartus_dir=C:/intelfpga_lite/20.1/quartus --verilog --config=C:/Users/andrs/AppData/Local/Temp/alt8657_3163242082686484788.dir/0004_onchip_memory2_gen//DE1_SoC_QSYS_onchip_memory2_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_memory2: Done RTL generation for module 'DE1_SoC_QSYS_onchip_memory2'
+Info: onchip_memory2: "DE1_SoC_QSYS" instantiated altera_avalon_onchip_memory2 "onchip_memory2"
+Info: pll: "DE1_SoC_QSYS" instantiated altera_pll "pll"
+Info: sdram: Starting RTL generation for module 'DE1_SoC_QSYS_sdram'
+Info: sdram:   Generation command is [exec C:/intelfpga_lite/20.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/20.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=DE1_SoC_QSYS_sdram --dir=C:/Users/andrs/AppData/Local/Temp/alt8657_3163242082686484788.dir/0006_sdram_gen/ --quartus_dir=C:/intelfpga_lite/20.1/quartus --verilog --config=C:/Users/andrs/AppData/Local/Temp/alt8657_3163242082686484788.dir/0006_sdram_gen//DE1_SoC_QSYS_sdram_component_configuration.pl  --do_build_sim=0  ]
+Info: sdram: Done RTL generation for module 'DE1_SoC_QSYS_sdram'
+Info: sdram: "DE1_SoC_QSYS" instantiated altera_avalon_new_sdram_controller "sdram"
+Info: sysid_qsys: "DE1_SoC_QSYS" instantiated altera_avalon_sysid_qsys "sysid_qsys"
+Info: timer: Starting RTL generation for module 'DE1_SoC_QSYS_timer'
+Info: timer:   Generation command is [exec C:/intelFPGA_lite/20.1/quartus/bin64//perl/bin/perl.exe -I C:/intelFPGA_lite/20.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- C:/intelfpga_lite/20.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=DE1_SoC_QSYS_timer --dir=C:/Users/andrs/AppData/Local/Temp/alt8657_3163242082686484788.dir/0008_timer_gen/ --quartus_dir=C:/intelfpga_lite/20.1/quartus --verilog --config=C:/Users/andrs/AppData/Local/Temp/alt8657_3163242082686484788.dir/0008_timer_gen//DE1_SoC_QSYS_timer_component_configuration.pl  --do_build_sim=0  ]
+Info: timer: Done RTL generation for module 'DE1_SoC_QSYS_timer'
+Info: timer: "DE1_SoC_QSYS" instantiated altera_avalon_timer "timer"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_006: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "DE1_SoC_QSYS" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: irq_mapper: "DE1_SoC_QSYS" instantiated altera_irq_mapper "irq_mapper"
+Info: rst_controller: "DE1_SoC_QSYS" instantiated altera_reset_controller "rst_controller"
+Info: cpu: Starting RTL generation for module 'DE1_SoC_QSYS_nios2_qsys_cpu'
+Info: cpu:   Generation command is [exec C:/intelFPGA_lite/20.1/quartus/bin64//perl/bin/perl.exe -I C:/intelFPGA_lite/20.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/20.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/20.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/20.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/20.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/20.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/20.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.pl --name=DE1_SoC_QSYS_nios2_qsys_cpu --dir=C:/Users/andrs/AppData/Local/Temp/alt8657_3163242082686484788.dir/0011_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/20.1/quartus/bin64/ --verilog --config=C:/Users/andrs/AppData/Local/Temp/alt8657_3163242082686484788.dir/0011_cpu_gen//DE1_SoC_QSYS_nios2_qsys_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2021.01.30 10:44:02 (*) Starting Nios II generation
+Info: cpu: # 2021.01.30 10:44:02 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2021.01.30 10:44:02 (*)   Creating all objects for CPU
+Info: cpu: # 2021.01.30 10:44:02 (*)     Testbench
+Info: cpu: # 2021.01.30 10:44:02 (*)     Instruction decoding
+Info: cpu: # 2021.01.30 10:44:02 (*)       Instruction fields
+Info: cpu: # 2021.01.30 10:44:02 (*)       Instruction decodes
+Info: cpu: # 2021.01.30 10:44:03 (*)       Signals for RTL simulation waveforms
+Info: cpu: # 2021.01.30 10:44:03 (*)       Instruction controls
+Info: cpu: # 2021.01.30 10:44:03 (*)     Pipeline frontend
+Info: cpu: # 2021.01.30 10:44:03 (*)     Pipeline backend
+Info: cpu: # 2021.01.30 10:44:07 (*)   Generating RTL from CPU objects
+Info: cpu: # 2021.01.30 10:44:07 (*)   Creating plain-text RTL
+Info: cpu: # 2021.01.30 10:44:09 (*) Done Nios II generation
+Info: cpu: Done RTL generation for module 'DE1_SoC_QSYS_nios2_qsys_cpu'
+Info: cpu: "nios2_qsys" instantiated altera_nios2_gen2_unit "cpu"
+Info: nios2_qsys_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "nios2_qsys_data_master_translator"
+Info: jtag_uart_avalon_jtag_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "jtag_uart_avalon_jtag_slave_translator"
+Info: nios2_qsys_data_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "nios2_qsys_data_master_agent"
+Info: jtag_uart_avalon_jtag_slave_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "jtag_uart_avalon_jtag_slave_agent"
+Info: jtag_uart_avalon_jtag_slave_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "jtag_uart_avalon_jtag_slave_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: router_004: "mm_interconnect_0" instantiated altera_merlin_router "router_004"
+Info: router_008: "mm_interconnect_0" instantiated altera_merlin_router "router_008"
+Info: nios2_qsys_data_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "nios2_qsys_data_master_limiter"
+Info: Reusing file E:/repos/hse_spds_labs/lab_09/dop_materials/SPDS_Lab_10_DE1_SoC_SDRAM_Nios_Test/DE1_SoC_QSYS/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: sdram_s1_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "sdram_s1_burst_adapter"
+Info: Reusing file E:/repos/hse_spds_labs/lab_09/dop_materials/SPDS_Lab_10_DE1_SoC_SDRAM_Nios_Test/DE1_SoC_QSYS/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: cmd_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_002"
+Info: Reusing file E:/repos/hse_spds_labs/lab_09/dop_materials/SPDS_Lab_10_DE1_SoC_SDRAM_Nios_Test/DE1_SoC_QSYS/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_002"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file E:/repos/hse_spds_labs/lab_09/dop_materials/SPDS_Lab_10_DE1_SoC_SDRAM_Nios_Test/DE1_SoC_QSYS/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
+Info: Reusing file E:/repos/hse_spds_labs/lab_09/dop_materials/SPDS_Lab_10_DE1_SoC_SDRAM_Nios_Test/DE1_SoC_QSYS/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: sdram_s1_rsp_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "sdram_s1_rsp_width_adapter"
+Info: Reusing file E:/repos/hse_spds_labs/lab_09/dop_materials/SPDS_Lab_10_DE1_SoC_SDRAM_Nios_Test/DE1_SoC_QSYS/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file E:/repos/hse_spds_labs/lab_09/dop_materials/SPDS_Lab_10_DE1_SoC_SDRAM_Nios_Test/DE1_SoC_QSYS/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: avalon_st_adapter_006: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_006"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: error_adapter_0: "avalon_st_adapter_006" instantiated error_adapter "error_adapter_0"
+Info: DE1_SoC_QSYS: Done "DE1_SoC_QSYS" with 38 modules, 69 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

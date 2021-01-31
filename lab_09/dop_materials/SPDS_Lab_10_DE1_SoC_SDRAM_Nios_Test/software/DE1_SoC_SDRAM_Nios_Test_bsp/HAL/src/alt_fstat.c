@@ -1,34 +1,34 @@
 /******************************************************************************
-*                                                                             *
-* License Agreement                                                           *
-*                                                                             *
-* Copyright (c) 2006 Altera Corporation, San Jose, California, USA.           *
-* All rights reserved.                                                        *
-*                                                                             *
-* Permission is hereby granted, free of charge, to any person obtaining a     *
-* copy of this software and associated documentation files (the "Software"),  *
-* to deal in the Software without restriction, including without limitation   *
-* the rights to use, copy, modify, merge, publish, distribute, sublicense,    *
-* and/or sell copies of the Software, and to permit persons to whom the       *
-* Software is furnished to do so, subject to the following conditions:        *
-*                                                                             *
-* The above copyright notice and this permission notice shall be included in  *
-* all copies or substantial portions of the Software.                         *
-*                                                                             *
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR  *
-* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,    *
-* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE *
-* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER      *
-* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING     *
-* FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER         *
-* DEALINGS IN THE SOFTWARE.                                                   *
-*                                                                             *
-* This agreement shall be governed in all respects by the laws of the State   *
-* of California and by the laws of the United States of America.              *
-*                                                                             *
-* Altera does not recommend, suggest or require that this reference design    *
-* file be used in conjunction or combination with any other product.          *
-******************************************************************************/
+ *                                                                             *
+ * License Agreement                                                           *
+ *                                                                             *
+ * Copyright (c) 2006 Altera Corporation, San Jose, California, USA.           *
+ * All rights reserved.                                                        *
+ *                                                                             *
+ * Permission is hereby granted, free of charge, to any person obtaining a     *
+ * copy of this software and associated documentation files (the "Software"),  *
+ * to deal in the Software without restriction, including without limitation   *
+ * the rights to use, copy, modify, merge, publish, distribute, sublicense,    *
+ * and/or sell copies of the Software, and to permit persons to whom the       *
+ * Software is furnished to do so, subject to the following conditions:        *
+ *                                                                             *
+ * The above copyright notice and this permission notice shall be included in  *
+ * all copies or substantial portions of the Software.                         *
+ *                                                                             *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR  *
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,    *
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE *
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER      *
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING     *
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER         *
+ * DEALINGS IN THE SOFTWARE.                                                   *
+ *                                                                             *
+ * This agreement shall be governed in all respects by the laws of the State   *
+ * of California and by the laws of the United States of America.              *
+ *                                                                             *
+ * Altera does not recommend, suggest or require that this reference design    *
+ * file be used in conjunction or combination with any other product.          *
+ ******************************************************************************/
 
 #include <stddef.h>
 #include <sys/stat.h>
@@ -62,67 +62,61 @@
  */
 int ALT_FSTAT (int file, struct stat *st)
 {
-    switch (file) {
+	switch (file) {
 #ifdef ALT_STDIN_PRESENT
-    case 0: /* stdin file descriptor */
+		case 0: /* stdin file descriptor */
 #endif /* ALT_STDIN_PRESENT */
 #ifdef ALT_STDOUT_PRESENT
-    case 1: /* stdout file descriptor */
+		case 1: /* stdout file descriptor */
 #endif /* ALT_STDOUT_PRESENT */
 #ifdef ALT_STDERR_PRESENT
-    case 2: /* stderr file descriptor */
+		case 2: /* stderr file descriptor */
 #endif /* ALT_STDERR_PRESENT */
-        st->st_mode = _IFCHR;
-        return 0;
-    default:
-        return -1;
-    }
+		st->st_mode = _IFCHR;
+		return 0;
+		default:
+		return -1;
+	}
 
 #if !defined(ALT_STDIN_PRESENT) && !defined(ALT_STDOUT_PRESENT) && !defined(ALT_STDERR_PRESENT)
-    /* Generate a link time warning, should this function ever be called. */
-    ALT_STUB_WARNING(fstat);
+	/* Generate a link time warning, should this function ever be called. */
+	ALT_STUB_WARNING(fstat);
 #endif
 }
 
 #else /* !ALT_USE_DIRECT_DRIVERS */
 
-int ALT_FSTAT (int file, struct stat *st)
-{
-  alt_fd*  fd;
+int ALT_FSTAT(int file, struct stat *st) {
+	alt_fd* fd;
 
-  /*
-   * A common error case is that when the file descriptor was created, the call
-   * to open() failed resulting in a negative file descriptor. This is trapped
-   * below so that we don't try and process an invalid file descriptor.
-   */
+	/*
+	 * A common error case is that when the file descriptor was created, the call
+	 * to open() failed resulting in a negative file descriptor. This is trapped
+	 * below so that we don't try and process an invalid file descriptor.
+	 */
 
-  fd = (file < 0) ? NULL : &alt_fd_list[file];
-  
-  if (fd)
-  {
-    /* Call the drivers fstat() function to fill out the "st" structure. */
+	fd = (file < 0) ? NULL : &alt_fd_list[file];
 
-    if (fd->dev->fstat)
-    {
-      return fd->dev->fstat(fd, st);
-    }
+	if (fd) {
+		/* Call the drivers fstat() function to fill out the "st" structure. */
 
-    /* 
-     * If no function is provided, mark the fd as belonging to a character 
-     * device.
-     */
- 
-    else
-    {
-      st->st_mode = _IFCHR;
-      return 0;
-    }
-  }
-  else
-  {
-    ALT_ERRNO = EBADFD;
-    return -1;
-  }
+		if (fd->dev->fstat) {
+			return fd->dev->fstat(fd, st);
+		}
+
+		/* 
+		 * If no function is provided, mark the fd as belonging to a character 
+		 * device.
+		 */
+
+		else {
+			st->st_mode = _IFCHR;
+			return 0;
+		}
+	} else {
+		ALT_ERRNO = EBADFD;
+		return -1;
+	}
 }
 
 #endif /* ALT_USE_DIRECT_DRIVERS */

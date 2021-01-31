@@ -2,34 +2,34 @@
 #define __ALT_LEGACY_IRQ_H__
 
 /******************************************************************************
-*                                                                             *
-* License Agreement                                                           *
-*                                                                             *
-* Copyright (c) 2009 Altera Corporation, San Jose, California, USA.           *
-* All rights reserved.                                                        *
-*                                                                             *
-* Permission is hereby granted, free of charge, to any person obtaining a     *
-* copy of this software and associated documentation files (the "Software"),  *
-* to deal in the Software without restriction, including without limitation   *
-* the rights to use, copy, modify, merge, publish, distribute, sublicense,    *
-* and/or sell copies of the Software, and to permit persons to whom the       *
-* Software is furnished to do so, subject to the following conditions:        *
-*                                                                             *
-* The above copyright notice and this permission notice shall be included in  *
-* all copies or substantial portions of the Software.                         *
-*                                                                             *
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR  *
-* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,    *
-* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE *
-* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER      *
-* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING     *
-* FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER         *
-* DEALINGS IN THE SOFTWARE.                                                   *
-*                                                                             *
-* This agreement shall be governed in all respects by the laws of the State   *
-* of California and by the laws of the United States of America.              *
-*                                                                             *
-******************************************************************************/
+ *                                                                             *
+ * License Agreement                                                           *
+ *                                                                             *
+ * Copyright (c) 2009 Altera Corporation, San Jose, California, USA.           *
+ * All rights reserved.                                                        *
+ *                                                                             *
+ * Permission is hereby granted, free of charge, to any person obtaining a     *
+ * copy of this software and associated documentation files (the "Software"),  *
+ * to deal in the Software without restriction, including without limitation   *
+ * the rights to use, copy, modify, merge, publish, distribute, sublicense,    *
+ * and/or sell copies of the Software, and to permit persons to whom the       *
+ * Software is furnished to do so, subject to the following conditions:        *
+ *                                                                             *
+ * The above copyright notice and this permission notice shall be included in  *
+ * all copies or substantial portions of the Software.                         *
+ *                                                                             *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR  *
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,    *
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE *
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER      *
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING     *
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER         *
+ * DEALINGS IN THE SOFTWARE.                                                   *
+ *                                                                             *
+ * This agreement shall be governed in all respects by the laws of the State   *
+ * of California and by the laws of the United States of America.              *
+ *                                                                             *
+ ******************************************************************************/
 
 /*
  * This file provides prototypes and inline implementations of certain routines
@@ -37,7 +37,7 @@
  * application source files, use "sys/alt_irq.h" instead to access the proper
  * public API.
  */
- 
+
 #include <errno.h>
 #include "system.h"
 
@@ -49,8 +49,7 @@
 #include "sys/alt_irq.h"
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif /* __cplusplus */
 
 /*
@@ -58,44 +57,40 @@ extern "C"
  * function is succesful, then the requested interrupt will be enabled upon 
  * return.
  */
-extern int alt_irq_register (alt_u32 id, 
-                             void*   context, 
-                             alt_isr_func handler);
+extern int alt_irq_register(alt_u32 id, void* context, alt_isr_func handler);
 
 /*
  * alt_irq_disable() disables the individual interrupt indicated by "id".
  */
-static ALT_INLINE int ALT_ALWAYS_INLINE alt_irq_disable (alt_u32 id)
-{
-  alt_irq_context  status;
-  extern volatile alt_u32 alt_irq_active;
+static ALT_INLINE int ALT_ALWAYS_INLINE alt_irq_disable(alt_u32 id) {
+	alt_irq_context status;
+	extern volatile alt_u32 alt_irq_active;
 
-  status = alt_irq_disable_all ();
+	status = alt_irq_disable_all();
 
-  alt_irq_active &= ~(1 << id);
-  NIOS2_WRITE_IENABLE (alt_irq_active);
+	alt_irq_active &= ~(1 << id);
+	NIOS2_WRITE_IENABLE(alt_irq_active);
 
-  alt_irq_enable_all(status);
+	alt_irq_enable_all(status);
 
-  return 0;
+	return 0;
 }
 
 /*
  * alt_irq_enable() enables the individual interrupt indicated by "id".
  */
-static ALT_INLINE int ALT_ALWAYS_INLINE alt_irq_enable (alt_u32 id)
-{
-  alt_irq_context  status;
-  extern volatile alt_u32 alt_irq_active;
+static ALT_INLINE int ALT_ALWAYS_INLINE alt_irq_enable(alt_u32 id) {
+	alt_irq_context status;
+	extern volatile alt_u32 alt_irq_active;
 
-  status = alt_irq_disable_all ();
+	status = alt_irq_disable_all();
 
-  alt_irq_active |= (1 << id);
-  NIOS2_WRITE_IENABLE (alt_irq_active);
+	alt_irq_active |= (1 << id);
+	NIOS2_WRITE_IENABLE(alt_irq_active);
 
-  alt_irq_enable_all(status);
+	alt_irq_enable_all(status);
 
-  return 0;
+	return 0;
 }
 
 #ifndef ALT_EXCEPTION_STACK
@@ -115,37 +110,37 @@ static ALT_INLINE int ALT_ALWAYS_INLINE alt_irq_enable (alt_u32 id)
  * If you are using an exception stack then nested interrupts won't work, so
  * these functions are not available in that case.
  */
-static ALT_INLINE alt_u32 ALT_ALWAYS_INLINE alt_irq_interruptible (alt_u32 priority)
-{
-  extern volatile alt_u32 alt_priority_mask;
-  extern volatile alt_u32 alt_irq_active;
+static ALT_INLINE alt_u32 ALT_ALWAYS_INLINE alt_irq_interruptible(
+		alt_u32 priority) {
+	extern volatile alt_u32 alt_priority_mask;
+	extern volatile alt_u32 alt_irq_active;
 
-  alt_u32 old_priority;
+	alt_u32 old_priority;
 
-  old_priority      = alt_priority_mask;
-  alt_priority_mask = (1 << priority) - 1;
+	old_priority = alt_priority_mask;
+	alt_priority_mask = (1 << priority) - 1;
 
-  NIOS2_WRITE_IENABLE (alt_irq_active & alt_priority_mask);
+	NIOS2_WRITE_IENABLE(alt_irq_active & alt_priority_mask);
 
-  NIOS2_WRITE_STATUS (1);
+	NIOS2_WRITE_STATUS(1);
 
-  return old_priority; 
+	return old_priority;
 }
 
 /*
  * See Comments above for alt_irq_interruptible() for an explanation of the use of this
  * function.
  */
-static ALT_INLINE void ALT_ALWAYS_INLINE alt_irq_non_interruptible (alt_u32 mask)
-{
-  extern volatile alt_u32 alt_priority_mask;
-  extern volatile alt_u32 alt_irq_active;
+static ALT_INLINE void ALT_ALWAYS_INLINE alt_irq_non_interruptible(
+		alt_u32 mask) {
+	extern volatile alt_u32 alt_priority_mask;
+	extern volatile alt_u32 alt_irq_active;
 
-  NIOS2_WRITE_STATUS (0);  
+	NIOS2_WRITE_STATUS(0);
 
-  alt_priority_mask = mask;
+	alt_priority_mask = mask;
 
-  NIOS2_WRITE_IENABLE (mask & alt_irq_active);  
+	NIOS2_WRITE_IENABLE(mask & alt_irq_active);
 }
 #endif /* ALT_EXCEPTION_STACK */
 

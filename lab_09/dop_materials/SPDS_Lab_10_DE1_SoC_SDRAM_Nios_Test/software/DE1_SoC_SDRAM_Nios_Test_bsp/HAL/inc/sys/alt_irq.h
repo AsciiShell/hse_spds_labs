@@ -2,34 +2,34 @@
 #define __ALT_IRQ_H__
 
 /******************************************************************************
-*                                                                             *
-* License Agreement                                                           *
-*                                                                             *
-* Copyright (c) 2009 Altera Corporation, San Jose, California, USA.           *
-* All rights reserved.                                                        *
-*                                                                             *
-* Permission is hereby granted, free of charge, to any person obtaining a     *
-* copy of this software and associated documentation files (the "Software"),  *
-* to deal in the Software without restriction, including without limitation   *
-* the rights to use, copy, modify, merge, publish, distribute, sublicense,    *
-* and/or sell copies of the Software, and to permit persons to whom the       *
-* Software is furnished to do so, subject to the following conditions:        *
-*                                                                             *
-* The above copyright notice and this permission notice shall be included in  *
-* all copies or substantial portions of the Software.                         *
-*                                                                             *
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR  *
-* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,    *
-* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE *
-* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER      *
-* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING     *
-* FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER         *
-* DEALINGS IN THE SOFTWARE.                                                   *
-*                                                                             *
-* This agreement shall be governed in all respects by the laws of the State   *
-* of California and by the laws of the United States of America.              *
-*                                                                             *
-******************************************************************************/
+ *                                                                             *
+ * License Agreement                                                           *
+ *                                                                             *
+ * Copyright (c) 2009 Altera Corporation, San Jose, California, USA.           *
+ * All rights reserved.                                                        *
+ *                                                                             *
+ * Permission is hereby granted, free of charge, to any person obtaining a     *
+ * copy of this software and associated documentation files (the "Software"),  *
+ * to deal in the Software without restriction, including without limitation   *
+ * the rights to use, copy, modify, merge, publish, distribute, sublicense,    *
+ * and/or sell copies of the Software, and to permit persons to whom the       *
+ * Software is furnished to do so, subject to the following conditions:        *
+ *                                                                             *
+ * The above copyright notice and this permission notice shall be included in  *
+ * all copies or substantial portions of the Software.                         *
+ *                                                                             *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR  *
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,    *
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE *
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER      *
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING     *
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER         *
+ * DEALINGS IN THE SOFTWARE.                                                   *
+ *                                                                             *
+ * This agreement shall be governed in all respects by the laws of the State   *
+ * of California and by the laws of the United States of America.              *
+ *                                                                             *
+ ******************************************************************************/
 
 /*
  * alt_irq.h is the Nios II specific implementation of the interrupt controller 
@@ -52,8 +52,7 @@
 #include "system.h"
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif /* __cplusplus */
 
 /*
@@ -83,7 +82,7 @@ typedef void (*alt_isr_func)(void* isr_context, alt_u32 id);
  * The following protypes and routines are supported by both
  * the enhanced and legacy interrupt APIs
  */
- 
+
 /*
  * alt_irq_enabled can be called to determine if the processor's global
  * interrupt enable is asserted. The return value is zero if interrupts 
@@ -93,13 +92,12 @@ typedef void (*alt_isr_func)(void* isr_context, alt_u32 id);
  * individual interrupts may still be disabled. Use the other API to query
  * a specific interrupt. 
  */
-static ALT_INLINE int ALT_ALWAYS_INLINE alt_irq_enabled (void)
-{
-  int status;
+static ALT_INLINE int ALT_ALWAYS_INLINE alt_irq_enabled(void) {
+	int status;
 
-  NIOS2_READ_STATUS (status);
+	NIOS2_READ_STATUS(status);
 
-  return status & NIOS2_STATUS_PIE_MSK; 
+	return status & NIOS2_STATUS_PIE_MSK;
 }
 
 /*
@@ -110,16 +108,15 @@ static ALT_INLINE int ALT_ALWAYS_INLINE alt_irq_enabled (void)
  * context) which can be used to restore the status register PIE bit to its 
  * state before this routine was called.
  */
-static ALT_INLINE alt_irq_context ALT_ALWAYS_INLINE 
-       alt_irq_disable_all (void)
-{
-  alt_irq_context context;
+static ALT_INLINE alt_irq_context ALT_ALWAYS_INLINE
+alt_irq_disable_all(void) {
+	alt_irq_context context;
 
-  NIOS2_READ_STATUS (context);
+	NIOS2_READ_STATUS(context);
 
-  NIOS2_WRITE_STATUS (context & ~NIOS2_STATUS_PIE_MSK);
-  
-  return context;
+	NIOS2_WRITE_STATUS(context & ~NIOS2_STATUS_PIE_MSK);
+
+	return context;
 }
 
 /*
@@ -140,21 +137,20 @@ static ALT_INLINE alt_irq_context ALT_ALWAYS_INLINE
  * interrupt controller port, and shadow registers. Otherwise, as a performance
  * enhancement, status is overwritten with the prior context. 
  */
-static ALT_INLINE void ALT_ALWAYS_INLINE 
-       alt_irq_enable_all (alt_irq_context context)
-{
+static ALT_INLINE void ALT_ALWAYS_INLINE
+alt_irq_enable_all(alt_irq_context context) {
 #if (NIOS2_NUM_OF_SHADOW_REG_SETS > 0) || (defined NIOS2_EIC_PRESENT) || \
     (defined NIOS2_MMU_PRESENT) || (defined NIOS2_MPU_PRESENT)
-  alt_irq_context status;
-  
-  NIOS2_READ_STATUS (status);
-  
-  status &= ~NIOS2_STATUS_PIE_MSK;
-  status |= (context & NIOS2_STATUS_PIE_MSK);
-  
-  NIOS2_WRITE_STATUS (status);
+	alt_irq_context status;
+
+	NIOS2_READ_STATUS (status);
+
+	status &= ~NIOS2_STATUS_PIE_MSK;
+	status |= (context & NIOS2_STATUS_PIE_MSK);
+
+	NIOS2_WRITE_STATUS (status);
 #else
-  NIOS2_WRITE_STATUS (context);
+	NIOS2_WRITE_STATUS(context);
 #endif
 }
 
@@ -167,21 +163,19 @@ static ALT_INLINE void ALT_ALWAYS_INLINE
  * The "base" parameter is ignored and only present for backwards-compatibility.
  * It is recommended that NULL is passed in for the "base" parameter.
  */
-extern void alt_irq_init (const void* base);
+extern void alt_irq_init(const void* base);
 
 /*
  * alt_irq_cpu_enable_interrupts() enables the CPU to start taking interrupts.
  */
-static ALT_INLINE void ALT_ALWAYS_INLINE 
-       alt_irq_cpu_enable_interrupts ()
-{
-    NIOS2_WRITE_STATUS(NIOS2_STATUS_PIE_MSK
+static ALT_INLINE void ALT_ALWAYS_INLINE
+alt_irq_cpu_enable_interrupts() {
+	NIOS2_WRITE_STATUS(NIOS2_STATUS_PIE_MSK
 #if defined(NIOS2_EIC_PRESENT) && (NIOS2_NUM_OF_SHADOW_REG_SETS > 0)
-    | NIOS2_STATUS_RSIE_MSK
+			| NIOS2_STATUS_RSIE_MSK
 #endif      
-      );
+			);
 }
-
 
 /*
  * Prototypes for the enhanced interrupt API.
@@ -192,23 +186,20 @@ static ALT_INLINE void ALT_ALWAYS_INLINE
  * function is succesful, then the requested interrupt will be enabled upon 
  * return.
  */
-extern int alt_ic_isr_register(alt_u32 ic_id,
-                        alt_u32 irq,
-                        alt_isr_func isr,
-                        void *isr_context,
-                        void *flags);
+extern int alt_ic_isr_register(alt_u32 ic_id, alt_u32 irq, alt_isr_func isr,
+		void *isr_context, void *flags);
 
 /* 
  * alt_ic_irq_enable() and alt_ic_irq_disable() enable/disable a specific 
  * interrupt by using IRQ port and interrupt controller instance.
  */
-int alt_ic_irq_enable (alt_u32 ic_id, alt_u32 irq);
-int alt_ic_irq_disable(alt_u32 ic_id, alt_u32 irq);        
+int alt_ic_irq_enable(alt_u32 ic_id, alt_u32 irq);
+int alt_ic_irq_disable(alt_u32 ic_id, alt_u32 irq);
 
- /* 
+/* 
  * alt_ic_irq_enabled() indicates whether a specific interrupt, as
  * specified by IRQ port and interrupt controller instance is enabled.
- */        
+ */
 alt_u32 alt_ic_irq_enabled(alt_u32 ic_id, alt_u32 irq);
 
 #else 
@@ -217,7 +208,6 @@ alt_u32 alt_ic_irq_enabled(alt_u32 ic_id, alt_u32 irq);
  */
 #include "priv/alt_legacy_irq.h"
 #endif 
-
 
 /*
  * alt_irq_pending() returns a bit list of the current pending interrupts.
@@ -228,13 +218,12 @@ alt_u32 alt_ic_irq_enabled(alt_u32 ic_id, alt_u32 irq);
  * controller.
  */
 #ifndef NIOS2_EIC_PRESENT
-static ALT_INLINE alt_u32 ALT_ALWAYS_INLINE alt_irq_pending (void)
-{
-  alt_u32 active;
+static ALT_INLINE alt_u32 ALT_ALWAYS_INLINE alt_irq_pending(void) {
+	alt_u32 active;
 
-  NIOS2_READ_IPENDING (active);
+	NIOS2_READ_IPENDING(active);
 
-  return active;
+	return active;
 }
 #endif 
 

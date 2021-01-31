@@ -1,0 +1,138 @@
+Flow report for DE1_SoC_SDRAM_Nios_Test
+Sat Jan 30 14:41:09 2021
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Flow Summary                                                                  ;
++---------------------------------+---------------------------------------------+
+; Flow Status                     ; Successful - Sat Jan 30 14:40:19 2021       ;
+; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                   ; DE1_SoC_SDRAM_Nios_Test                     ;
+; Top-level Entity Name           ; DE1_SoC_SDRAM_Nios_Test                     ;
+; Family                          ; Cyclone V                                   ;
+; Device                          ; 5CSEMA5F31C6                                ;
+; Timing Models                   ; Final                                       ;
+; Logic utilization (in ALMs)     ; 1,936 / 32,070 ( 6 % )                      ;
+; Total registers                 ; 3211                                        ;
+; Total pins                      ; 241 / 457 ( 53 % )                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 1,089,984 / 4,065,280 ( 27 % )              ;
+; Total DSP Blocks                ; 3 / 87 ( 3 % )                              ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 1 / 6 ( 17 % )                              ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------+
+; Flow Settings                               ;
++-------------------+-------------------------+
+; Option            ; Setting                 ;
++-------------------+-------------------------+
+; Start date & time ; 01/30/2021 14:27:29     ;
+; Main task         ; Compilation             ;
+; Revision Name     ; DE1_SoC_SDRAM_Nios_Test ;
++-------------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                               ;
++---------------------------------------------------+----------------------------------------------------------------+---------------+--------------+------------+
+; Assignment Name                                   ; Value                                                          ; Default Value ; Entity Name  ; Section Id ;
++---------------------------------------------------+----------------------------------------------------------------+---------------+--------------+------------+
+; COMPILER_SIGNATURE_ID                             ; 1096177057049.161200604807164                                  ; --            ; --           ; --         ;
+; FITTER_EFFORT                                     ; Standard Fit                                                   ; Auto Fit      ; --           ; --         ;
+; MAX_CORE_JUNCTION_TEMP                            ; 85                                                             ; --            ; --           ; --         ;
+; MIN_CORE_JUNCTION_TEMP                            ; 0                                                              ; --            ; --           ; --         ;
+; MISC_FILE                                         ; DE1_SoC_QSYS/synthesis/../DE1_SoC_QSYS.cmp                     ; --            ; --           ; --         ;
+; MISC_FILE                                         ; DE1_SoC_QSYS/synthesis/../../DE1_SoC_QSYS.qsys                 ; --            ; --           ; --         ;
+; OPTIMIZATION_TECHNIQUE                            ; Speed                                                          ; Balanced      ; --           ; --         ;
+; PARTITION_COLOR                                   ; -- (Not supported for targeted family)                         ; --            ; --           ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL               ; -- (Not supported for targeted family)                         ; --            ; --           ; Top        ;
+; PARTITION_NETLIST_TYPE                            ; -- (Not supported for targeted family)                         ; --            ; --           ; Top        ;
+; PHYSICAL_SYNTHESIS_ASYNCHRONOUS_SIGNAL_PIPELINING ; On                                                             ; Off           ; --           ; --         ;
+; PHYSICAL_SYNTHESIS_COMBO_LOGIC                    ; On                                                             ; Off           ; --           ; --         ;
+; PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION           ; On                                                             ; Off           ; --           ; --         ;
+; PHYSICAL_SYNTHESIS_REGISTER_RETIMING              ; On                                                             ; Off           ; --           ; --         ;
+; SLD_FILE                                          ; DE1_SoC_QSYS/synthesis/DE1_SoC_QSYS.regmap                     ; --            ; --           ; --         ;
+; SLD_FILE                                          ; DE1_SoC_QSYS/synthesis/DE1_SoC_QSYS.debuginfo                  ; --            ; --           ; --         ;
+; SLD_INFO                                          ; QSYS_NAME DE1_SoC_QSYS HAS_SOPCINFO 1 GENERATION_ID 1611992586 ; --            ; DE1_SoC_QSYS ; --         ;
+; SOPCINFO_FILE                                     ; DE1_SoC_QSYS/synthesis/../../DE1_SoC_QSYS.sopcinfo             ; --            ; --           ; --         ;
+; SYNTHESIS_ONLY_QIP                                ; On                                                             ; --            ; --           ; --         ;
++---------------------------------------------------+----------------------------------------------------------------+---------------+--------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:01:34     ; 1.0                     ; 5061 MB             ; 00:02:17                           ;
+; Fitter               ; 00:10:43     ; 1.0                     ; 6647 MB             ; 00:16:56                           ;
+; Assembler            ; 00:00:21     ; 1.0                     ; 4920 MB             ; 00:00:20                           ;
+; Timing Analyzer      ; 00:00:49     ; 1.4                     ; 5394 MB             ; 00:01:05                           ;
+; Total                ; 00:13:27     ; --                      ; --                  ; 00:20:38                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                    ;
++----------------------+------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis ; DESKTOP-1IP44BL  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-1IP44BL  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-1IP44BL  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-1IP44BL  ; Windows 10 ; 10.0       ; x86_64         ;
++----------------------+------------------+------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC_SDRAM_Nios_Test -c DE1_SoC_SDRAM_Nios_Test
+quartus_fit --read_settings_files=off --write_settings_files=off DE1_SoC_SDRAM_Nios_Test -c DE1_SoC_SDRAM_Nios_Test
+quartus_asm --read_settings_files=off --write_settings_files=off DE1_SoC_SDRAM_Nios_Test -c DE1_SoC_SDRAM_Nios_Test
+quartus_sta DE1_SoC_SDRAM_Nios_Test -c DE1_SoC_SDRAM_Nios_Test
+
+
+

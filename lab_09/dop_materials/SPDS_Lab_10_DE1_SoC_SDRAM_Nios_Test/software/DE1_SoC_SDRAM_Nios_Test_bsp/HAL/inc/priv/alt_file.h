@@ -2,42 +2,42 @@
 #define __ALT_FILE_H__
 
 /******************************************************************************
-*                                                                             *
-* License Agreement                                                           *
-*                                                                             *
-* Copyright (c) 2004 Altera Corporation, San Jose, California, USA.           *
-* All rights reserved.                                                        *
-*                                                                             *
-* Permission is hereby granted, free of charge, to any person obtaining a     *
-* copy of this software and associated documentation files (the "Software"),  *
-* to deal in the Software without restriction, including without limitation   *
-* the rights to use, copy, modify, merge, publish, distribute, sublicense,    *
-* and/or sell copies of the Software, and to permit persons to whom the       *
-* Software is furnished to do so, subject to the following conditions:        *
-*                                                                             *
-* The above copyright notice and this permission notice shall be included in  *
-* all copies or substantial portions of the Software.                         *
-*                                                                             *
-* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR  *
-* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,    *
-* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE *
-* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER      *
-* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING     *
-* FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER         *
-* DEALINGS IN THE SOFTWARE.                                                   *
-*                                                                             *
-* This agreement shall be governed in all respects by the laws of the State   *
-* of California and by the laws of the United States of America.              *
-*                                                                             *
-* Altera does not recommend, suggest or require that this reference design    *
-* file be used in conjunction or combination with any other product.          *
-******************************************************************************/
+ *                                                                             *
+ * License Agreement                                                           *
+ *                                                                             *
+ * Copyright (c) 2004 Altera Corporation, San Jose, California, USA.           *
+ * All rights reserved.                                                        *
+ *                                                                             *
+ * Permission is hereby granted, free of charge, to any person obtaining a     *
+ * copy of this software and associated documentation files (the "Software"),  *
+ * to deal in the Software without restriction, including without limitation   *
+ * the rights to use, copy, modify, merge, publish, distribute, sublicense,    *
+ * and/or sell copies of the Software, and to permit persons to whom the       *
+ * Software is furnished to do so, subject to the following conditions:        *
+ *                                                                             *
+ * The above copyright notice and this permission notice shall be included in  *
+ * all copies or substantial portions of the Software.                         *
+ *                                                                             *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR  *
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,    *
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE *
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER      *
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING     *
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER         *
+ * DEALINGS IN THE SOFTWARE.                                                   *
+ *                                                                             *
+ * This agreement shall be governed in all respects by the laws of the State   *
+ * of California and by the laws of the United States of America.              *
+ *                                                                             *
+ * Altera does not recommend, suggest or require that this reference design    *
+ * file be used in conjunction or combination with any other product.          *
+ ******************************************************************************/
 
 /******************************************************************************
-*                                                                             *
-* THIS IS A LIBRARY READ-ONLY SOURCE FILE. DO NOT EDIT.                       *
-*                                                                             *
-******************************************************************************/
+ *                                                                             *
+ * THIS IS A LIBRARY READ-ONLY SOURCE FILE. DO NOT EDIT.                       *
+ *                                                                             *
+ ******************************************************************************/
 
 #include "sys/alt_dev.h"
 #include "sys/alt_llist.h"
@@ -52,8 +52,7 @@
  */
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif /* __cplusplus */
 
 /*
@@ -61,8 +60,8 @@ extern "C"
  * locate a device named "name". If a match is found, then a pointer to the
  * device is returned, otherwise NULL is returned. 
  */
- 
-extern alt_dev* alt_find_dev (const char* name, alt_llist* list);
+
+extern alt_dev* alt_find_dev(const char* name, alt_llist* list);
 
 /*
  * alt_find_file() is used to search the list of registered file systems to
@@ -76,7 +75,7 @@ extern alt_dev* alt_find_dev (const char* name, alt_llist* list);
  * to determine if the file exists.
  */
 
-extern alt_dev* alt_find_file (const char* name);
+extern alt_dev* alt_find_file(const char* name);
 
 /*
  * alt_get_fd() is used to allocate a file descriptor for the device or 
@@ -85,13 +84,13 @@ extern alt_dev* alt_find_file (const char* name);
  * pool.
  */
 
-extern int alt_get_fd (alt_dev* dev);
+extern int alt_get_fd(alt_dev* dev);
 
 /*
  * alt_release_fd() is called to free the file descriptor with index "fd".
  */
 
-extern void alt_release_fd (int fd);
+extern void alt_release_fd(int fd);
 
 /*
  * alt_fd_lock() is called by ioctl() to mark the file descriptor "fd" as 
@@ -101,14 +100,14 @@ extern void alt_release_fd (int fd);
  * details).
  */
 
-extern int alt_fd_lock (alt_fd* fd);
+extern int alt_fd_lock(alt_fd* fd);
 
 /*
  * alt_fd_unlock() is called by ioctl() to unlock a descriptor previously 
  * locked by a call to alt_fd_lock().
  */
 
-extern int alt_fd_unlock (alt_fd* fd);
+extern int alt_fd_unlock(alt_fd* fd);
 
 /*
  * "alt_fd_list" is the pool of file descriptors.
@@ -157,7 +156,7 @@ ALT_EXTERN_SEM(alt_fd_list_lock)
  * for active file descriptors, which helps avoid contention on access 
  * to the file descriptor pool.
  */
- 
+
 extern alt_32 alt_max_fd;
 
 /*
@@ -167,10 +166,8 @@ extern alt_32 alt_max_fd;
  * all of the devices have been registered within the system. 
  */
 
-extern void alt_io_redirect(const char* stdout_dev, 
-                            const char* stdin_dev, 
-                            const char* stderr_dev);
-
+extern void alt_io_redirect(const char* stdout_dev, const char* stdin_dev,
+		const char* stderr_dev);
 
 #ifdef __cplusplus
 }
