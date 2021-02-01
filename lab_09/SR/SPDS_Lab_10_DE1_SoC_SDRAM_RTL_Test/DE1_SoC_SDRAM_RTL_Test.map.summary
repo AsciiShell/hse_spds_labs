@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Mon Feb 01 22:08:41 2021
+Analysis & Synthesis Status : Successful - Mon Feb 01 22:27:40 2021
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : DE1_SoC_SDRAM_RTL_Test
 Top-level Entity Name : DE1_SoC_SDRAM_RTL_SR
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 2667
+Total registers : 2692
 Total pins : 241
 Total virtual pins : 0
 Total block memory bits : 1,458,176

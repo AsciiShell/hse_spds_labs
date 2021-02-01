@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE1_SoC_SDRAM_RTL_Test
-Mon Feb 01 22:08:42 2021
+Mon Feb 01 22:27:40 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -51,13 +51,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Feb 01 22:08:41 2021       ;
+; Analysis & Synthesis Status     ; Successful - Mon Feb 01 22:27:40 2021       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; DE1_SoC_SDRAM_RTL_Test                      ;
 ; Top-level Entity Name           ; DE1_SoC_SDRAM_RTL_SR                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 2667                                        ;
+; Total registers                 ; 2692                                        ;
 ; Total pins                      ; 241                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 1,458,176                                   ;
@@ -266,16 +266,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------------+
 ; Resource                                    ; Usage             ;
 +---------------------------------------------+-------------------+
-; Estimate of Logic utilization (ALMs needed) ; 1399              ;
+; Estimate of Logic utilization (ALMs needed) ; 1411              ;
 ;                                             ;                   ;
-; Combinational ALUT usage for logic          ; 574               ;
+; Combinational ALUT usage for logic          ; 599               ;
 ;     -- 7 input functions                    ; 1                 ;
 ;     -- 6 input functions                    ; 90                ;
 ;     -- 5 input functions                    ; 254               ;
 ;     -- 4 input functions                    ; 49                ;
-;     -- <=3 input functions                  ; 180               ;
+;     -- <=3 input functions                  ; 205               ;
 ;                                             ;                   ;
-; Dedicated logic registers                   ; 2667              ;
+; Dedicated logic registers                   ; 2692              ;
 ;                                             ;                   ;
 ; I/O pins                                    ; 241               ;
 ; Total MLAB memory bits                      ; 0                 ;
@@ -285,8 +285,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                   ;
 ; Maximum fan-out node                        ; QIC_SIGNALTAP_GND ;
 ; Maximum fan-out                             ; 1768              ;
-; Total fan-out                               ; 15832             ;
-; Average fan-out                             ; 3.95              ;
+; Total fan-out                               ; 15932             ;
+; Average fan-out                             ; 3.93              ;
 +---------------------------------------------+-------------------+
 
 
@@ -295,9 +295,9 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                              ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |DE1_SoC_SDRAM_RTL_SR                                                                                                                   ; 574 (10)            ; 2667 (50)                 ; 1458176           ; 0          ; 241  ; 0            ; |DE1_SoC_SDRAM_RTL_SR                                                                                                                                                                                                                                                                                                                                            ; DE1_SoC_SDRAM_RTL_SR              ; work         ;
+; |DE1_SoC_SDRAM_RTL_SR                                                                                                                   ; 599 (10)            ; 2692 (50)                 ; 1458176           ; 0          ; 241  ; 0            ; |DE1_SoC_SDRAM_RTL_SR                                                                                                                                                                                                                                                                                                                                            ; DE1_SoC_SDRAM_RTL_SR              ; work         ;
 ;    |SEG7_LUT:comb_80|                                                                                                                   ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC_SDRAM_RTL_SR|SEG7_LUT:comb_80                                                                                                                                                                                                                                                                                                                           ; SEG7_LUT                          ; work         ;
-;    |dev_clk:dev_clk|                                                                                                                    ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC_SDRAM_RTL_SR|dev_clk:dev_clk                                                                                                                                                                                                                                                                                                                            ; dev_clk                           ; work         ;
+;    |dev_clk:dev_clk|                                                                                                                    ; 26 (26)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC_SDRAM_RTL_SR|dev_clk:dev_clk                                                                                                                                                                                                                                                                                                                            ; dev_clk                           ; work         ;
 ;    |sld_hub:auto_hub|                                                                                                                   ; 91 (1)              ; 90 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC_SDRAM_RTL_SR|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld   ;
 ;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 90 (0)              ; 90 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC_SDRAM_RTL_SR|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input       ; altera_sld   ;
 ;          |alt_sld_fab:instrumentation_fabric|                                                                                           ; 90 (0)              ; 90 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |DE1_SoC_SDRAM_RTL_SR|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                        ; alt_sld_fab                       ; alt_sld_fab  ;
@@ -542,14 +542,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 
 
-+-------------------------------------------------------------+
-; Registers Removed During Synthesis                          ;
-+----------------------------------------+--------------------+
-; Register name                          ; Reason for Removal ;
-+----------------------------------------+--------------------+
-; dev_clk:dev_clk|timer[1..27]           ; Lost fanout        ;
-; Total Number of Removed Registers = 27 ;                    ;
-+----------------------------------------+--------------------+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; dev_clk:dev_clk|timer[26,27]          ; Lost fanout        ;
+; Total Number of Removed Registers = 2 ;                    ;
++---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -557,7 +557,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 2667  ;
+; Total registers                              ; 2692  ;
 ; Number of registers using Synchronous Clear  ; 132   ;
 ; Number of registers using Synchronous Load   ; 326   ;
 ; Number of registers using Asynchronous Clear ; 894   ;
@@ -681,10 +681,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 51                          ;
-;     plain             ; 51                          ;
+; arriav_ff             ; 76                          ;
+;     plain             ; 76                          ;
 ; arriav_io_obuf        ; 97                          ;
-; arriav_lcell_comb     ; 17                          ;
+; arriav_lcell_comb     ; 42                          ;
+;     arith             ; 25                          ;
+;         1 data inputs ; 24                          ;
+;         2 data inputs ; 1                           ;
 ;     normal            ; 17                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 2                           ;
@@ -693,8 +696,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         4 data inputs ; 11                          ;
 ; boundary_port         ; 241                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 0.15                        ;
+; Max LUT depth         ; 3.40                        ;
+; Average LUT depth     ; 0.91                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1110,7 +1113,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon Feb 01 22:07:45 2021
+    Info: Processing started: Mon Feb 01 22:26:43 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SoC_SDRAM_RTL_Test -c DE1_SoC_SDRAM_RTL_Test
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -1200,7 +1203,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_99c File: E:/repos/hse_spds_labs/lab_09/SR/SPDS_Lab_10_DE1_SoC_SDRAM_RTL_Test/db/cmpr_99c.tdf Line: 23
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2021.02.01.22:08:18 Progress: Loading sld44158d60/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2021.02.01.22:27:16 Progress: Loading sld44158d60/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -1393,7 +1396,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "VGA_SYNC_N" is stuck at GND File: E:/repos/hse_spds_labs/lab_09/SR/SPDS_Lab_10_DE1_SoC_SDRAM_RTL_Test/DE1_SoC_SDRAM_RTL_SR.v Line: 195
     Warning (13410): Pin "VGA_VS" is stuck at GND File: E:/repos/hse_spds_labs/lab_09/SR/SPDS_Lab_10_DE1_SoC_SDRAM_RTL_Test/DE1_SoC_SDRAM_RTL_SR.v Line: 197
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
-Info (17049): 27 registers lost all their fanouts during netlist optimizations.
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Warning (20013): Ignored 13 assignments for entity "pll" -- entity does not exist in design
 Warning (20013): Ignored 318 assignments for entity "pll_0002" -- entity does not exist in design
 Warning (20013): Ignored 13 assignments for entity "sdram_pll0" -- entity does not exist in design
@@ -1432,16 +1435,16 @@ Warning (21074): Design contains 30 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "TD_DATA[7]" File: E:/repos/hse_spds_labs/lab_09/SR/SPDS_Lab_10_DE1_SoC_SDRAM_RTL_Test/DE1_SoC_SDRAM_RTL_SR.v Line: 183
     Warning (15610): No output dependent on input pin "TD_HS" File: E:/repos/hse_spds_labs/lab_09/SR/SPDS_Lab_10_DE1_SoC_SDRAM_RTL_Test/DE1_SoC_SDRAM_RTL_SR.v Line: 184
     Warning (15610): No output dependent on input pin "TD_VS" File: E:/repos/hse_spds_labs/lab_09/SR/SPDS_Lab_10_DE1_SoC_SDRAM_RTL_Test/DE1_SoC_SDRAM_RTL_SR.v Line: 186
-Info (21057): Implemented 3290 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3315 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 35 input pins
     Info (21059): Implemented 113 output pins
     Info (21060): Implemented 97 bidirectional pins
-    Info (21061): Implemented 2866 logic cells
+    Info (21061): Implemented 2891 logic cells
     Info (21064): Implemented 178 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 237 warnings
-    Info: Peak virtual memory: 4951 megabytes
-    Info: Processing ended: Mon Feb 01 22:08:42 2021
+    Info: Peak virtual memory: 4952 megabytes
+    Info: Processing ended: Mon Feb 01 22:27:40 2021
     Info: Elapsed time: 00:00:57
-    Info: Total CPU time (on all processors): 00:01:38
+    Info: Total CPU time (on all processors): 00:01:40
 
 

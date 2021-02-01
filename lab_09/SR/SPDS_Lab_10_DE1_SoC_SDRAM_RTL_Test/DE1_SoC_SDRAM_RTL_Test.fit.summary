@@ -1,12 +1,12 @@
-Fitter Status : Successful - Mon Feb 01 22:14:36 2021
+Fitter Status : Successful - Mon Feb 01 22:34:05 2021
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : DE1_SoC_SDRAM_RTL_Test
 Top-level Entity Name : DE1_SoC_SDRAM_RTL_SR
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 880 / 32,070 ( 3 % )
-Total registers : 2711
+Logic utilization (in ALMs) : 891 / 32,070 ( 3 % )
+Total registers : 2742
 Total pins : 241 / 457 ( 53 % )
 Total virtual pins : 0
 Total block memory bits : 1,458,176 / 4,065,280 ( 36 % )

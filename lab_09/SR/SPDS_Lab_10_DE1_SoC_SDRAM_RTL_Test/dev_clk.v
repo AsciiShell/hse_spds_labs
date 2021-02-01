@@ -7,5 +7,5 @@ reg [27:0] timer;
 always @ (negedge(clk))
 	timer = timer + 1;
 	
-assign oclk = timer[0];
+assign oclk = timer[25];
 endmodule
