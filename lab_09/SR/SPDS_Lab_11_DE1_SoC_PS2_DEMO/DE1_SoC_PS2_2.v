@@ -239,10 +239,28 @@ assign action = TD_HS & TD_CLK27 & (TD_DATA == 8'hff);
            .oRIGBUT(rB),  //right button press display;
            .oMIDBUT(mB),  //middle button press display;
            .oX_MOV(x_mov),  //lower SEG of mouse displacement display for X axis.
-								,  //higher SEG of mouse displacement display for X axis.
+						//higher SEG of mouse displacement display for X axis.
            .oY_MOV(y_mov),  //lower SEG of mouse displacement display for Y axis.
            .oX_D(xD),
-			  .oY_D(yD)); //higher SEG of mouse displacement display for Y axis.
+		   .oY_D(yD)); //higher SEG of mouse displacement display for Y axis.
+		   
+
+action_det action_det(
+					.clk(CLOCK_50),
+					.lB(lB),
+					.rB(rB),
+					.mB(mB),
+					.x_mov(x_mov),
+					.y_mov(y_mov),
+					.xD(xD),
+					.yD(yD),
+					.HEX0(HEX0),
+					.HEX1(HEX1),
+					.HEX2(HEX2),
+					.HEX3(HEX3),
+					.HEX4(HEX4),
+					.HEX5(HEX5)
+					);
 
 
 
