@@ -33,7 +33,7 @@
 
 //`define ENABLE_HPS
 
-module DE1_SoC_SDRAM_RTL_Test(
+module DE1_SoC_SDRAM_RTL_SR(
       ///////// ADC /////////
       inout              ADC_CS_N,
       output             ADC_DIN,
@@ -214,6 +214,63 @@ dev_clk dev_clk(
 						.oclk(oclk)
 					);
 					
+reg	[6:0]	oHEX0;
+reg	[6:0]	oHEX1;
+reg	[6:0]	oHEX2;
+reg	[6:0]	oHEX3;
+reg	[6:0]	oHEX4;
+reg	[6:0]	oHEX5;
+
+assign HEX0 = oHEX0;
+assign HEX1 = oHEX1;
+assign HEX2 = oHEX2;
+assign HEX3 = oHEX3;
+assign HEX4 = oHEX4;
+assign HEX5 = oHEX5;
+
+reg	[3:0]	count = 4'b0;
+
+wire	[6:0] add_data;
+reg	[3:0] adr;
+					
+always @ (posedge(oclk))
+begin
+	case(count)
+		4'h0: adr = 4'h0;	// ---t----
+		4'h1: adr = 4'h1; 	// |	  |
+		4'h2: adr = 4'h7; 	// lt	 rt
+		4'h3: adr = 4'h4; 	// |	  |
+		4'h4: adr = 4'h0; 	// ---m----
+		4'h5: adr = 4'h5; 	// |	  |
+		4'h6: adr = 4'h0; 	// lb	 rb
+		4'h7: adr = 4'h0; 	// |	  |
+		4'h8: adr = 4'hc; 	// ---b----
+		4'h9: adr = 4'ha;
+		4'ha: adr = 4'ha;
+		4'hb: adr = 4'h0;
+		4'hc: adr = 4'hf;
+		4'hd: adr = 4'ha;
+		4'he: adr = 4'he;
+		4'hf: adr = 4'h0;
+	endcase
+	count = count + 1;
+end
+
+SEG7_LUT	(
+			.oSEG(add_data),
+			.iDIG(adr)
+			);
+			
+always @ (negedge(oclk))
+begin
+	oHEX5 <= oHEX4;
+	oHEX4 <= oHEX3;
+	oHEX3 <= oHEX2;
+	oHEX2 <= oHEX1;
+	oHEX1 <= oHEX0;
+	oHEX0 <= add_data;
+end
+
 
 
 endmodule
