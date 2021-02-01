@@ -20,42 +20,37 @@ dev_clk dev_clk(
 				.oclk(oclk)
 				);
 				
-reg [6:0] lBs;
-reg [6:0] rBs;
-reg [6:0] mBs0;
-reg [6:0] mBs1;
-reg [6:0] wU;
-reg [6:0] wP;
-reg [6:0] wD;
-reg [6:0] wH;
-reg [6:0] wL;
-reg [6:0] wF;
-reg [6:0] wI;
-reg [6:0] non;
+reg [6:0] lBs	=	7'b0100001;
+reg [6:0] rBs	=	7'b0000011;
+reg [6:0] mBs0	=	7'b0100000;
+reg [6:0] mBs1	=	7'b0000010;
+reg [6:0] wU	=	7'b1000001;
+reg [6:0] wP	=	7'b0001100;
+reg [6:0] wD	=	7'b1000000;
+reg [6:0] wH	=	7'b0001001;
+reg [6:0] wL	=	7'b1000111;
+reg [6:0] wF	=	7'b0001110;
+reg [6:0] wI	=	7'b0000110;
+reg [6:0] non	=	7'b0111111;
 
-wire [6:0] h0;
-wire [6:0] h1;
+reg [7:0] red_x_mov;
+reg [7:0] red_y_mov;
 
-wire [7:0] red_x_mov;
-wire [7:0] red_y_mov;
+reg [6:0] h0;
+reg [6:0] h1;
 
+assign HEX0 = ~h0;
+assign HEX1 = ~h1;
 
-assign lBs	=	7'b0100001;
-assign rBs	=	7'b0000011;
-assign mBs0	=	7'b0100000;
-assign mBs1	=	7'b0000010;
-assign wU	=	7'b1000001;
-assign wP	=	7'b0001100;
-assign wD	=	7'b1000000;
-assign wH	=	7'b0001001;
-assign wL	=	7'b1000111;
-assign wF	=	7'b0001110;
-assign wI	=	7'b0000110;
-assign non	=	7'b0111111;
+reg	[6:0] rHEX2;
+reg	[6:0] rHEX3;
+reg	[6:0] rHEX4;
+reg	[6:0] rHEX5;
 
-assign HEX0 = h0;
-assign HEX1 = h1;
-
+assign HEX2 = rHEX2;
+assign HEX3 = rHEX3;
+assign HEX4 = rHEX4;
+assign HEX5 = rHEX5;
 				
 always @ (negedge(oclk))
 begin
@@ -82,8 +77,8 @@ begin
 		h0 <= ~non;
 	end
 	
-	h1 <= ~h1;
-	h0 <= ~h0;
+//	h1 <= ~h1;
+//	h0 <= ~h0;
 	
 	//Directions
 	
@@ -94,38 +89,38 @@ begin
 	begin
 		if (xD === 1'b1)
 		begin
-			HEX3 <= wP;
-			HEX2 <= wI;
+			rHEX3 <= wP;
+			rHEX2 <= wI;
 		end
 		else
 		begin
-			HEX3 <= wL;
-			HEX2 <= wF;
+			rHEX3 <= wL;
+			rHEX2 <= wF;
 		end		
 	end
 	else
 	begin
-		HEX3 <= non;
-		HEX2 <= non;
+		rHEX3 <= non;
+		rHEX2 <= non;
 	end
 	
 	if (red_y_mov !== 8'b0)
 	begin
 		if (yD === 1'b1)
 		begin
-			HEX5 <= wU;
-			HEX4 <= wP;
+			rHEX5 <= wU;
+			rHEX4 <= wP;
 		end
 		else
 		begin
-			HEX5 <= wD;
-			HEX4 <= wH;
+			rHEX5 <= wD;
+			rHEX4 <= wH;
 		end		
 	end
 	else
 	begin
-		HEX5 <= non;
-		HEX4 <= non;
+		rHEX5 <= non;
+		rHEX4 <= non;
 	end
 end
 endmodule

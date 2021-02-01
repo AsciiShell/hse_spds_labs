@@ -212,8 +212,8 @@ begin
       leflatch <= 1'b0;
       riglatch <= 1'b0;
       midlatch <= 1'b0;
-		oX_D <= 1'b0;  
-		oY_D <= 1'b0;
+		x_d_latch <= 1'b0;  
+		y_d_latch <= 1'b0;
       x_latch  <= 8'd0;
       y_latch  <= 8'd0;
    end
@@ -222,8 +222,8 @@ begin
       leflatch <= shift_reg[1];
       riglatch <= shift_reg[2];
       midlatch <= shift_reg[3];
-		oX_D <= shift_reg[5];
-		oY_D <= shift_reg[6];
+		x_d_latch <= shift_reg[5];
+		y_d_latch <= shift_reg[6];
       x_latch  <= x_latch+shift_reg[19 : 12];
       y_latch  <= y_latch+shift_reg[30 : 23];
    end

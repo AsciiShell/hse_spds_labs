@@ -1,5 +1,5 @@
 EDA Netlist Writer report for DE1_SoC_PS2_DEMO
-Sun Jan 31 16:32:59 2021
+Mon Feb 01 16:10:14 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -37,9 +37,9 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sun Jan 31 16:32:58 2021 ;
+; EDA Netlist Writer Status ; Successful - Mon Feb 01 16:10:14 2021 ;
 ; Revision Name             ; DE1_SoC_PS2_DEMO                      ;
-; Top-level Entity Name     ; ps2                                   ;
+; Top-level Entity Name     ; action_det                            ;
 ; Family                    ; Cyclone V                             ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
@@ -66,13 +66,13 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                                    ;
-+---------------------------------------------------------------------------------------------------------------+
-; Generated Files                                                                                               ;
-+---------------------------------------------------------------------------------------------------------------+
-; E:/repos/hse_spds_labs/lab_09/dop_materials/SPDS_Lab_11_DE1_SoC_PS2_DEMO/simulation/qsim//DE1_SoC_PS2_DEMO.vo ;
-+---------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                         ;
++----------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                    ;
++----------------------------------------------------------------------------------------------------+
+; E:/repos/hse_spds_labs/lab_09/SR/SPDS_Lab_11_DE1_SoC_PS2_DEMO/simulation/qsim//DE1_SoC_PS2_DEMO.vo ;
++----------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -95,14 +95,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Sun Jan 31 16:32:56 2021
-Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=E:/repos/hse_spds_labs/lab_09/dop_materials/SPDS_Lab_11_DE1_SoC_PS2_DEMO/simulation/qsim/ DE1_SoC_PS2_DEMO -c DE1_SoC_PS2_DEMO
+    Info: Processing started: Mon Feb 01 16:10:12 2021
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=E:/repos/hse_spds_labs/lab_09/SR/SPDS_Lab_11_DE1_SoC_PS2_DEMO/simulation/qsim/ DE1_SoC_PS2_DEMO -c DE1_SoC_PS2_DEMO
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file DE1_SoC_PS2_DEMO.vo in folder "E:/repos/hse_spds_labs/lab_09/dop_materials/SPDS_Lab_11_DE1_SoC_PS2_DEMO/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file DE1_SoC_PS2_DEMO.vo in folder "E:/repos/hse_spds_labs/lab_09/SR/SPDS_Lab_11_DE1_SoC_PS2_DEMO/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4733 megabytes
-    Info: Processing ended: Sun Jan 31 16:32:59 2021
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Processing ended: Mon Feb 01 16:10:14 2021
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

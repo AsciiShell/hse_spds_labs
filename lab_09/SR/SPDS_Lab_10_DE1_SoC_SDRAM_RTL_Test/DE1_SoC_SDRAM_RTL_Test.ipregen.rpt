@@ -1,0 +1,81 @@
+IP Upgrade report for DE1_SoC_SDRAM_RTL_Test
+Sat Jan 30 15:17:43 2021
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. IP Upgrade Summary
+  3. Successfully Upgraded IP Components
+  4. IP Upgrade Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------+
+; IP Upgrade Summary                                                         ;
++------------------------------+---------------------------------------------+
+; IP Components Upgrade Status ; Passed - Sat Jan 30 15:17:43 2021           ;
+; Quartus Prime Version        ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                ; DE1_SoC_SDRAM_RTL_Test                      ;
+; Top-level Entity Name        ; DE1_SoC_SDRAM_RTL_Test                      ;
+; Family                       ; Cyclone V                                   ;
++------------------------------+---------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Successfully Upgraded IP Components                                                                                                                    ;
++---------------+----------------+---------+---------------------------------+-------------------------------+---------------------------------+---------+
+; Entity Name   ; Component Name ; Version ; Original Source File            ; Generation File Path          ; New Source File                 ; Message ;
++---------------+----------------+---------+---------------------------------+-------------------------------+---------------------------------+---------+
+; Sdram_WR_FIFO ; FIFO           ; 13.1    ; Sdram_Control/Sdram_WR_FIFO.qip ; Sdram_Control/Sdram_WR_FIFO.v ; Sdram_Control/Sdram_WR_FIFO.qip ;         ;
+; Sdram_RD_FIFO ; FIFO           ; 13.1    ; Sdram_Control/Sdram_RD_FIFO.qip ; Sdram_Control/Sdram_RD_FIFO.v ; Sdram_Control/Sdram_RD_FIFO.qip ;         ;
+; sdram_pll0    ; altera_pll     ; 13.1    ; Sdram_Control/sdram_pll0.qip    ; Sdram_Control/sdram_pll0.v    ; Sdram_Control/sdram_pll0.qip    ;         ;
+; pll           ; altera_pll     ; 13.1    ; v/pll.qip                       ; v/pll.v                       ; v/pll.qip                       ;         ;
++---------------+----------------+---------+---------------------------------+-------------------------------+---------------------------------+---------+
+
+
++---------------------+
+; IP Upgrade Messages ;
++---------------------+
+Info (11902): Backing up file "Sdram_Control/Sdram_WR_FIFO.v" to "Sdram_Control/Sdram_WR_FIFO.BAK.v"
+Info (11837): Started upgrading IP component FIFO with file "Sdram_Control/Sdram_WR_FIFO.v"
+Info (11902): Backing up file "Sdram_Control/Sdram_RD_FIFO.v" to "Sdram_Control/Sdram_RD_FIFO.BAK.v"
+Info (11837): Started upgrading IP component FIFO with file "Sdram_Control/Sdram_RD_FIFO.v"
+Info (11902): Backing up file "Sdram_Control/sdram_pll0.v" to "Sdram_Control/sdram_pll0.BAK.v"
+Info (11837): Started upgrading IP component altera_pll with file "Sdram_Control/sdram_pll0.v"
+Info (11902): Backing up file "v/pll.v" to "v/pll.BAK.v"
+Info (11837): Started upgrading IP component altera_pll with file "v/pll.v"
+Info (11131): Completed upgrading IP component FIFO with file "Sdram_Control/Sdram_WR_FIFO.v"
+Info (11131): Completed upgrading IP component FIFO with file "Sdram_Control/Sdram_RD_FIFO.v"
+Info (11131): Completed upgrading IP component altera_pll with file "Sdram_Control/sdram_pll0.v"
+Info (11131): Completed upgrading IP component altera_pll with file "v/pll.v"
+Info (23030): Evaluation of Tcl script c:/intelfpga_lite/20.1/quartus/common/tcl/internal/ip_regen/ip_regen.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4859 megabytes
+    Info: Processing ended: Sat Jan 30 15:17:44 2021
+    Info: Elapsed time: 00:02:35
+    Info: Total CPU time (on all processors): 00:00:53
+
+

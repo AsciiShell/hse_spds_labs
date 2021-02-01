@@ -1,5 +1,5 @@
 Flow report for DE1_SoC_PS2_DEMO
-Sun Jan 31 23:48:32 2021
+Mon Feb 01 16:22:37 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,16 +41,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sun Jan 31 23:47:57 2021       ;
+; Flow Status                     ; Successful - Mon Feb 01 16:22:25 2021       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; DE1_SoC_PS2_DEMO                            ;
-; Top-level Entity Name           ; DE1_SoC_PS2_DEMO                            ;
+; Top-level Entity Name           ; action_det                                  ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 52 / 32,070 ( < 1 % )                       ;
-; Total registers                 ; 102                                         ;
-; Total pins                      ; 241 / 457 ( 53 % )                          ;
+; Logic utilization (in ALMs)     ; 43 / 32,070 ( < 1 % )                       ;
+; Total registers                 ; 72                                          ;
+; Total pins                      ; 64 / 457 ( 14 % )                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
@@ -68,26 +68,27 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/31/2021 23:38:37 ;
+; Start date & time ; 02/01/2021 16:20:02 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE1_SoC_PS2_DEMO    ;
 +-------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                        ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 1096177057049.161212551607980          ; --            ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --         ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --         ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                           ;
++-------------------------------------+----------------------------------------+------------------+-------------+------------+
+; Assignment Name                     ; Value                                  ; Default Value    ; Entity Name ; Section Id ;
++-------------------------------------+----------------------------------------+------------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 1096177057049.161218560106200          ; --               ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --               ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --               ; --          ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --               ; action_det  ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --               ; action_det  ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --               ; action_det  ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --               ; --          ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --               ; --          ; --         ;
+; TOP_LEVEL_ENTITY                    ; action_det                             ; DE1_SoC_PS2_DEMO ; --          ; --         ;
++-------------------------------------+----------------------------------------+------------------+-------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -95,11 +96,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:01     ; 1.0                     ; 4799 MB             ; 00:01:01                           ;
-; Fitter               ; 00:07:40     ; 1.0                     ; 6188 MB             ; 00:05:34                           ;
-; Assembler            ; 00:00:33     ; 1.0                     ; 4850 MB             ; 00:00:17                           ;
-; Timing Analyzer      ; 00:00:33     ; 1.0                     ; 5129 MB             ; 00:00:21                           ;
-; Total                ; 00:09:47     ; --                      ; --                  ; 00:07:13                           ;
+; Analysis & Synthesis ; 00:00:19     ; 1.0                     ; 4801 MB             ; 00:00:42                           ;
+; Fitter               ; 00:01:48     ; 1.0                     ; 6184 MB             ; 00:02:52                           ;
+; Assembler            ; 00:00:12     ; 1.0                     ; 4841 MB             ; 00:00:12                           ;
+; Timing Analyzer      ; 00:00:11     ; 1.0                     ; 5128 MB             ; 00:00:11                           ;
+; Total                ; 00:02:30     ; --                      ; --                  ; 00:03:57                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
