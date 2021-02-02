@@ -2,100 +2,52 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1100mV 85C Model Setup 'clk'
-Slack : -4.614
-TNS   : -42.389
-
-Type  : Slow 1100mV 85C Model Setup 'dev_clk:dev_clk|timer[27]'
-Slack : -2.744
-TNS   : -70.245
-
-Type  : Slow 1100mV 85C Model Hold 'clk'
-Slack : 0.234
+Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
+Slack : 16.152
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Hold 'dev_clk:dev_clk|timer[27]'
-Slack : 0.350
+Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
+Slack : 0.036
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'dev_clk:dev_clk|timer[27]'
-Slack : -0.394
-TNS   : -24.415
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk'
-Slack : -0.394
-TNS   : -17.954
-
-Type  : Slow 1100mV 0C Model Setup 'clk'
-Slack : -4.306
-TNS   : -42.390
-
-Type  : Slow 1100mV 0C Model Setup 'dev_clk:dev_clk|timer[27]'
-Slack : -2.693
-TNS   : -68.363
-
-Type  : Slow 1100mV 0C Model Hold 'clk'
-Slack : 0.297
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 8.863
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Hold 'dev_clk:dev_clk|timer[27]'
-Slack : 0.389
+Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
+Slack : 16.103
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'dev_clk:dev_clk|timer[27]'
-Slack : -0.394
-TNS   : -23.291
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk'
-Slack : -0.394
-TNS   : -18.839
-
-Type  : Fast 1100mV 85C Model Setup 'clk'
-Slack : -3.045
-TNS   : -13.896
-
-Type  : Fast 1100mV 85C Model Setup 'dev_clk:dev_clk|timer[27]'
-Slack : -1.161
-TNS   : -29.100
-
-Type  : Fast 1100mV 85C Model Hold 'clk'
-Slack : 0.145
+Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.294
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Hold 'dev_clk:dev_clk|timer[27]'
-Slack : 0.187
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 8.819
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk'
-Slack : -0.364
-TNS   : -1.770
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'dev_clk:dev_clk|timer[27]'
-Slack : 0.114
+Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
+Slack : 17.622
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Setup 'clk'
-Slack : -2.371
-TNS   : -11.336
+Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
+Slack : -0.097
+TNS   : -0.097
 
-Type  : Fast 1100mV 0C Model Setup 'dev_clk:dev_clk|timer[27]'
-Slack : -1.042
-TNS   : -24.974
-
-Type  : Fast 1100mV 0C Model Hold 'clk'
-Slack : 0.153
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 8.752
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Hold 'dev_clk:dev_clk|timer[27]'
-Slack : 0.177
+Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
+Slack : 17.798
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk'
-Slack : -0.374
-TNS   : -2.090
+Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.004
+TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'dev_clk:dev_clk|timer[27]'
-Slack : 0.106
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 8.708
 TNS   : 0.000
 
 ------------------------------------------------------------

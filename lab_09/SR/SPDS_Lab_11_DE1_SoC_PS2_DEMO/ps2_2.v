@@ -224,8 +224,8 @@ begin
       midlatch <= shift_reg[3];
 		x_d_latch <= shift_reg[5];
 		y_d_latch <= shift_reg[6];
-      x_latch  <= x_latch+shift_reg[19 : 12];
-      y_latch  <= y_latch+shift_reg[30 : 23];
+      x_latch  <= shift_reg[19 : 12];
+      y_latch  <= shift_reg[30 : 23];
    end
 end
 

@@ -1,4 +1,4 @@
-/* Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version */
+/* Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition */
 JedecChain;
 	FileRevision(JESD32A);
 	DefaultMfr(6E);
@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSEMA5F31) Path("F:/DE1_SoC_SDRAM_RTL_Test/") File("DE1_SoC_SDRAM_RTL_Test.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSEMA5F31) Path("E:/repos/hse_spds_labs/lab_09/demo/SPDS_Lab_9_DE1_SoC_SDRAM_RTL_Test/SPDS_Lab_10_DE1_SoC_SDRAM_RTL_Test/") File("DE1_SoC_SDRAM_RTL_Test.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

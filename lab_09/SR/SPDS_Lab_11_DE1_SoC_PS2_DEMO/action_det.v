@@ -85,9 +85,9 @@ begin
 	red_x_mov <= x_mov >> 4;
 	red_y_mov <= y_mov >> 4;
 	
-	if (red_x_mov !== 8'b0)
+	if (red_y_mov !== 8'b0)
 	begin
-		if (xD === 1'b1)
+		if (yD === 1'b1)
 		begin
 			rHEX3 <= wP;
 			rHEX2 <= wI;
@@ -104,9 +104,9 @@ begin
 		rHEX2 <= non;
 	end
 	
-	if (red_y_mov !== 8'b0)
+	if (red_x_mov !== 8'b0)
 	begin
-		if (yD === 1'b1)
+		if (xD === 1'b1)
 		begin
 			rHEX5 <= wU;
 			rHEX4 <= wP;

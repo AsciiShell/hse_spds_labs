@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Mon Feb 01 16:20:20 2021
+Analysis & Synthesis Status : Successful - Tue Feb 02 10:56:47 2021
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : DE1_SoC_PS2_DEMO
-Top-level Entity Name : action_det
+Top-level Entity Name : DE1_SoC_PS2_2
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 72
-Total pins : 64
+Total registers : 161
+Total pins : 241
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

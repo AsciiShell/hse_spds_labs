@@ -1,6 +1,6 @@
 @ REM ######################################
 @ echo off
-%QUARTUS_ROOTDIR%\\bin\\jtagconfig.exe > %%JTAG_INFO
+%QUARTUS_ROOTDIR%\\bin64\\jtagconfig.exe > %%JTAG_INFO
 IF ERRORLEVEL 1 goto error
 setlocal enableextensions
 
@@ -60,7 +60,7 @@ echo ===========================================================
 @ REM # Variable to ignore mixed paths
 @ REM # i.e. G:/$SOPC_KIT_NIOS2/bin
 @ set CYGWIN=nodosfilewarning
-%QUARTUS_ROOTDIR%\\bin\\quartus_pgm.exe -m jtag -c 1 -o "p;DE1_SoC_SDRAM_RTL_Test.sof@%Index%"
+%QUARTUS_ROOTDIR%\\bin64\\quartus_pgm.exe -m jtag -c 1 -o "p;DE1_SoC_SDRAM_RTL_Test.sof@%Index%"
 goto end
 
 :error

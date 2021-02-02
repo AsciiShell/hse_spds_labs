@@ -1,5 +1,5 @@
 Assembler report for DE1_SoC_PS2_DEMO
-Mon Feb 01 16:22:25 2021
+Tue Feb 02 10:58:56 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -38,9 +38,9 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Feb 01 16:22:25 2021 ;
+; Assembler Status      ; Successful - Tue Feb 02 10:58:56 2021 ;
 ; Revision Name         ; DE1_SoC_PS2_DEMO                      ;
-; Top-level Entity Name ; action_det                            ;
+; Top-level Entity Name ; DE1_SoC_PS2_2                         ;
 ; Family                ; Cyclone V                             ;
 ; Device                ; 5CSEMA5F31C6                          ;
 +-----------------------+---------------------------------------+
@@ -67,8 +67,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------+---------------------------------------------------------------------------------------------+
 ; Option         ; Setting                                                                                     ;
 +----------------+---------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x00B0DE12                                                                                  ;
-; Checksum       ; 0x00B0DE12                                                                                  ;
+; JTAG usercode  ; 0x00B32199                                                                                  ;
+; Checksum       ; 0x00B32199                                                                                  ;
 +----------------+---------------------------------------------------------------------------------------------+
 
 
@@ -78,13 +78,13 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon Feb 01 16:22:13 2021
+    Info: Processing started: Tue Feb 02 10:58:44 2021
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off DE1_SoC_PS2_DEMO -c DE1_SoC_PS2_DEMO
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4842 megabytes
-    Info: Processing ended: Mon Feb 01 16:22:25 2021
+    Info: Peak virtual memory: 4850 megabytes
+    Info: Processing ended: Tue Feb 02 10:58:56 2021
     Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:12
 
