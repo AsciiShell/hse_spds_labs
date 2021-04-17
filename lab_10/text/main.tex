@@ -1,0 +1,107 @@
+%!TEX TS-program = xelatex
+
+% Шаблон документа LaTeX создан в 2018 году
+% Алексеем Подчезерцевым
+% В качестве исходных использованы шаблоны
+% 	Данилом Фёдоровых (danil@fedorovykh.ru) 
+%		https://www.writelatex.com/coursera/latex/5.2.2
+%	LaTeX-шаблон для русской кандидатской диссертации и её автореферата.
+%		https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template
+
+\documentclass[a4paper,14pt]{article}
+
+\input{data/preambular.tex}
+\begin{document} % конец преамбулы, начало документа
+	\input{data/title.tex}
+	\tableofcontents
+	\pagebreak
+	\section{Задание}
+	
+	\begin{enumerate}
+		
+		\item Изучить раздел 6.2 Users LED and KEY из \_DE1-Nano\_User\_manual.pdf;
+		
+		\item Запустиь проект hps\_gpio;
+		
+		\item Изучить мануал hps\_gpio.txt;
+		
+		\item Изучить раздел 7 из \_DE1-Nano\_User\_manual.pdf;
+		
+		\item Запустить проекты Soc\_GHRD и HPS\_FPGA\_LED;
+		
+		\item Реализовать циклическое переключение светодиода;
+		
+		\item Разработать программу, выводящую информацию об изменении состояния кнопок или переключателей;
+		
+		\item К проекту из п.7 подключить четырехразрядный семисегментный индикатор. модифицировать проекты для ПЛИС и HPS и вывести на индикатор текущее время.
+		
+		\item К проекту из п.7: реализовать для данного индикатора бегущую строку для вывода информации. Вывести на индикатор текущую дату (день, месяц, год)
+		
+	\end{enumerate}
+	\pagebreak
+	%{\small \VerbatimInput{../03_syn_pow_5_single_cycle_always/pow_5_single_cycle_always.v}}
+	
+	\section{Выполнение работы}
+	
+	Был изучен раздел раздел 6.2 из \_DE1-Nano\_User\_manual.pdf. Схема работы платы представлена на 	рис. \ref{fig:gpiodemonstrtion}.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{images/gpio_demonstrtion}
+		\caption{Демонстрация GPIO}
+		\label{fig:gpiodemonstrtion}
+	\end{figure}
+
+	Был запущен проект hps\_gpio, в котором по нажатию кнопки гаснет и загорается светодиод.
+	
+	В мануале hps\_gpio.txt говорится о том, как можно узнать общую информацию о GPI и о том как можно смотреть состояние GPIO через командную строку.
+	
+	Раздел 7 из \_DE1-Nano\_User\_manual.pdf был изучен. Дигаграмма подключения устройств представлена на рис. \ref{fig:axi-bridge-block-diagram}.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\linewidth]{"images/AXI Bridge Block Diagram"}
+		\caption{AXI Bridge Block Diagram}
+		\label{fig:axi-bridge-block-diagram}
+	\end{figure}
+	
+	
+
+	\section{Самостоятельная работа}
+	
+	Все проекты были собраны загружены на плату:
+	
+	\begin{enumerate}
+		\item Реализовать циклическое переключение светодиода;
+		
+		\item Разработать программу, выводящую информацию об изменении состояния кнопок или переключателей;
+		
+		\item К проекту из п.7 подключить четырехразрядный семисегментный индикатор. модифицировать проекты для ПЛИС и HPS и вывести на индикатор текущее время.
+		
+		\item К проекту из п.7: реализовать для данного индикатора бегущую строку для вывода информации. Вывести на индикатор текущую дату (день, месяц, год)
+	\end{enumerate}
+	
+	Ссылка на репозиторий с программами: 
+	
+	\href{https://github.com/AsciiShell/hse_spds_labs/tree/master/lab_10}{https://github.com/AsciiShell/hse\_spds\_labs/tree/master/lab\_10	}
+	
+	
+	\section{Выводы по работе}
+	
+	В ходе работы был изучен принцип загрузки ОС Linux на плату.
+	Был рассмотрен вариант взаимодействия с периферийными устройствами через HPS.
+	Был получен опыт в написании и анализе кода на языке С.
+	Был получен опыт в компиляции программ для ПЛИС на языке C.
+	Был получен опыт в загрузке программы и работе с ОС на ПЛИС через PuTTY.	
+	Был повторен метод создания программ для ПЛИС при помощи QSYS.	
+	Итоговые проекты были собраны и загружены на плату.
+	
+	\newpage 
+	\renewcommand{\refname}{{\normalsize Список использованных источников}} 
+	\centering 
+	\begin{thebibliography}{9} 
+		\addcontentsline{toc}{section}{\refname} 
+		\bibitem{Harris} Хэррис Д. М., Хэррис С. Л. Цифровая схемотехника и архитектура компьютера. – 2015.
+	\end{thebibliography}
+	
+\end{document} % конец документа
